@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://shakilmahmud.github.io/sitemap.xml
+Sitemap: https://shakilmahmudshuvo.github.io/sitemap.xml
