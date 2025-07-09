@@ -40,12 +40,13 @@ layout: default
   </header>
 
   <article class="post-content">
-    {% if page.toc and page.toc.beginning %}
+    <!-- Table of contents disabled for GitHub Pages compatibility -->
+    <!-- {% if page.toc and page.toc.beginning %}
     <div id="table-of-contents">
       {% toc %}
     </div>
     <hr>
-    {% endif %}
+    {% endif %} -->
     <div id="markdown-content">
       {{ content }}
     </div>

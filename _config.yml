@@ -129,8 +129,10 @@ permalink: /blog/:year/:title/
 display_tags: #['formatting', 'images', 'links', 'math', 'code'] # this tags will be dispalyed on the front page of your blog
 
 # Pagination
+# Note: jekyll-paginate-v2 is not supported by GitHub Pages
+# Pagination disabled for GitHub Pages compatibility
 pagination:
-  enabled: true
+  enabled: false
 
 related_blog_posts:
   enabled: true
@@ -222,18 +224,18 @@ keep_files:
 
 # Plug-ins
 plugins:
-  - jekyll-archives
-  - jekyll-diagrams
-  - jekyll-email-protect
+  # - jekyll-archives  # Not supported by GitHub Pages
+  # - jekyll-diagrams  # Not supported by GitHub Pages
+  # - jekyll-email-protect  # Not supported by GitHub Pages
   - jekyll-feed
-  - jekyll-imagemagick
-  - jekyll-link-attributes
-  - jekyll-minifier
-  - jekyll-paginate-v2
-  - jekyll/scholar
+  # - jekyll-imagemagick  # Not supported by GitHub Pages
+  # - jekyll-link-attributes  # Not supported by GitHub Pages
+  # - jekyll-minifier  # Not supported by GitHub Pages
+  # - jekyll-paginate-v2  # Not supported by GitHub Pages
+  # - jekyll/scholar  # Not supported by GitHub Pages
   - jekyll-sitemap
-  - jekyll-toc
-  - jekyll-twitter-plugin
+  # - jekyll-toc  # Not supported by GitHub Pages
+  # - jekyll-twitter-plugin  # Not supported by GitHub Pages
   - jemoji
 
 # Sitemap settings
