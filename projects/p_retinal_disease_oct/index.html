@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Retinal Disease Classification using OCT Images | Shakil Mahmud Shuvo</title>
+    <meta name="author" content="Shakil Mahmud Shuvo">
+    <meta name="description" content="Hybrid CNN architectures with attention mechanisms for multi-class retinal disease identification.">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9D%84%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://shakilmahmud.github.io/projects/p_retinal_disease_oct/">
+
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/">Shakil Mahmud Shuvo</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              <!-- 
+
+              <!-- Other pages -->
+              <li class="nav-item ">                
+                <a class="nav-link" href="/education/">Education</a>
+              </li>
+              <li class="nav-item ">                
+                <a class="nav-link" href="/cv/">CV</a>
+              </li>
+              <li class="nav-item ">                
+                <a class="nav-link" href="/research/">Research</a>
+              </li>
+              <li class="nav-item ">                
+                <a class="nav-link" href="/experience/">Experience</a>
+              </li>
+              <li class="nav-item ">                
+                <a class="nav-link" href="/projects/">Projects</a>
+              </li>
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">others</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/achievements/">Achievements</a>
+                </div>
+              </li>
+
+              <!-- Toogle theme mode -->
+              <li class="toggle-container">
+                <button id="light-toggle" title="Change theme">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    <div class="container mt-5">
+      
+        <!-- page.html -->
+        <div class="post">
+
+          <header class="post-header">
+            <h1 class="post-title">Retinal Disease Classification using OCT Images</h1>
+            <p class="post-description">Hybrid CNN architectures with attention mechanisms for multi-class retinal disease identification.</p>
+          </header>
+
+          <article>
+            <div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div class="text-center">
+            <a href="https://github.com/ShakilMahmudShuvo/RetinalDiseaseMulticlassClassification" class="btn btn-sm btn-primary" target="_blank" rel="external nofollow noopener">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+            <a href="https://dl.acm.org/doi/full/10.1145/3723178.3723304" class="btn btn-sm btn-success" target="_blank" rel="external nofollow noopener">
+                <i class="fas fa-file-alt"></i> Read Paper
+            </a>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="overview">Overview</h2>
+
+<p>This research presents a novel approach to automated retinal disease classification using Optical Coherence Tomography (OCT) images. By incorporating <strong>Convolutional Block Attention Module (CBAM)</strong> and <strong>skip connections</strong> into pre-trained CNNs, we achieved state-of-the-art performance in identifying eight different retinal conditions.</p>
+
+<p>Published at the <strong>3rd International Conference on Computing Advancements (ICCA 2024)</strong>, this work addresses the critical need for automated diagnostic tools in ophthalmology, potentially preventing blindness through early disease detection.</p>
+
+<h3 id="tools--technologies">Tools &amp; Technologies</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Python</code> <code class="language-plaintext highlighter-rouge">TensorFlow</code> <code class="language-plaintext highlighter-rouge">Keras</code> <code class="language-plaintext highlighter-rouge">OpenCV</code> <code class="language-plaintext highlighter-rouge">NumPy</code> <code class="language-plaintext highlighter-rouge">Pandas</code> <code class="language-plaintext highlighter-rouge">Matplotlib</code> <code class="language-plaintext highlighter-rouge">CBAM</code> <code class="language-plaintext highlighter-rouge">DenseNet121</code> <code class="language-plaintext highlighter-rouge">Xception</code></p>
+
+<hr>
+
+<h2 id="research-motivation">Research Motivation</h2>
+
+<p>Millions of people worldwide suffer from retinal diseases that, if left untreated, can lead to preventable blindness. Traditional manual diagnosis methods are:</p>
+<ul>
+  <li>Time-consuming and labor-intensive</li>
+  <li>Subject to inter-observer variability</li>
+  <li>Limited by the availability of specialized ophthalmologists</li>
+  <li>Prone to human error in early-stage disease detection</li>
+</ul>
+
+<p>Our automated approach using deep learning aims to overcome these limitations by providing fast, consistent, and accurate diagnoses.</p>
+
+<hr>
+
+<h2 id="technical-approach">Technical Approach</h2>
+
+<h3 id="1-hybrid-architecture-design">1. <strong>Hybrid Architecture Design</strong>
+</h3>
+
+<p>We developed a novel architecture combining three key components:</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">
+<i class="fas fa-network-wired"></i> Pre-trained CNNs</h5>
+                <p class="card-text">Leveraged transfer learning with DenseNet121, ResNet50, VGG16, Xception, and EfficientNetB1</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-success">
+            <div class="card-body">
+                <h5 class="card-title text-success">
+<i class="fas fa-eye"></i> CBAM Module</h5>
+                <p class="card-text">Enhanced feature extraction by focusing on pathologically significant regions in OCT images</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-warning">
+            <div class="card-body">
+                <h5 class="card-title text-warning">
+<i class="fas fa-project-diagram"></i> Skip Connections</h5>
+                <p class="card-text">Facilitated direct information flow between layers, preserving fine-grained features</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 id="2-dataset-oct-c8">2. <strong>Dataset: OCT-C8</strong>
+</h3>
+
+<p>The study utilized the comprehensive OCT-C8 dataset containing:</p>
+<ul>
+  <li>
+<strong>8 Classes</strong>: 7 disease types + 1 healthy class</li>
+  <li>
+<strong>Diseases Covered</strong>:
+    <ul>
+      <li>Age-related Macular Degeneration (AMD)</li>
+      <li>Diabetic Macular Edema (DME)</li>
+      <li>Epiretinal Membrane (ERM)</li>
+      <li>Macular Hole (MH)</li>
+      <li>Retinal Artery Occlusion (RAO)</li>
+      <li>Retinal Vein Occlusion (RVO)</li>
+      <li>Vitreomacular Traction (VMT)</li>
+      <li>Normal retina</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-model-architecture">3. <strong>Model Architecture</strong>
+</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Simplified architecture overview
+</span><span class="n">Input</span> <span class="n">OCT</span> <span class="n">Image</span> <span class="err">→</span> <span class="n">Pre</span><span class="o">-</span><span class="n">trained</span> <span class="n">CNN</span> <span class="n">Base</span> <span class="err">→</span> <span class="n">CBAM</span> <span class="n">Module</span> <span class="err">→</span> <span class="n">Skip</span> <span class="n">Connection</span> <span class="err">→</span> 
+<span class="n">Dense</span> <span class="n">Layers</span> <span class="err">→</span> <span class="n">Softmax</span> <span class="n">Classification</span> <span class="err">→</span> <span class="n">Disease</span> <span class="n">Prediction</span>
+</code></pre></div></div>
+
+<hr>
+
+<h2 id="results--performance">Results &amp; Performance</h2>
+
+<div class="row text-center mb-4">
+    <div class="col-md-3 col-6">
+        <div class="metric-card">
+            <h2 class="text-primary">96.28%</h2>
+            <p>DenseNet-CBAM-Skip Accuracy</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="metric-card">
+            <h2 class="text-success">96.11%</h2>
+            <p>Xception-CBAM-Skip Accuracy</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="metric-card">
+            <h2 class="text-warning">96.31%</h2>
+            <p>F1-Score (DenseNet)</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="metric-card">
+            <h2 class="text-info">8</h2>
+            <p>Classes Identified</p>
+        </div>
+    </div>
+</div>
+
+<h3 id="performance-comparison">Performance Comparison</h3>
+
+<p>Our hybrid models significantly outperformed baseline pre-trained models:</p>
+<ul>
+  <li>
+<strong>DenseNet121 (baseline)</strong>: 91.2% → <strong>DenseNet-CBAM-Skip</strong>: 96.28% (+5.08%)</li>
+  <li>
+<strong>Xception (baseline)</strong>: 90.8% → <strong>Xception-CBAM-Skip</strong>: 96.11% (+5.31%)</li>
+</ul>
+
+<hr>
+
+<h2 id="key-innovations">Key Innovations</h2>
+
+<ol>
+  <li>
+<strong>Attention-Enhanced Feature Extraction</strong>: CBAM module enables the model to focus on disease-specific regions in OCT images</li>
+  <li>
+<strong>Information Preservation</strong>: Skip connections prevent loss of fine-grained details crucial for accurate diagnosis</li>
+  <li>
+<strong>Efficient Transfer Learning</strong>: Leveraged pre-trained models while adapting them specifically for retinal disease patterns</li>
+  <li>
+<strong>Multi-Architecture Validation</strong>: Tested across multiple CNN architectures to ensure robustness</li>
+</ol>
+
+<hr>
+
+<h2 id="clinical-impact">Clinical Impact</h2>
+
+<p>This research contributes to:</p>
+<ul>
+  <li>
+<strong>Early Disease Detection</strong>: Automated screening can identify diseases in early stages</li>
+  <li>
+<strong>Healthcare Accessibility</strong>: Reduces dependency on specialized ophthalmologists in remote areas</li>
+  <li>
+<strong>Consistent Diagnoses</strong>: Eliminates inter-observer variability</li>
+  <li>
+<strong>Rapid Processing</strong>: Real-time classification enables immediate clinical decisions</li>
+</ul>
+
+<hr>
+
+<h2 id="implementation-details">Implementation Details</h2>
+
+<h3 id="model-training">Model Training</h3>
+<ul>
+  <li>
+<strong>Optimizer</strong>: Adam with learning rate scheduling</li>
+  <li>
+<strong>Loss Function</strong>: Categorical cross-entropy</li>
+  <li>
+<strong>Data Augmentation</strong>: Rotation, flipping, zooming to improve generalization</li>
+  <li>
+<strong>Validation Strategy</strong>: 5-fold cross-validation</li>
+</ul>
+
+<h3 id="hardware-requirements">Hardware Requirements</h3>
+<ul>
+  <li>
+<strong>GPU</strong>: NVIDIA Tesla V100 or equivalent</li>
+  <li>
+<strong>RAM</strong>: Minimum 16GB</li>
+  <li>
+<strong>Storage</strong>: ~10GB for dataset and models</li>
+</ul>
+
+<hr>
+
+<h2 id="future-work">Future Work</h2>
+
+<ul>
+  <li>Integration with clinical imaging systems for real-time diagnosis</li>
+  <li>Extension to other imaging modalities (fundus photography, fluorescein angiography)</li>
+  <li>Development of explainable AI features for clinical interpretation</li>
+  <li>Mobile deployment for point-of-care diagnostics</li>
+</ul>
+
+<hr>
+
+<h2 id="citation">Citation</h2>
+
+<p>If you use this work in your research, please cite:</p>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">novely2024improving</span><span class="p">,</span>
+  <span class="na">title</span><span class="p">=</span><span class="s">{Improving Pre-Trained CNNs with CBAM and Skip Connections for 
+         Multi-Class Retinal Diseases Classification using OCT Images}</span><span class="p">,</span>
+  <span class="na">author</span><span class="p">=</span><span class="s">{Novely, Navia and Mahmud Shuvo, Shakil and Faruk, Md Farukuzzaman}</span><span class="p">,</span>
+  <span class="na">booktitle</span><span class="p">=</span><span class="s">{Proceedings of the 3rd International Conference on Computing Advancements}</span><span class="p">,</span>
+  <span class="na">pages</span><span class="p">=</span><span class="s">{946--953}</span><span class="p">,</span>
+  <span class="na">year</span><span class="p">=</span><span class="s">{2024}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr>
+
+<div class="text-center mt-5">
+    <a href="https://github.com/ShakilMahmudShuvo/RetinalDiseaseMulticlassClassification" class="btn btn-primary" target="_blank" rel="external nofollow noopener">
+        <i class="fab fa-github"></i> View Source Code
+    </a>
+    <a href="https://dl.acm.org/doi/full/10.1145/3723178.3723304" class="btn btn-success ml-2" target="_blank" rel="external nofollow noopener">
+        <i class="fas fa-file-alt"></i> Read Full Paper
+    </a>
+</div>
+
+<style>
+.metric-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.metric-card h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+</style>
+
+
+          </article>
+
+        </div>
+
+      
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2025 Shakil Mahmud Shuvo. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script>
+
+  <!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+</html>
