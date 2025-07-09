@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article class="post-content">
+    {% if site.data.education %}
+      {% for entry in site.data.education %}
+        <div class="education-entry mb-5">
+          <div class="row">
+            <div class="col-md-2 text-center">
+              {% if entry.logo %}
+                <img src="{{ site.baseurl }}/assets/img/logos/{{ entry.logo }}" alt="{{ entry.university }} logo" class="img-fluid" style="max-width: 100px;">
+              {% endif %}
+            </div>
+            <div class="col-md-10">
+              <h3 class="mb-1">{{ entry.title }}</h3>
+              <h4 class="mb-2">{{ entry.degree }}</h4>
+              <h5 class="text-muted mb-3">
+                {% if entry.uni_link %}
+                  <a href="{{ entry.uni_link }}" target="_blank">{{ entry.university }}</a>
+                {% else %}
+                  {{ entry.university }}
+                {% endif %}
+                | {{ entry.duration }} | {{ entry.location }}
+              </h5>
+              
+              {% if entry.details %}
+                <ul class="list-unstyled">
+                  {% for detail in entry.details %}
+                    <li class="mb-2">{{ detail }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        
+        {% unless forloop.last %}
+          <hr class="my-4">
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+    
+    {{ content }}
+  </article>
+</div>

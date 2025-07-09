@@ -1,0 +1,162 @@
+---
+layout: default
+---
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article class="post-content experience clearfix">
+    {% if site.data.experience %}
+      {% assign sorted_experiences = site.data.experience | sort: 'order' %}
+      {% for experience in sorted_experiences %}
+        <div class="experience-item mb-4">
+          <div class="d-flex align-items-start mb-3">
+            {% if experience.logo %}
+              <div class="company-logo me-4 flex-shrink-0">
+                <img src="{{ experience.logo | relative_url }}" 
+                     alt="{{ experience.company }} logo"
+                     class="rounded"
+                     style="width: 80px; height: 80px; object-fit: contain;">
+              </div>
+            {% endif %}
+            <div class="experience-content flex-grow-1">
+              <h3 class="experience-title mb-1">
+                {{ experience.position }}
+              </h3>
+              <h4 class="experience-company mb-2">
+                {% if experience.website %}
+                  <a href="{{ experience.website }}" target="_blank" class="text-decoration-none" style="color: var(--global-theme-color);">
+                    {{ experience.company }}
+                  </a>
+                {% else %}
+                  {{ experience.company }}
+                {% endif %}
+              </h4>
+              <div class="experience-meta mb-3">
+                <span class="badge bg-secondary me-2">
+                  <i class="fas fa-calendar-alt me-1"></i>{{ experience.duration }}
+                </span>
+                <span class="badge bg-secondary">
+                  <i class="fas fa-map-marker-alt me-1"></i>{{ experience.location }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-details">
+            <h5 class="mb-2" style="color: var(--global-text-color);">Key Responsibilities:</h5>
+            <ul class="list-unstyled">
+              {% for responsibility in experience.top_responsibilities %}
+                <li class="mb-2">
+                  <i class="fas fa-chevron-right me-2" style="color: var(--global-theme-color);"></i>
+                  {{ responsibility }}
+                </li>
+              {% endfor %}
+            </ul>
+
+            {% if experience.additional_responsibilities and experience.additional_responsibilities.size > 0 %}
+              <div class="mt-3">
+                <button class="btn btn-outline-secondary btn-sm" 
+                        type="button" 
+                        data-toggle="collapse" 
+                        data-target="#additional-{{ forloop.index }}" 
+                        aria-expanded="false" 
+                        aria-controls="additional-{{ forloop.index }}">
+                  <i class="fas fa-plus me-1"></i>View more
+                </button>
+                <div class="collapse mt-3" id="additional-{{ forloop.index }}">
+                  <div class="card card-body" style="background-color: var(--global-bg-color); border-color: var(--global-divider-color);">
+                    <ul class="list-unstyled mb-0">
+                      {% for responsibility in experience.additional_responsibilities %}
+                        <li class="mb-2">
+                          <i class="fas fa-chevron-right me-2" style="color: var(--global-theme-color);"></i>
+                          {{ responsibility }}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        
+        {% unless forloop.last %}
+          <hr class="my-4" style="border-color: var(--global-divider-color);">
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+  </article>
+</div>
+
+<style>
+.experience-item {
+  padding: 1.5rem 0;
+}
+
+.experience-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.experience-company a {
+  color: var(--global-theme-color);
+  transition: color 0.3s ease;
+}
+
+.experience-company a:hover {
+  color: var(--global-hover-color);
+  text-decoration: underline !important;
+}
+
+.company-logo img {
+  transition: transform 0.3s ease;
+}
+
+.company-logo img:hover {
+  transform: scale(1.05);
+}
+
+.badge {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.responsibilities ul li {
+  line-height: 1.6;
+}
+
+.btn-outline-primary {
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+}
+
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column;
+  }
+  
+  .company-logo {
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+  
+  .experience-content {
+    text-align: center;
+  }
+}
+</style>

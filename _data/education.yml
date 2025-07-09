@@ -1,0 +1,31 @@
+# Education background
+
+- title: "Bachelor of Science"
+  degree: "Computer Science & Engineering"
+  dept_link: "https://www.ruet.ac.bd/departments/CSE"
+  key: "bsc2023"
+  university: "Rajshahi University of Engineering & Technology"
+  uni_link: "https://www.ruet.ac.bd/"
+  duration: "January 2018 - September 2023"
+  year: 2023
+  location: "Rajshahi, Bangladesh"
+  logo: "ruet.png"
+  thesis_link: "YOUR_GOOGLE_DRIVE_LINK_HERE"
+  details:
+    - "<strong>Result:</strong> CGPA <strong>3.22</strong>/4.00 (Last 60 credit average: <strong>3.71</strong>/4.00)"
+    - "<strong>Undergrad Thesis:</strong> A Two-Phase Framework for Multi-Class Brain Tumor Detection using DenseNet-121 Features and Machine Learning Ensembles"
+    - "<strong>Supervisor:</strong> <a href='https://www.ruet.ac.bd/farukuzzaman' target='_blank' class='text-decoration-none'>Md. Farukuzzaman Faruk</a>, Assistant Professor, Department of Computer Science & Engineering, Rajshahi University of Engineering & Technology"
+    - "<strong>Relevant Coursework:</strong> Applied Statistics and Queuing Theory, Digital Image Processing, Digital System Processing, Neural Network, Artificial Intelligence, Data Mining, Discrete Mathematics, Database Systems, Object-Oriented Programming"
+    - "<strong>Extra Curricular Activities:</strong><br>• Mentor <a href='https://rapl.site/' target='_blank' class='text-decoration-none'>RUET Analytical Programming Lab (RAPL)</a> - Guided students in problem-solving and programming competitions<br>• Organizing Member <a href='https://www.facebook.com/ruetesports/' target='_blank' class='text-decoration-none'>RUET e-Sports Club</a> - Organized gaming events and managed club activities"
+
+- title: "Higher Secondary Certificate"
+  degree: "Science"
+  key: "hsc2017"
+  university: "Notre Dame College"
+  duration: "2017"
+  year: 2017
+  location: "Dhaka, Bangladesh"
+  logo: "ndc.png"
+  details:
+    - "<strong>Result:</strong> GPA <strong>5.00</strong>/5.00"
+    - "<strong>Extra Curricular Activities:</strong><br>• Group Representative <a href='https://ndc.edu.bd/club/news/list/11' target='_blank' class='text-decoration-none'>Outward Bound Adventure Club</a>, Notre Dame College - Led group activities and ensured team coordination"

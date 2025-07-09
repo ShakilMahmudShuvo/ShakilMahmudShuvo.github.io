@@ -1,0 +1,66 @@
+# Professional experience
+
+- company: "Cognitus Consulting LLC"
+  position: "Associate Data Scientist"
+  duration: "Sept 2024 – Present"
+  location: "Dallas Parkway, Suite 200, Dallas, TX 75248 (Remote)"
+  website: "https://cognitusconsulting.com/"
+  logo: "/assets/img/logos/cognitus.png"
+  top_responsibilities:
+    - "Played a pivotal role in guiding the conceptualization and development phases, actively contributing to the seamless implementation of LambdaX at industry leaders like <a href='https://www.lockheedmartin.com/' target='_blank' class='text-decoration-none'>Lockheed Martin</a>."
+    - "Led data integration optimization for LambdaX, an AI-powered Contract Lifecycle Management platform."
+    - "Partnered with clients to design custom data workflows through automation and machine learning-driven process optimization."
+    - "Developed LLM-powered workflow generation system using MCP server-based architecture, creating an intelligent chatbot for automated workflow creation and optimization."
+  additional_responsibilities:
+    - "Built and maintained scalable ETL pipelines for contract data from SAP, Salesforce, and internal systems."
+    - "Automated contract lifecycle processes to streamline operations using AI-powered document processing."
+    - "Collaborated with cross-functional global teams (engineering, product, QA) in a remote setting to ensure data accuracy and alignment with business goals."
+    - "Implemented centralized contract data management for real-time access and predictive analytics."
+    - "Optimized system performance by resolving operational bottlenecks through algorithmic approaches."
+
+- company: "IdeaScale Bangladesh Limited"
+  position: "Associate Software Engineer - Machine Learning"
+  duration: "Nov 2023 – Aug 2024"
+  location: "Dhaka, Bangladesh"
+  website: "https://ideascale.com/"
+  logo: "/assets/img/logos/ideascale.png"
+  top_responsibilities:
+    - "Developed and enhanced machine learning models for recommendation systems, increasing user engagement by 15% through personalized suggestions."
+    - "Designed a contextual recommendation system (proof-of-concept/research) powered by NLP and deep learning, improving recommendation relevance by 20%."
+    - "Integrated OpenSearch as a vector database for data collection and embedding storage."
+    - "Optimized text processing and embedding generation pipelines using transformer-based models."
+  additional_responsibilities:
+    - "Deployed machine learning solutions via REST APIs with proper model versioning."
+    - "Collaborated on microservice management to ensure system reliability in distributed ML environments."
+
+- company: "Young Learners' Research Lab"
+  position: "Research Assistant"
+  duration: "Jan 2023 – Present"
+  location: "Rajshahi, Bangladesh"
+  website: "https://www.linkedin.com/company/aysrizon-ylrl/"
+  logo: "/assets/img/logos/ylrlab.png"
+  top_responsibilities:
+    - "Focused on Medical Imaging, Machine and Deep Learning, Computer Vision, character & pattern recognition, and Natural Language Processing."
+    - "Developed deep learning models for medical image analysis using CNNs and attention mechanisms, improving diagnostic accuracy by 18%."
+    - "Implemented computer vision algorithms for pattern recognition in clinical datasets using state-of-the-art architectures."
+    - "Collaborated with medical professionals to design and validate AI-assisted diagnostic tools."
+  additional_responsibilities:
+    - "Created NLP pipelines for processing and analyzing medical literature and clinical notes."
+    - "Presented research findings at departmental seminars and contributed to 6 academic publications (2 first-author)."
+    - "Mentored junior researchers on machine learning methodologies and best practices."
+
+- company: "Outlier"
+  position: "Generative AI Trainer (Part Time)"
+  duration: "Jun 2024 – Present"
+  location: "San Francisco, CA (Remote)"
+  website: "https://outlier.ai/"
+  logo: "/assets/img/logos/outlier.png"
+  top_responsibilities:
+    - "Engaged in advanced AI model training through structured text conversations, providing expert feedback on language model performance, accuracy, and cultural/linguistic understanding."
+    - "Conducted comprehensive AI response evaluation and hallucination detection, reviewing prompts and outputs for factual accuracy, grammatical correctness, and appropriate tone alignment."
+    - "Performed systematic AI voice response analysis, evaluating models across multiple dimensions including instruction adherence, relevance, truthfulness, and harmlessness detection."
+    - "Collaborated with AI development teams to enhance large language model capabilities through iterative feedback and quality assessment protocols."
+  additional_responsibilities:
+    - "Applied rigorous model evaluation frameworks with prioritized assessment criteria, focusing on safety, accuracy, and instruction-following capabilities."
+    - "Provided detailed performance justifications and analytical assessments to support continuous model improvement and development processes."
+
