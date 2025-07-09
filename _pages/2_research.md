@@ -220,8 +220,6 @@ A complete list of my publications is provided below. My **Google Scholar** prof
 
 <!-- Publications Section -->
 <div class="publications">
-  <!-- Bibliography disabled for GitHub Pages compatibility -->
-  <!-- {% bibliography -f {{ site.scholar.bibliography }} --group_by year --group_order descending %} -->
   <p><em>Please visit my <a href="https://scholar.google.com/citations?user=EOsiW3sAAAAJ&hl=en&authuser=3" target="_blank">Google Scholar profile</a> for a complete list of publications.</em></p>
 </div>
 
