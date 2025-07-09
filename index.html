@@ -182,18 +182,12 @@
             <script>
 document.addEventListener('DOMContentLoaded', function() {
     const titles = [
-        "PhD Aspirant in AI for Healthcare",
+        "Data Scientist",
+        "Machine Learning Engineer",
+        "PhD Aspirant",
         "Machine Learning Researcher",
-        "Published Author with 6 Papers",
-        "Medical AI Innovator",
         "Deep Learning Enthusiast",
-        "Healthcare Technology Pioneer",
-        "Computer Vision Researcher",
-        "NLP for Mental Health Advocate",
-        "Federated Learning Explorer",
-        "AI Ethics Champion",
-        "Global Health Tech Visionary",
-        "Future Research Leader"
+        "Traveller"
     ];
     
     let currentIndex = 0;
@@ -314,25 +308,32 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
           <!-- Selected papers -->
           <h2><a href="/publications/" style="color: inherit;">Selected Publications</a></h2>
+          <h2>Selected Papers</h2>
           <div class="publications">
             <ol class="bibliography">
               
               <li>
                 <div class="row">
-                  <div class="col-sm-2 abbr">
-                    <abbr class="badge">ICCA 2024</abbr>
+                  <div class="col-sm-2 preview">
+                    <img src="/assets/img/publication_preview/suicidal_ideation.png" class="preview z-depth-1 rounded" alt="suicidal ideation preview">
                   </div>
                   <div class="col-sm-10">
-                    <div class="title">Early Detection of Suicidal Ideation Using Bidirectional GRU and Language Models</div>
+                    <div class="title">
+                      <a href="https://dl.acm.org/doi/10.1145/3723178.3723242" target="_blank">Early Detection of Suicidal Ideation Using Bidirectional GRU and Language Models</a>
+                    </div>
                     <div class="author">
                       <strong>Shakil Mahmud Shuvo</strong>, Navia Novely, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, S. M. Mahedy Hasan
                     </div>
                     <div class="periodical">
-                      <em>Proceedings of the 3rd International Conference on Computing Advancements</em>, 2024
+                      <em>Proceedings of the 3rd International Conference on Computing Advancements (ICCA)</em>, 2024
                     </div>
                     <div class="note"><span class="badge badge-danger">First Author</span></div>
-                    <div class="links">
-                      <a href="https://dl.acm.org/doi/10.1145/3723178.3723242" class="btn btn-sm btn-outline-primary" target="_blank">Paper</a>
+                    
+                    <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+                    <a href="https://dl.acm.org/doi/10.1145/3723178.3723242" class="btn btn-sm z-depth-0" role="button" target="_blank">Paper</a>
+                    
+                    <div class="abstract hidden">
+                      <p>Suicide has recently emerged as a leading cause of death worldwide, underlining the importance of effective preventative measures. Online social media posts can provide valuable insights into people who are suicidal and assist in preventing unfortunate outcomes. This study examined the utilization of Bidirectional GRU, a type of recurrent neural network that analyzes data sequences in both forward and backward directions, to improve text classification using language models.</p>
                     </div>
                   </div>
                 </div>
@@ -340,20 +341,26 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
               
               <li>
                 <div class="row">
-                  <div class="col-sm-2 abbr">
-                    <abbr class="badge">ICCA 2024</abbr>
+                  <div class="col-sm-2 preview">
+                    <img src="/assets/img/publication_preview/retinal_oct.png" class="preview z-depth-1 rounded" alt="retinal OCT preview">
                   </div>
                   <div class="col-sm-10">
-                    <div class="title">Improving Pre-Trained CNNs with CBAM and Skip Connections for Multi-Class Retinal Diseases Classification using OCT Images</div>
+                    <div class="title">
+                      <a href="https://dl.acm.org/doi/10.1145/3723178.3723304" target="_blank">Improving Pre-Trained CNNs with CBAM and Skip Connections for Multi-Class Retinal Diseases Classification using OCT Images</a>
+                    </div>
                     <div class="author">
                       Navia Novely, <strong>Shakil Mahmud Shuvo</strong>, Md. Farukuzzaman Faruk
                     </div>
                     <div class="periodical">
-                      <em>Proceedings of the 3rd International Conference on Computing Advancements</em>, 2024
+                      <em>Proceedings of the 3rd International Conference on Computing Advancements (ICCA)</em>, 2024
                     </div>
                     <div class="note"><span class="badge badge-info">Second Author</span></div>
-                    <div class="links">
-                      <a href="https://dl.acm.org/doi/10.1145/3723178.3723304" class="btn btn-sm btn-outline-primary" target="_blank">Paper</a>
+                    
+                    <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+                    <a href="https://dl.acm.org/doi/10.1145/3723178.3723304" class="btn btn-sm z-depth-0" role="button" target="_blank">Paper</a>
+                    
+                    <div class="abstract hidden">
+                      <p>Millions of people suffer from retinal defects over the world. Early discovery and treatment of these anomalies could halt further progression, saving many people from preventable blindness. This study presented a hybrid framework that utilizes pre-trained models incorporating the Convolutional Block Attention Module (CBAM) and skip connections for accurate retinal disease classification.</p>
                     </div>
                   </div>
                 </div>
@@ -361,6 +368,60 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
               
             </ol>
           </div>
+          
+          <script>
+          // Abstract toggle functionality for selected papers
+          document.addEventListener('DOMContentLoaded', function() {
+              const abstractButtons = document.querySelectorAll('.publications .abstract.btn');
+              
+              abstractButtons.forEach(button => {
+                  button.addEventListener('click', function() {
+                      const abstractDiv = this.parentElement.querySelector('.abstract:not(.btn)');
+                      if (abstractDiv) {
+                          abstractDiv.classList.toggle('hidden');
+                          this.textContent = abstractDiv.classList.contains('hidden') ? 'Abstract' : 'Hide Abstract';
+                      }
+                  });
+              });
+          });
+          </script>
+          
+          <style>
+          /* Abstract content styling */
+          .publications .abstract.hidden {
+              display: none;
+          }
+          
+          .publications .abstract:not(.btn) {
+              margin-top: 15px;
+              padding: 15px;
+              background: #f8f9fa;
+              border-left: 3px solid #007bff;
+              border-radius: 0 4px 4px 0;
+              font-size: 0.95rem;
+              line-height: 1.6;
+          }
+          
+          /* Thumbnail styling */
+          .publications .preview {
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+          
+          .publications .preview img {
+              max-width: 100%;
+              height: auto;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+              transition: all 0.3s ease;
+          }
+          
+          .publications .preview img:hover {
+              transform: scale(1.05);
+              box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+          }
+          </style>
 
 
 
