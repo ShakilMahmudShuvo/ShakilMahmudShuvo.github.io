@@ -2,8 +2,7 @@
 <html lang="en">
 
   <!-- Head -->
-  <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
@@ -11,13 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Suicidal Ideation Detection Using Language Models | Shakil Mahmud Shuvo</title>
-    <meta name="author" content="Shakil Mahmud Shuvo">
-    <meta name="description" content="Transformer-based NLP system for early detection of suicidal ideation in Reddit posts.">
+    <meta name="author" content="Shakil Mahmud Shuvo" />
+    <meta name="description" content="Transformer-based NLP system for early detection of suicidal ideation in Reddit posts." />
 
 
     <!-- Bootstrap & MDB -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
 
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
@@ -25,20 +24,20 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
     <!-- Code Syntax Highlighting -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light" />
 
     
 
     <!-- Styles -->
     
-    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9D%84%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="https://shakilmahmudshuvo.github.io/projects/p_suicidal_ideation/">
 
     <!-- Dark Mode -->
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark" />
 
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/dark_mode.js"></script>
@@ -132,17 +131,17 @@
             <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <div class="text-center">
-            <a href="https://github.com/ShakilMahmudShuvo/SuicidalIdeationDetection" class="btn btn-sm btn-primary" target="_blank" rel="external nofollow noopener">
+            <a href="https://github.com/ShakilMahmudShuvo/SuicidalIdeationDetection" class="btn btn-sm btn-primary" target="_blank">
                 <i class="fab fa-github"></i> View on GitHub
             </a>
-            <a href="https://dl.acm.org/doi/full/10.1145/3723178.3723242" class="btn btn-sm btn-success" target="_blank" rel="external nofollow noopener">
+            <a href="https://dl.acm.org/doi/full/10.1145/3723178.3723242" class="btn btn-sm btn-success" target="_blank">
                 <i class="fas fa-file-alt"></i> Read Paper
             </a>
         </div>
     </div>
 </div>
 
-<hr>
+<hr />
 
 <h2 id="overview">Overview</h2>
 
@@ -154,31 +153,26 @@
 
 <p><code class="language-plaintext highlighter-rouge">Python</code> <code class="language-plaintext highlighter-rouge">PyTorch</code> <code class="language-plaintext highlighter-rouge">Transformers</code> <code class="language-plaintext highlighter-rouge">BERT</code> <code class="language-plaintext highlighter-rouge">RoBERTa</code> <code class="language-plaintext highlighter-rouge">DistilBERT</code> <code class="language-plaintext highlighter-rouge">ELECTRA</code> <code class="language-plaintext highlighter-rouge">Bi-GRU</code> <code class="language-plaintext highlighter-rouge">scikit-learn</code> <code class="language-plaintext highlighter-rouge">NLTK</code> <code class="language-plaintext highlighter-rouge">Pandas</code></p>
 
-<hr>
+<hr />
 
 <h2 id="research-motivation">Research Motivation</h2>
 
 <p>Suicide is a leading cause of death worldwide, with social media platforms increasingly becoming spaces where individuals express distressing thoughts. However, detecting these signals faces several challenges:</p>
 
 <ul>
-  <li>
-<strong>Implicit Expression</strong>: People often express suicidal thoughts indirectly due to stigma</li>
-  <li>
-<strong>Complex Language</strong>: Sarcasm, metaphors, and context-dependent meanings complicate detection</li>
-  <li>
-<strong>High Stakes</strong>: False negatives could mean missing someone in crisis</li>
-  <li>
-<strong>Scale Challenge</strong>: Manual monitoring of millions of posts is impossible</li>
+  <li><strong>Implicit Expression</strong>: People often express suicidal thoughts indirectly due to stigma</li>
+  <li><strong>Complex Language</strong>: Sarcasm, metaphors, and context-dependent meanings complicate detection</li>
+  <li><strong>High Stakes</strong>: False negatives could mean missing someone in crisis</li>
+  <li><strong>Scale Challenge</strong>: Manual monitoring of millions of posts is impossible</li>
 </ul>
 
 <p>Our approach leverages deep learning to provide automated, scalable detection while maintaining high sensitivity to potential crisis situations.</p>
 
-<hr>
+<hr />
 
 <h2 id="technical-innovation">Technical Innovation</h2>
 
-<h3 id="1-hybrid-architecture">1. <strong>Hybrid Architecture</strong>
-</h3>
+<h3 id="1-hybrid-architecture">1. <strong>Hybrid Architecture</strong></h3>
 
 <p>Our novel approach combines the strengths of two powerful techniques:</p>
 
@@ -186,8 +180,7 @@
     <div class="col-md-6">
         <div class="card h-100 border-primary">
             <div class="card-body">
-                <h5 class="card-title text-primary">
-<i class="fas fa-brain"></i> Pre-trained Language Models</h5>
+                <h5 class="card-title text-primary"><i class="fas fa-brain"></i> Pre-trained Language Models</h5>
                 <p class="card-text">Leverage contextual understanding from BERT, RoBERTa, DistilBERT, DistilRoBERTa, and ELECTRA-Small for deep semantic comprehension</p>
             </div>
         </div>
@@ -195,37 +188,30 @@
     <div class="col-md-6">
         <div class="card h-100 border-success">
             <div class="card-body">
-                <h5 class="card-title text-success">
-<i class="fas fa-sync-alt"></i> Bidirectional GRU</h5>
+                <h5 class="card-title text-success"><i class="fas fa-sync-alt"></i> Bidirectional GRU</h5>
                 <p class="card-text">Capture sequential dependencies and temporal patterns in both forward and backward directions for enhanced text understanding</p>
             </div>
         </div>
     </div>
 </div>
 
-<h3 id="2-model-architecture">2. <strong>Model Architecture</strong>
-</h3>
+<h3 id="2-model-architecture">2. <strong>Model Architecture</strong></h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Input</span> <span class="n">Text</span> <span class="err">→</span> <span class="n">Tokenization</span> <span class="err">→</span> <span class="n">Pre</span><span class="o">-</span><span class="n">trained</span> <span class="n">Language</span> <span class="n">Model</span> <span class="err">→</span> 
 <span class="n">Contextual</span> <span class="n">Embeddings</span> <span class="err">→</span> <span class="n">Bidirectional</span> <span class="n">GRU</span> <span class="err">→</span> 
 <span class="n">Dense</span> <span class="n">Layer</span> <span class="err">→</span> <span class="n">Sigmoid</span> <span class="err">→</span> <span class="n">Binary</span> <span class="n">Classification</span>
 </code></pre></div></div>
 
-<h3 id="3-key-features">3. <strong>Key Features</strong>
-</h3>
+<h3 id="3-key-features">3. <strong>Key Features</strong></h3>
 
 <ul>
-  <li>
-<strong>Contextual Understanding</strong>: Language models capture nuanced meanings and context</li>
-  <li>
-<strong>Sequential Pattern Recognition</strong>: Bi-GRU identifies temporal dependencies in text</li>
-  <li>
-<strong>Attention to Subtle Cues</strong>: Model learns to recognize indirect expressions of distress</li>
-  <li>
-<strong>Low False Negative Rate</strong>: Optimized to minimize missing at-risk individuals</li>
+  <li><strong>Contextual Understanding</strong>: Language models capture nuanced meanings and context</li>
+  <li><strong>Sequential Pattern Recognition</strong>: Bi-GRU identifies temporal dependencies in text</li>
+  <li><strong>Attention to Subtle Cues</strong>: Model learns to recognize indirect expressions of distress</li>
+  <li><strong>Low False Negative Rate</strong>: Optimized to minimize missing at-risk individuals</li>
 </ul>
 
-<hr>
+<hr />
 
 <h2 id="results--performance">Results &amp; Performance</h2>
 
@@ -305,51 +291,39 @@
   </tbody>
 </table>
 
-<hr>
+<hr />
 
 <h2 id="ethical-considerations">Ethical Considerations</h2>
 
 <p>This research was conducted with careful attention to:</p>
 <ul>
-  <li>
-<strong>Privacy</strong>: All data was anonymized and no personal identifiers were retained</li>
-  <li>
-<strong>Consent</strong>: Used only publicly available data from consenting platforms</li>
-  <li>
-<strong>Responsible Disclosure</strong>: Results shared with mental health organizations</li>
-  <li>
-<strong>Deployment Ethics</strong>: Emphasis on human-in-the-loop systems</li>
+  <li><strong>Privacy</strong>: All data was anonymized and no personal identifiers were retained</li>
+  <li><strong>Consent</strong>: Used only publicly available data from consenting platforms</li>
+  <li><strong>Responsible Disclosure</strong>: Results shared with mental health organizations</li>
+  <li><strong>Deployment Ethics</strong>: Emphasis on human-in-the-loop systems</li>
 </ul>
 
-<hr>
+<hr />
 
 <h2 id="real-world-impact">Real-World Impact</h2>
 
 <h3 id="potential-applications">Potential Applications</h3>
 <ul>
-  <li>
-<strong>Social Media Monitoring</strong>: Early warning systems for platforms</li>
-  <li>
-<strong>Mental Health Support</strong>: Assisting counselors in identifying at-risk individuals</li>
-  <li>
-<strong>Research Tool</strong>: Understanding linguistic markers of mental distress</li>
-  <li>
-<strong>Crisis Prevention</strong>: Enabling timely interventions</li>
+  <li><strong>Social Media Monitoring</strong>: Early warning systems for platforms</li>
+  <li><strong>Mental Health Support</strong>: Assisting counselors in identifying at-risk individuals</li>
+  <li><strong>Research Tool</strong>: Understanding linguistic markers of mental distress</li>
+  <li><strong>Crisis Prevention</strong>: Enabling timely interventions</li>
 </ul>
 
 <h3 id="key-advantages">Key Advantages</h3>
 <ul>
-  <li>
-<strong>Scalability</strong>: Can process millions of posts in real-time</li>
-  <li>
-<strong>Consistency</strong>: Eliminates human variability in screening</li>
-  <li>
-<strong>24/7 Availability</strong>: Continuous monitoring capability</li>
-  <li>
-<strong>Multi-platform</strong>: Adaptable to various social media platforms</li>
+  <li><strong>Scalability</strong>: Can process millions of posts in real-time</li>
+  <li><strong>Consistency</strong>: Eliminates human variability in screening</li>
+  <li><strong>24/7 Availability</strong>: Continuous monitoring capability</li>
+  <li><strong>Multi-platform</strong>: Adaptable to various social media platforms</li>
 </ul>
 
-<hr>
+<hr />
 
 <h2 id="citation">Citation</h2>
 
@@ -366,13 +340,13 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<hr>
+<hr />
 
 <div class="text-center mt-5">
-    <a href="https://github.com/ShakilMahmudShuvo/SuicidalIdeationDetection" class="btn btn-primary" target="_blank" rel="external nofollow noopener">
+    <a href="https://github.com/ShakilMahmudShuvo/SuicidalIdeationDetection" class="btn btn-primary" target="_blank">
         <i class="fab fa-github"></i> View Source Code
     </a>
-    <a href="https://dl.acm.org/doi/full/10.1145/3723178.3723242" class="btn btn-success ml-2" target="_blank" rel="external nofollow noopener">
+    <a href="https://dl.acm.org/doi/full/10.1145/3723178.3723242" class="btn btn-success ml-2" target="_blank">
         <i class="fas fa-file-alt"></i> Read Full Paper
     </a>
 </div>
@@ -421,7 +395,7 @@ table td {
     <!-- Footer -->    
     <footer class="fixed-bottom">
       <div class="container mt-0">
-        © Copyright 2025 Shakil Mahmud Shuvo. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+        &copy; Copyright 2025 Shakil Mahmud Shuvo. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
       </div>
     </footer>
