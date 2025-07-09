@@ -25,18 +25,12 @@ social: true  # includes social icons at the bottom of the page
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const titles = [
-        "PhD Aspirant in AI for Healthcare",
+        "Data Scientist",
+        "Machine Learning Engineer",
+        "PhD Aspirant",
         "Machine Learning Researcher",
-        "Published Author with 6 Papers",
-        "Medical AI Innovator",
         "Deep Learning Enthusiast",
-        "Healthcare Technology Pioneer",
-        "Computer Vision Researcher",
-        "NLP for Mental Health Advocate",
-        "Federated Learning Explorer",
-        "AI Ethics Champion",
-        "Global Health Tech Visionary",
-        "Future Research Leader"
+        "Traveller"
     ];
     
     let currentIndex = 0;
