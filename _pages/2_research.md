@@ -238,7 +238,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       <strong>Shakil Mahmud Shuvo</strong>, Navia Novely, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, S. M. Mahedy Hasan
     </div>
     <div class="periodical">
-      <em>Proceedings of the 3rd International Conference on Computing Advancements (ICCA)</em>, 2024
+      <em>Proceedings of the <a href="https://icca.acm.org/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
     </div>
     <div class="note"><span class="badge badge-danger">First Author</span></div>
     
@@ -265,7 +265,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       Navia Novely, <strong>Shakil Mahmud Shuvo</strong>, Md. Farukuzzaman Faruk
     </div>
     <div class="periodical">
-      <em>Proceedings of the 3rd International Conference on Computing Advancements (ICCA)</em>, 2024
+      <em>Proceedings of the <a href="https://icca.acm.org/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
     </div>
     <div class="note"><span class="badge badge-info">Second Author</span></div>
     
@@ -292,7 +292,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       Soumit Das, Md. Farukuzzaman Faruk, <strong>Shakil Mahmud Shuvo</strong>, Azmain Yakin Srizon, S. M. Mahedy Hasan, Prof. Dr. Md. Al Mamun
     </div>
     <div class="periodical">
-      <em>Proceedings of the 3rd International Conference on Computing Advancements (ICCA)</em>, 2024
+      <em>Proceedings of the <a href="https://icca.acm.org/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
     </div>
     <div class="note"><span class="badge badge-secondary">Third Author</span></div>
     
@@ -327,7 +327,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       <strong>Shakil Mahmud Shuvo</strong>, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, Tahsen Islam Sajon, S. M. Mahedy Hasan, Anirban Barai, A. F. M. Minhazur Rahman, Md. Al Mamun
     </div>
     <div class="periodical">
-      <em>Proceedings of the 2nd International Conference on Big Data, IoT and Machine Learning (BIM)</em>, 2023
+      <em>Proceedings of the <a href="https://link.springer.com/conference/bim" target="_blank">2nd International Conference on Big Data, IoT and Machine Learning (BIM)</a></em>, 2023
     </div>
     <div class="note"><span class="badge badge-danger">First Author</span></div>
     
@@ -354,7 +354,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       Anirban Barai, Md. Farukuzzaman Faruk, <strong>Shakil Mahmud Shuvo</strong>, Azmain Yakin Srizon, S. M. Mahedy Hasan, Abu Sayeed
     </div>
     <div class="periodical">
-      <em>Proceedings of the 2023 International Conference on Next-Generation Computing, IoT and Machine Learning (NCIM)</em>, 2023
+      <em>Proceedings of the <a href="https://ieeexplore.ieee.org/xpl/conhome/10212658/proceeding" target="_blank">2023 International Conference on Next-Generation Computing, IoT and Machine Learning (NCIM)</a></em>, 2023
     </div>
     <div class="note"><span class="badge badge-secondary">Third Author</span></div>
     
@@ -382,7 +382,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       Tahsen Islam Sajon, Barsha Roy, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, <strong>Shakil Mahmud Shuvo</strong>, Md. Al Mamun, Abu Sayeed, S. M. Mahedy Hasan
     </div>
     <div class="periodical">
-      <em>Proceedings of the 2nd International Conference on Big Data, IoT and Machine Learning (BIM)</em>, 2023
+      <em>Proceedings of the <a href="https://link.springer.com/conference/bim" target="_blank">2nd International Conference on Big Data, IoT and Machine Learning (BIM)</a></em>, 2023
     </div>
     <div class="note"><span class="badge badge-secondary">Fifth Author</span></div>
     
@@ -616,6 +616,19 @@ A complete list of my publications is provided below. My **Google Scholar** prof
     border-color: #1e7e34;
     color: white;
     text-decoration: none;
+}
+
+/* Conference links styling */
+.publications .periodical a {
+    color: #495057;
+    text-decoration: none;
+    border-bottom: 1px dotted #495057;
+    transition: all 0.2s ease;
+}
+
+.publications .periodical a:hover {
+    color: #007bff;
+    border-bottom-color: #007bff;
 }
 
 /* Abstract content styling */

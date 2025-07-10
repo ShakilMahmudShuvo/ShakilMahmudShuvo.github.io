@@ -106,23 +106,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## About Me
 
-I am a **Machine Learning Researcher** with a proven track record of **6 peer-reviewed publications** (2 as first author) and a passion for developing AI solutions that address critical healthcare challenges. My research has consistently achieved state-of-the-art results, with accuracies ranging from **96.33% to 99.33%** across medical imaging, NLP for mental health, and computer vision applications.
+As a passionate **Machine Learning Researcher**, I thrive on pushing the boundaries of AI to solve real-world challenges. My research journey has led me through diverse areas of machine learning, from medical imaging and natural language processing to computer vision, resulting in **6 peer-reviewed publications** where I've contributed as both lead and collaborative researcher.
+
+My professional experience spans both academia and industry. Currently, I work as an **Associate Data Scientist** at [Cognitus Consulting LLC](https://cognitus.com), where I architect large language model solutions for Fortune 500 clients. This role has deepened my understanding of practical AI deployment while reinforcing my belief that the most impactful research bridges theoretical innovation with real-world application.
 
 <div class="research-highlight">
-    <h4><i class="fas fa-graduation-cap mr-2"></i>PhD Aspirations</h4>
-    <p class="mb-0">I am actively seeking PhD opportunities to advance my research in <strong>trustworthy AI for healthcare</strong>, with particular focus on multimodal learning, federated systems, and explainable AI. My goal is to develop AI technologies that democratize healthcare access globally while ensuring privacy, interpretability, and robustness.</p>
+    <h4><i class="fas fa-lightbulb mr-2"></i>Research Philosophy</h4>
+    <p class="mb-0">I believe in the transformative power of machine learning across domains. While my published work focuses on healthcare AI, I'm <strong>eager to explore new frontiers in ML</strong> - from reinforcement learning and generative models to emerging paradigms in AI. Every new challenge is an opportunity to learn, adapt, and innovate.</p>
 </div>
 
-Currently, I serve as an **Associate Data Scientist** at [Cognitus Consulting LLC](https://cognitus.com), where I spearhead the development of large-language-model driven systems for Fortune 500 clients. My journey in AI research began at [Rajshahi University of Engineering & Technology (RUET)](https://www.ruet.ac.bd/), where I graduated with a **B.Sc. in Computer Science & Engineering** and worked as a research assistant at the *Young Learners' Research Lab*.
+My academic foundation was built at [Rajshahi University of Engineering & Technology (RUET)](https://www.ruet.ac.bd/), where I earned my **B.Sc. in Computer Science & Engineering**. During my time there, I served as a research assistant at the *Young Learners' Research Lab*, where I discovered my passion for pushing the boundaries of what's possible with AI.
 
-## Research Contributions
+## Research Journey & Aspirations
 
-My research contributions span multiple high-impact areas:
+Throughout my research career, I've developed expertise in:
 
-- **Medical Imaging & AI**: Developed novel architectures for brain tumor classification, glioma segmentation, and retinal disease detection
-- **NLP for Mental Health**: Created BERT-based systems for early detection of suicidal ideation with 95.8% accuracy
-- **Computer Vision Innovation**: Implemented attention mechanisms and fusion techniques achieving up to 99.33% accuracy
-- **Healthcare AI Systems**: Published in prestigious venues including **ICCA 2024**, **BIM 2023**, and **NCIM 2023**
+- **Medical AI Systems**: Creating innovative architectures for brain tumor classification, retinal disease detection, and glioma segmentation
+- **NLP Applications**: Building BERT-based models for mental health applications, including early detection of suicidal ideation
+- **Computer Vision**: Implementing attention mechanisms and fusion techniques for enhanced image analysis
+- **Cross-Domain Learning**: Applying transfer learning and ensemble methods across different problem spaces
+
+What excites me most is the **unexplored potential** of machine learning. I'm actively seeking **PhD opportunities** where I can contribute to cutting-edge research while continuously expanding my horizons. Whether it's developing novel architectures, exploring theoretical foundations, or applying ML to entirely new domains, I approach each challenge with curiosity and determination.
+
+<div class="research-highlight">
+    <h4><i class="fas fa-rocket mr-2"></i>Looking Forward</h4>
+    <p class="mb-0">I'm particularly interested in emerging areas like federated learning, multimodal AI, explainable AI systems, and the intersection of ML with other fields. My goal is not just to advance the state-of-the-art, but to ensure AI technologies are accessible, interpretable, and beneficial for all.</p>
+</div>
 
 <div class="text-center mt-4 mb-4">
     <a href="/research/" class="btn btn-outline-primary btn-lg">
