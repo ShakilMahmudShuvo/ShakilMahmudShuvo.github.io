@@ -777,18 +777,30 @@
 .publications .abstract:not(.btn) {
     margin-top: 15px;
     padding: 15px 0 15px 20px;
-    background: transparent;
+    background: #f8f9fa;
     border-left: 2px solid #dee2e6;
     border-radius: 0;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #6c757d;
+    color: #333333;
 }
 
-/* Hide any stray HTML tags */
-.publications ol.bibliography:after {
-    content: '';
-    display: none;
+/* Hide any stray HTML tags - more aggressive */
+.publications:after,
+.publications ol:after,
+.publications ol.bibliography:after,
+.publications .bibliography:after {
+    content: '' !important;
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide any literal HTML text */
+.publications:contains("</ol>"),
+.publications:contains("</li>") {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
 }
 
 /* Responsive adjustments */
@@ -827,6 +839,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Remove any visible HTML tags
+    const bodyText = document.body.innerHTML;
+    if (bodyText.includes('&lt;/ol&gt;') || bodyText.includes('</ol>')) {
+        document.body.innerHTML = bodyText.replace(/&lt;\/ol&gt;/g, '').replace(/&lt;\/li&gt;/g, '');
+    }
+    
+    // Find and hide any text nodes containing HTML tags
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+    );
+    
+    while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (node.nodeValue && (node.nodeValue.includes('</ol>') || node.nodeValue.includes('</li>'))) {
+            node.nodeValue = node.nodeValue.replace(/<\/ol>/g, '').replace(/<\/li>/g, '');
+        }
+    }
 });
 </script>
 </li></ol></div>
