@@ -591,8 +591,8 @@ A complete list of my publications is provided below. My **Google Scholar** prof
 }
 
 .publications .abstract.btn:hover {
-    background: #f8f9fa;
-    border-color: #adb5bd;
+    background: transparent;
+    border-color: #495057;
     color: #212529;
     text-decoration: none;
 }
