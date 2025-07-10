@@ -155,57 +155,57 @@ My work has been published in reputable venues including **ICCA 2024**, **BIM 20
 
 ## Current Research Interests
 
-<button class="btn btn-success mb-3" type="button" data-toggle="collapse" data-target="#futureResearchCollapse" aria-expanded="false" aria-controls="futureResearchCollapse">
+<button class="btn btn-outline-secondary mb-3" type="button" data-toggle="collapse" data-target="#futureResearchCollapse" aria-expanded="false" aria-controls="futureResearchCollapse">
   <i class="fas fa-rocket mr-2"></i>View Future Research Directions
 </button>
 
 <div class="collapse" id="futureResearchCollapse">
   <div class="row">
     <div class="col-md-6 mb-3">
-      <div class="card border-primary">
+      <div class="card border-light">
         <div class="card-body">
-          <h6 class="card-title text-primary"><i class="fas fa-layer-group mr-2"></i>Multimodal Learning</h6>
-          <p class="card-text small">Integrating multiple data modalities (text, image, audio) for comprehensive healthcare analysis and diagnosis.</p>
+          <h6 class="card-title text-dark"><i class="fas fa-layer-group mr-2 text-muted"></i>Multimodal Learning</h6>
+          <p class="card-text small text-muted">Integrating multiple data modalities (text, image, audio) for comprehensive healthcare analysis and diagnosis.</p>
         </div>
       </div>
     </div>
     <div class="col-md-6 mb-3">
-      <div class="card border-success">
+      <div class="card border-light">
         <div class="card-body">
-          <h6 class="card-title text-success"><i class="fas fa-network-wired mr-2"></i>Federated Learning</h6>
-          <p class="card-text small">Developing privacy-preserving machine learning systems for healthcare institutions while maintaining data security.</p>
+          <h6 class="card-title text-dark"><i class="fas fa-network-wired mr-2 text-muted"></i>Federated Learning</h6>
+          <p class="card-text small text-muted">Developing privacy-preserving machine learning systems for healthcare institutions while maintaining data security.</p>
         </div>
       </div>
     </div>
     <div class="col-md-6 mb-3">
-      <div class="card border-warning">
+      <div class="card border-light">
         <div class="card-body">
-          <h6 class="card-title text-warning"><i class="fas fa-search mr-2"></i>Explainable AI</h6>
-          <p class="card-text small">Creating interpretable machine learning models for healthcare applications to enhance trust and clinical adoption.</p>
+          <h6 class="card-title text-dark"><i class="fas fa-search mr-2 text-muted"></i>Explainable AI</h6>
+          <p class="card-text small text-muted">Creating interpretable machine learning models for healthcare applications to enhance trust and clinical adoption.</p>
         </div>
       </div>
     </div>
     <div class="col-md-6 mb-3">
-      <div class="card border-info">
+      <div class="card border-light">
         <div class="card-body">
-          <h6 class="card-title text-info"><i class="fas fa-shield-alt mr-2"></i>Computer Security</h6>
-          <p class="card-text small">Exploring adversarial attacks and defenses in medical AI systems, ensuring robustness against malicious inputs.</p>
+          <h6 class="card-title text-dark"><i class="fas fa-shield-alt mr-2 text-muted"></i>Computer Security</h6>
+          <p class="card-text small text-muted">Exploring adversarial attacks and defenses in medical AI systems, ensuring robustness against malicious inputs.</p>
         </div>
       </div>
     </div>
     <div class="col-md-6 mb-3">
-      <div class="card border-danger">
+      <div class="card border-light">
         <div class="card-body">
-          <h6 class="card-title text-danger"><i class="fas fa-robot mr-2"></i>Large Language Models</h6>
-          <p class="card-text small">Adapting and fine-tuning LLMs for healthcare applications, including medical question answering and clinical decision support.</p>
+          <h6 class="card-title text-dark"><i class="fas fa-robot mr-2 text-muted"></i>Large Language Models</h6>
+          <p class="card-text small text-muted">Adapting and fine-tuning LLMs for healthcare applications, including medical question answering and clinical decision support.</p>
         </div>
       </div>
     </div>
     <div class="col-md-6 mb-3">
-      <div class="card border-purple">
+      <div class="card border-light">
         <div class="card-body">
-          <h6 class="card-title" style="color: #6f42c1;"><i class="fas fa-heartbeat mr-2"></i>AI for Global Health</h6>
-          <p class="card-text small">Developing scalable AI solutions for healthcare challenges in resource-limited settings and underserved populations.</p>
+          <h6 class="card-title text-dark"><i class="fas fa-heartbeat mr-2 text-muted"></i>AI for Global Health</h6>
+          <p class="card-text small text-muted">Developing scalable AI solutions for healthcare challenges in resource-limited settings and underserved populations.</p>
         </div>
       </div>
     </div>
@@ -415,16 +415,17 @@ A complete list of my publications is provided below. My **Google Scholar** prof
 /* Metric Cards */
 .metric-card {
     padding: 20px 10px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+    background: #f8f9fa;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 1px solid #e9ecef;
 }
 
 .metric-card:hover {
-    transform: translateY(-3px);
-    border-color: #007bff;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    transform: translateY(-2px);
+    border-color: #dee2e6;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .metric-number {
@@ -525,8 +526,8 @@ A complete list of my publications is provided below. My **Google Scholar** prof
 
 .publications h2:hover,
 .bibliography h2:hover {
-    color: #007bff !important;
-    border-bottom-color: #007bff !important;
+    color: #212529 !important;
+    border-bottom-color: #adb5bd !important;
     transform: none !important;
     box-shadow: none !important;
 }
@@ -540,7 +541,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
     left: 0 !important;
     width: 0 !important;
     height: 2px !important;
-    background: #007bff !important;
+    background: #6c757d !important;
     transition: width 0.3s ease !important;
 }
 
@@ -577,45 +578,63 @@ A complete list of my publications is provided below. My **Google Scholar** prof
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-/* Abstract button styling */
+/* Minimal button styling */
 .publications .abstract.btn {
-    background: #007bff;
-    border: 1px solid #007bff;
-    color: white;
+    background: transparent;
+    border: 1px solid #dee2e6;
+    color: #495057;
     padding: 0.25rem 0.75rem;
     margin-right: 0.5rem;
     transition: all 0.2s ease;
     font-size: 0.875rem;
+    font-weight: 400;
 }
 
 .publications .abstract.btn:hover {
-    background: #0056b3;
-    border-color: #0056b3;
-    color: white;
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    color: #212529;
     text-decoration: none;
 }
 
-/* Paper button styling - green color */
+/* Paper button styling - minimal */
 .publications a.btn[href*="doi"],
 .publications a.btn[href*="ieee"],
 .publications a.btn[href*="springer"],
 .publications a.btn[href*="acm"] {
-    background: #28a745;
-    border: 1px solid #28a745;
-    color: white;
+    background: transparent;
+    border: 1px solid #dee2e6;
+    color: #495057;
     padding: 0.25rem 0.75rem;
     transition: all 0.2s ease;
     font-size: 0.875rem;
+    font-weight: 400;
 }
 
 .publications a.btn[href*="doi"]:hover,
 .publications a.btn[href*="ieee"]:hover,
 .publications a.btn[href*="springer"]:hover,
 .publications a.btn[href*="acm"]:hover {
-    background: #218838;
-    border-color: #1e7e34;
-    color: white;
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    color: #212529;
     text-decoration: none;
+}
+
+/* Badge styling - minimal */
+.publications .badge {
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
+    border: 1px solid #dee2e6 !important;
+    font-weight: 400 !important;
+    padding: 0.35em 0.65em !important;
+}
+
+.publications .badge-danger,
+.publications .badge-info,
+.publications .badge-secondary {
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
 }
 
 /* Conference links styling */
@@ -627,8 +646,8 @@ A complete list of my publications is provided below. My **Google Scholar** prof
 }
 
 .publications .periodical a:hover {
-    color: #007bff;
-    border-bottom-color: #007bff;
+    color: #495057;
+    border-bottom-color: #212529;
 }
 
 /* Abstract content styling */
@@ -640,10 +659,17 @@ A complete list of my publications is provided below. My **Google Scholar** prof
     margin-top: 15px;
     padding: 15px 0 15px 20px;
     background: transparent;
-    border-left: 3px solid #007bff;
+    border-left: 2px solid #dee2e6;
     border-radius: 0;
     font-size: 0.95rem;
     line-height: 1.6;
+    color: #6c757d;
+}
+
+/* Hide any stray HTML tags */
+.publications ol.bibliography:after {
+    content: '';
+    display: none;
 }
 
 /* Responsive adjustments */

@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <style>
 .dynamic-title {
-    color: var(--global-theme-color);
-    font-weight: 500;
+    color: #495057;
+    font-weight: 400;
     min-height: 1.5em;
     display: inline-block;
     position: relative;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     position: absolute;
     right: -10px;
     animation: blink 1s infinite;
-    color: var(--global-theme-color);
+    color: #6c757d;
 }
 
 @keyframes blink {
@@ -91,16 +91,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* Research highlight box */
 .research-highlight {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-left: 4px solid var(--global-theme-color);
+    background: #f8f9fa;
+    border-left: 2px solid #dee2e6;
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0;
 }
 
 .research-highlight h4 {
-    color: var(--global-theme-color);
+    color: #212529;
     margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 </style>
 
@@ -134,7 +135,7 @@ What excites me most is the **unexplored potential** of machine learning. I'm ac
 </div>
 
 <div class="text-center mt-4 mb-4">
-    <a href="/research/" class="btn btn-outline-primary btn-lg">
+    <a href="/research/" class="btn btn-outline-secondary">
         <i class="fas fa-microscope mr-2"></i>View My Research
     </a>
 </div>
