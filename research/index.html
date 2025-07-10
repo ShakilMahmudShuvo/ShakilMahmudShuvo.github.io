@@ -346,10 +346,10 @@
 
 <li>
 <div class="row">
-  <div class="col-sm-2 preview">
+  <div class="col-sm-3 preview">
     <img src="/assets/img/publication_preview/suicidal_ideation.png" class="preview z-depth-1 rounded" alt="suicidal ideation preview" />
   </div>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <div class="title">
       <a href="https://dl.acm.org/doi/10.1145/3723178.3723242" target="_blank">Early Detection of Suicidal Ideation Using Bidirectional GRU and Language Models</a>
     </div>
@@ -373,10 +373,10 @@
 
 <li>
 <div class="row">
-  <div class="col-sm-2 preview">
+  <div class="col-sm-3 preview">
     <img src="/assets/img/publication_preview/retinal_oct.png" class="preview z-depth-1 rounded" alt="retinal OCT preview" />
   </div>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <div class="title">
       <a href="https://dl.acm.org/doi/10.1145/3723178.3723304" target="_blank">Improving Pre-Trained CNNs with CBAM and Skip Connections for Multi-Class Retinal Diseases Classification using OCT Images</a>
     </div>
@@ -400,10 +400,10 @@
 
 <li>
 <div class="row">
-  <div class="col-sm-2 preview">
+  <div class="col-sm-3 preview">
     <img src="/assets/img/publication_preview/glioma_segmentation.png" class="preview z-depth-1 rounded" alt="glioma segmentation preview" />
   </div>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <div class="title">
       <a href="https://dl.acm.org/doi/10.1145/3723178.3723308" target="_blank">Advancing Glioma Segmentation: A Robust 3D Residual Attention U-Net Framework for Multimodal MRI Images</a>
     </div>
@@ -435,10 +435,10 @@
 
 <li>
 <div class="row">
-  <div class="col-sm-2 preview">
+  <div class="col-sm-3 preview">
     <img src="/assets/img/publication_preview/brain_tumor.png" class="preview z-depth-1 rounded" alt="brain tumor preview" />
   </div>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <div class="title">
       <a href="https://link.springer.com/chapter/10.1007/978-981-99-8937-9_37" target="_blank">Multi-class Brain Tumor Classification with DenseNet-Based Deep Learning Features and Ensemble of Machine Learning Approaches</a>
     </div>
@@ -462,10 +462,10 @@
 
 <li>
 <div class="row">
-  <div class="col-sm-2 preview">
+  <div class="col-sm-3 preview">
     <img src="/assets/img/publication_preview/brain_tumor_mri.png" class="preview z-depth-1 rounded" alt="brain tumor MRI preview" />
   </div>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <div class="title">
       <a href="https://ieeexplore.ieee.org/document/10212729" target="_blank">A Late Fusion Deep CNN Model for the Classification of Brain Tumors from Multi-Parametric MRI Images</a>
     </div>
@@ -490,10 +490,10 @@
 
 <li>
 <div class="row">
-  <div class="col-sm-2 preview">
+  <div class="col-sm-3 preview">
     <img src="/assets/img/publication_preview/leukemia_classification.png" class="preview z-depth-1 rounded" alt="leukemia classification preview" />
   </div>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <div class="title">
       <a href="https://link.springer.com/chapter/10.1007/978-981-99-8937-9_24" target="_blank">Attention Mechanism-Enhanced Deep CNN Architecture for Precise Multi-class Leukemia Classification</a>
     </div>
@@ -680,18 +680,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 15px;
 }
 
 .publications .preview img {
-    max-width: 100%;
+    max-width: 180px;
+    width: 100%;
     height: auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
 
 .publications .preview img:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 /* Abstract button styling */
@@ -708,6 +710,29 @@
 .publications .abstract.btn:hover {
     background: #0056b3;
     border-color: #0056b3;
+    color: white;
+    text-decoration: none;
+}
+
+/* Paper button styling - green color */
+.publications a.btn[href*="doi"],
+.publications a.btn[href*="ieee"],
+.publications a.btn[href*="springer"],
+.publications a.btn[href*="acm"] {
+    background: #28a745;
+    border: 1px solid #28a745;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.publications a.btn[href*="doi"]:hover,
+.publications a.btn[href*="ieee"]:hover,
+.publications a.btn[href*="springer"]:hover,
+.publications a.btn[href*="acm"]:hover {
+    background: #218838;
+    border-color: #1e7e34;
     color: white;
     text-decoration: none;
 }
