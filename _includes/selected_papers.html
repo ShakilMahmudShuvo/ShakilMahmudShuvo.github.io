@@ -60,17 +60,36 @@
             </ol>
           </div>
           
+          <!-- View More Link -->
+          <div class="text-center mt-4 mb-3">
+            <p class="lead mb-3">Want to explore more of my research?</p>
+            <a href="/research/" class="btn btn-primary btn-lg">
+              <i class="fas fa-microscope mr-2"></i>View All Publications in Research Page
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          
           <script>
           // Abstract toggle functionality for selected papers
           document.addEventListener('DOMContentLoaded', function() {
               const abstractButtons = document.querySelectorAll('.publications .abstract.btn');
               
               abstractButtons.forEach(button => {
-                  button.addEventListener('click', function() {
+                  button.addEventListener('click', function(e) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      
                       const abstractDiv = this.parentElement.querySelector('.abstract:not(.btn)');
                       if (abstractDiv) {
-                          abstractDiv.classList.toggle('hidden');
-                          this.textContent = abstractDiv.classList.contains('hidden') ? 'Abstract' : 'Hide Abstract';
+                          if (abstractDiv.classList.contains('hidden')) {
+                              abstractDiv.classList.remove('hidden');
+                              this.textContent = 'Hide Abstract';
+                              this.classList.add('active');
+                          } else {
+                              abstractDiv.classList.add('hidden');
+                              this.textContent = 'Abstract';
+                              this.classList.remove('active');
+                          }
                       }
                   });
               });
@@ -80,38 +99,98 @@
           <style>
           /* Button styling */
           .publications .abstract.btn {
-              background: transparent;
-              border: 1px solid #dee2e6;
-              color: #495057;
-              padding: 0.25rem 0.75rem;
+              background: #007bff !important;
+              border: 1px solid #007bff;
+              color: #ffffff !important;
+              padding: 0.375rem 0.75rem;
               margin-right: 0.5rem;
               transition: all 0.2s ease;
               font-size: 0.875rem;
-              font-weight: 400;
+              font-weight: 500;
+              cursor: pointer;
           }
           
-                     .publications .abstract.btn:hover {
-               background: transparent;
-               border-color: #adb5bd;
-               color: #212529;
-               text-decoration: none;
-           }
+          .publications .abstract.btn:hover {
+              background: #0056b3 !important;
+              border-color: #0056b3;
+              color: #ffffff !important;
+              text-decoration: none;
+              transform: translateY(-1px);
+              box-shadow: 0 2px 5px rgba(0,123,255,0.3);
+          }
           
-          .publications a.btn {
+          .publications .abstract.btn:focus,
+          .publications .abstract.btn:active {
+              background: #0056b3 !important;
+              border-color: #0056b3 !important;
+              color: #ffffff !important;
+              box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.5) !important;
+              outline: none !important;
+          }
+          
+          .publications .abstract.btn.active {
+              background: #0056b3 !important;
+              border-color: #0056b3 !important;
+          }
+          
+          /* Paper button styling */
+          .publications a.btn[href*="doi"],
+          .publications a.btn[href*="ieee"],
+          .publications a.btn[href*="springer"],
+          .publications a.btn[href*="acm"] {
               background: transparent;
-              border: 1px solid #dee2e6;
-              color: #495057;
-              padding: 0.25rem 0.75rem;
+              border: 1px solid #28a745;
+              color: #28a745;
+              padding: 0.375rem 0.75rem;
               transition: all 0.2s ease;
               font-size: 0.875rem;
-              font-weight: 400;
+              font-weight: 500;
           }
           
-          .publications a.btn:hover {
-              background: #f8f9fa;
-              border-color: #adb5bd;
-              color: #212529;
+          .publications a.btn[href*="doi"]:hover,
+          .publications a.btn[href*="ieee"]:hover,
+          .publications a.btn[href*="springer"]:hover,
+          .publications a.btn[href*="acm"]:hover {
+              background: #28a745;
+              border-color: #28a745;
+              color: #ffffff;
               text-decoration: none;
+              transform: translateY(-1px);
+              box-shadow: 0 2px 5px rgba(40,167,69,0.3);
+          }
+          
+          /* Dark mode button styling */
+          html[data-theme='dark'] .publications .abstract.btn {
+              background: #0d6efd !important;
+              border-color: #0d6efd !important;
+              color: #ffffff !important;
+          }
+          
+          html[data-theme='dark'] .publications .abstract.btn:hover {
+              background: #0b5ed7 !important;
+              border-color: #0b5ed7 !important;
+          }
+          
+          html[data-theme='dark'] .publications .abstract.btn.active {
+              background: #0b5ed7 !important;
+              border-color: #0b5ed7 !important;
+          }
+          
+          html[data-theme='dark'] .publications a.btn[href*="doi"],
+          html[data-theme='dark'] .publications a.btn[href*="ieee"],
+          html[data-theme='dark'] .publications a.btn[href*="springer"],
+          html[data-theme='dark'] .publications a.btn[href*="acm"] {
+              border-color: #198754;
+              color: #198754;
+          }
+          
+          html[data-theme='dark'] .publications a.btn[href*="doi"]:hover,
+          html[data-theme='dark'] .publications a.btn[href*="ieee"]:hover,
+          html[data-theme='dark'] .publications a.btn[href*="springer"]:hover,
+          html[data-theme='dark'] .publications a.btn[href*="acm"]:hover {
+              background: #198754;
+              border-color: #198754;
+              color: #ffffff;
           }
           
           /* Badge styling */
@@ -157,5 +236,55 @@
           .publications .preview img:hover {
               transform: scale(1.05);
               box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+          }
+          
+          /* View More Button Styling */
+          .btn-primary.btn-lg {
+              background: #007bff;
+              border: 2px solid #007bff;
+              color: #ffffff;
+              padding: 0.75rem 2rem;
+              font-size: 1.1rem;
+              font-weight: 500;
+              transition: all 0.3s ease;
+              text-decoration: none;
+          }
+          
+          .btn-primary.btn-lg:hover {
+              background: transparent;
+              border-color: #007bff;
+              color: #007bff;
+              transform: translateY(-2px);
+              box-shadow: 0 5px 15px rgba(0,123,255,0.2);
+              text-decoration: none;
+          }
+          
+          .btn-primary.btn-lg i {
+              transition: transform 0.3s ease;
+          }
+          
+          .btn-primary.btn-lg:hover i.fa-arrow-right {
+              transform: translateX(5px);
+          }
+          
+          html[data-theme='dark'] .btn-primary.btn-lg {
+              background: #0d6efd;
+              border-color: #0d6efd;
+          }
+          
+          html[data-theme='dark'] .btn-primary.btn-lg:hover {
+              background: transparent;
+              border-color: #0d6efd;
+              color: #0d6efd;
+          }
+          
+          .lead {
+              color: #6c757d;
+              font-size: 1.15rem;
+              font-weight: 400;
+          }
+          
+          html[data-theme='dark'] .lead {
+              color: #adb5bd;
           }
           </style>

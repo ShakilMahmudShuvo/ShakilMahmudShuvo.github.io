@@ -28,7 +28,7 @@ layout: default
               </h3>
               <h5 class="mb-0 experience-company">
                 {% if experience.website %}
-                  <a href="{{ experience.website }}" target="_blank" class="text-decoration-none" style="color: #495057;">
+                  <a href="{{ experience.website }}" target="_blank" class="text-decoration-none">
                     {{ experience.company }}
                   </a>
                 {% else %}
@@ -111,12 +111,12 @@ layout: default
 }
 
 .experience-company a {
-  color: #495057;
+  color: #0066cc !important;
   transition: color 0.3s ease;
 }
 
 .experience-company a:hover {
-  color: #212529;
+  color: #0052a3 !important;
   text-decoration: underline !important;
 }
 
@@ -176,11 +176,11 @@ html[data-theme='dark'] .badge.bg-secondary {
 
 /* Dark mode adjustments */
 html[data-theme='dark'] .experience-company a {
-  color: #dee2e6;
+  color: #66b3ff !important;
 }
 
 html[data-theme='dark'] .experience-company a:hover {
-  color: #f8f9fa;
+  color: #99ccff !important;
 }
 
 html[data-theme='dark'] .btn-outline-secondary {
