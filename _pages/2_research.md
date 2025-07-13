@@ -321,7 +321,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
   </div>
   <div class="col-sm-9">
     <div class="title">
-      <a href="https://link.springer.com/chapter/10.1007/978-981-99-8937-9_37" target="_blank">Multi-class Brain Tumor Classification with DenseNet-Based Deep Learning Features and Ensemble of Machine Learning Approaches</a>
+      <a href="https://link.springer.com/chapter/10.1007/978-981-99-8937-9_38" target="_blank">Multi-class Brain Tumor Classification with DenseNet-Based Deep Learning Features and Ensemble of Machine Learning Approaches</a>
     </div>
     <div class="author">
       <strong>Shakil Mahmud Shuvo</strong>, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, Tahsen Islam Sajon, S. M. Mahedy Hasan, Anirban Barai, A. F. M. Minhazur Rahman, Md. Al Mamun
@@ -332,7 +332,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
     <div class="note"><span class="badge badge-danger">First Author</span></div>
     
     <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
-    <a href="https://link.springer.com/chapter/10.1007/978-981-99-8937-9_37" class="btn btn-sm z-depth-0" role="button" target="_blank">Paper</a>
+    <a href="https://link.springer.com/chapter/10.1007/978-981-99-8937-9_38" class="btn btn-sm z-depth-0" role="button" target="_blank">Paper</a>
     
     <div class="abstract hidden">
       <p>The timely and precise diagnosis of brain tumors is crucial in reducing mortality rates. Although Magnetic Resonance Imaging (MRI) is commonly used as a detection tool for brain tumors, the presence of unwanted regions in MRI and multi-class brain MRI datasets may pose challenges in accurately classifying tumors. This study proposed a two-phase end-to-end framework comprising DenseNet-121-based deep learning to extract features and an ensemble of machine learning methodologies for precise classification. The deep learning-based feature extraction phase effectively extracted essential and discriminant features that were utilized by multiple machine learning models. Preprocessing MRI images to eliminate unwanted regions enhanced the deep learning model's feature extraction capabilities. The effectiveness of the proposed framework was evaluated by measuring the classification performance of the ensemble mechanism, which achieved an accuracy of 98.86% and an f1-score of 98.76% without any data augmentation. Notably, the random forest attained the utmost accuracy and f1-score among the machine learning approaches used in the ensemble technique.</p>
