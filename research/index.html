@@ -699,21 +699,30 @@
 
 /* Minimal button styling */
 .publications .abstract.btn {
-    background: transparent;
+    background: transparent !important;
     border: 1px solid #dee2e6;
     color: #495057;
     padding: 0.25rem 0.75rem;
     margin-right: 0.5rem;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease;
     font-size: 0.875rem;
     font-weight: 400;
 }
 
 .publications .abstract.btn:hover {
-    background: transparent;
-    border-color: #495057;
+    background: transparent !important;
+    background-color: transparent !important;
+    border-color: #adb5bd;
     color: #212529;
     text-decoration: none;
+}
+
+.publications .abstract.btn:focus,
+.publications .abstract.btn:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 /* Paper button styling - minimal */
@@ -771,7 +780,11 @@
 
 /* Abstract content styling */
 .publications .abstract.hidden {
-    display: none;
+    display: none !important;
+}
+
+.publications .abstract:not(.btn):not(.hidden) {
+    display: block;
 }
 
 .publications .abstract:not(.btn) {
@@ -826,19 +839,64 @@
 </style>
 
 <script>
-// Abstract toggle functionality
+// Abstract toggle functionality - enhanced version
 document.addEventListener('DOMContentLoaded', function() {
-    const abstractButtons = document.querySelectorAll('.publications .abstract.btn');
-    
-    abstractButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const abstractDiv = this.parentElement.querySelector('.abstract:not(.btn)');
-            if (abstractDiv) {
-                abstractDiv.classList.toggle('hidden');
-                this.textContent = abstractDiv.classList.contains('hidden') ? 'Abstract' : 'Hide Abstract';
-            }
+    // Wait a moment for any dynamic content to load
+    setTimeout(function() {
+        const abstractButtons = document.querySelectorAll('.abstract.btn');
+        console.log('Found abstract buttons:', abstractButtons.length);
+        
+        abstractButtons.forEach((button, index) => {
+            console.log('Setting up button', index);
+            
+            // Remove any existing listeners
+            const newButton = button.cloneNode(true);
+            button.parentNode.replaceChild(newButton, button);
+            
+            newButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Abstract button clicked');
+                
+                // Find the abstract div within the same parent structure
+                let abstractDiv = null;
+                
+                // Try finding in the parent element first
+                const parentDiv = this.parentElement;
+                abstractDiv = parentDiv.querySelector('.abstract:not(.btn)');
+                
+                // If not found, try the grandparent (in case of nested structure)
+                if (!abstractDiv) {
+                    const grandParent = parentDiv.parentElement;
+                    abstractDiv = grandParent.querySelector('.abstract:not(.btn)');
+                }
+                
+                // If still not found, try the closest li
+                if (!abstractDiv) {
+                    const parentLi = this.closest('li');
+                    if (parentLi) {
+                        abstractDiv = parentLi.querySelector('.abstract:not(.btn)');
+                    }
+                }
+                
+                console.log('Found abstract div:', abstractDiv);
+                
+                if (abstractDiv) {
+                    if (abstractDiv.classList.contains('hidden')) {
+                        abstractDiv.classList.remove('hidden');
+                        abstractDiv.style.display = 'block';
+                        this.textContent = 'Hide Abstract';
+                    } else {
+                        abstractDiv.classList.add('hidden');
+                        abstractDiv.style.display = 'none';
+                        this.textContent = 'Abstract';
+                    }
+                } else {
+                    console.error('Abstract div not found');
+                }
+            });
         });
-    });
+    }, 500); // Increased timeout for safety
     
     // Remove any visible HTML tags
     const bodyText = document.body.innerHTML;
