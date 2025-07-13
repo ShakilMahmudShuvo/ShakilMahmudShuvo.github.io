@@ -219,6 +219,7 @@ My work has been published in reputable venues including **ICCA 2024**, **BIM 20
 A complete list of my publications is provided below. My **Google Scholar** profile is available [here](https://scholar.google.com/citations?user=EOsiW3sAAAAJ&hl=en&authuser=3). These publications demonstrate my expertise in developing novel deep learning architectures for healthcare applications, with consistent focus on achieving state-of-the-art performance while addressing real-world challenges.
 
 <!-- Publications Section -->
+{::nomarkdown}
 <div class="publications">
 
 <h2>2024</h2>
@@ -238,7 +239,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       <strong>Shakil Mahmud Shuvo</strong>, Navia Novely, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, S. M. Mahedy Hasan
     </div>
     <div class="periodical">
-      <em>Proceedings of the <a href="https://icca.acm.org/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
+      <em>Proceedings of the <a href="https://icca.aiub.edu/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
     </div>
     <div class="note"><span class="badge badge-danger">First Author</span></div>
     
@@ -265,7 +266,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       Navia Novely, <strong>Shakil Mahmud Shuvo</strong>, Md. Farukuzzaman Faruk
     </div>
     <div class="periodical">
-      <em>Proceedings of the <a href="https://icca.acm.org/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
+      <em>Proceedings of the <a href="https://icca.aiub.edu/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
     </div>
     <div class="note"><span class="badge badge-info">Second Author</span></div>
     
@@ -292,7 +293,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       Soumit Das, Md. Farukuzzaman Faruk, <strong>Shakil Mahmud Shuvo</strong>, Azmain Yakin Srizon, S. M. Mahedy Hasan, Prof. Dr. Md. Al Mamun
     </div>
     <div class="periodical">
-      <em>Proceedings of the <a href="https://icca.acm.org/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
+      <em>Proceedings of the <a href="https://icca.aiub.edu/" target="_blank">3rd International Conference on Computing Advancements (ICCA)</a></em>, 2024
     </div>
     <div class="note"><span class="badge badge-secondary">Third Author</span></div>
     
@@ -305,7 +306,6 @@ A complete list of my publications is provided below. My **Google Scholar** prof
   </div>
 </div>
 </li>
-
 </ol>
 
 <h2>2023</h2>
@@ -327,7 +327,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       <strong>Shakil Mahmud Shuvo</strong>, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, Tahsen Islam Sajon, S. M. Mahedy Hasan, Anirban Barai, A. F. M. Minhazur Rahman, Md. Al Mamun
     </div>
     <div class="periodical">
-      <em>Proceedings of the <a href="https://link.springer.com/conference/bim" target="_blank">2nd International Conference on Big Data, IoT and Machine Learning (BIM)</a></em>, 2023
+      <em>Proceedings of the <a href="https://confbim.com/" target="_blank">2nd International Conference on Big Data, IoT and Machine Learning (BIM)</a></em>, 2023
     </div>
     <div class="note"><span class="badge badge-danger">First Author</span></div>
     
@@ -354,7 +354,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       Anirban Barai, Md. Farukuzzaman Faruk, <strong>Shakil Mahmud Shuvo</strong>, Azmain Yakin Srizon, S. M. Mahedy Hasan, Abu Sayeed
     </div>
     <div class="periodical">
-      <em>Proceedings of the <a href="https://ieeexplore.ieee.org/xpl/conhome/10212658/proceeding" target="_blank">2023 International Conference on Next-Generation Computing, IoT and Machine Learning (NCIM)</a></em>, 2023
+      <em>Proceedings of the <a href="https://www.duet.ac.bd/event/1/International-Conference-on-Next-Generation-Computing-IoT-and-Machine-Learning" target="_blank">2023 International Conference on Next-Generation Computing, IoT and Machine Learning (NCIM)</a></em>, 2023
     </div>
     <div class="note"><span class="badge badge-secondary">Third Author</span></div>
     
@@ -382,7 +382,7 @@ A complete list of my publications is provided below. My **Google Scholar** prof
       Tahsen Islam Sajon, Barsha Roy, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, <strong>Shakil Mahmud Shuvo</strong>, Md. Al Mamun, Abu Sayeed, S. M. Mahedy Hasan
     </div>
     <div class="periodical">
-      <em>Proceedings of the <a href="https://link.springer.com/conference/bim" target="_blank">2nd International Conference on Big Data, IoT and Machine Learning (BIM)</a></em>, 2023
+      <em>Proceedings of the <a href="https://confbim.com/" target="_blank">2nd International Conference on Big Data, IoT and Machine Learning (BIM)</a></em>, 2023
     </div>
     <div class="note"><span class="badge badge-secondary">Fifth Author</span></div>
     
@@ -395,10 +395,10 @@ A complete list of my publications is provided below. My **Google Scholar** prof
   </div>
 </div>
 </li>
-
 </ol>
 
 </div>
+{:/nomarkdown}
 
 <style>
 /* Research Cards Hover Effects */
@@ -723,13 +723,7 @@ html[data-theme='dark'] .publications a.btn[href*="acm"]:hover {
     visibility: hidden !important;
 }
 
-/* Hide any literal HTML text */
-.publications:contains("</ol>"),
-.publications:contains("</li>") {
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
