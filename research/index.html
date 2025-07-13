@@ -699,29 +699,32 @@
 
 /* Minimal button styling */
 .publications .abstract.btn {
-    background: transparent !important;
-    border: 1px solid #dee2e6;
-    color: #495057;
-    padding: 0.25rem 0.75rem;
+    background: #007bff !important;
+    border: 1px solid #007bff;
+    color: #ffffff !important;
+    padding: 0.375rem 0.75rem;
     margin-right: 0.5rem;
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition: all 0.2s ease;
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .publications .abstract.btn:hover {
-    background: transparent !important;
-    background-color: transparent !important;
-    border-color: #adb5bd;
-    color: #212529;
+    background: #0056b3 !important;
+    border-color: #0056b3;
+    color: #ffffff !important;
     text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,123,255,0.3);
 }
 
 .publications .abstract.btn:focus,
 .publications .abstract.btn:active {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
+    background: #0056b3 !important;
+    border-color: #0056b3 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.5) !important;
     outline: none !important;
 }
 
@@ -731,22 +734,53 @@
 .publications a.btn[href*="springer"],
 .publications a.btn[href*="acm"] {
     background: transparent;
-    border: 1px solid #dee2e6;
-    color: #495057;
-    padding: 0.25rem 0.75rem;
+    border: 1px solid #28a745;
+    color: #28a745;
+    padding: 0.375rem 0.75rem;
     transition: all 0.2s ease;
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .publications a.btn[href*="doi"]:hover,
 .publications a.btn[href*="ieee"]:hover,
 .publications a.btn[href*="springer"]:hover,
 .publications a.btn[href*="acm"]:hover {
-    background: #f8f9fa;
-    border-color: #adb5bd;
-    color: #212529;
+    background: #28a745;
+    border-color: #28a745;
+    color: #ffffff;
     text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(40,167,69,0.3);
+}
+
+/* Dark mode button styling */
+html[data-theme='dark'] .publications .abstract.btn {
+    background: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #ffffff !important;
+}
+
+html[data-theme='dark'] .publications .abstract.btn:hover {
+    background: #0b5ed7 !important;
+    border-color: #0b5ed7 !important;
+}
+
+html[data-theme='dark'] .publications a.btn[href*="doi"],
+html[data-theme='dark'] .publications a.btn[href*="ieee"],
+html[data-theme='dark'] .publications a.btn[href*="springer"],
+html[data-theme='dark'] .publications a.btn[href*="acm"] {
+    border-color: #198754;
+    color: #198754;
+}
+
+html[data-theme='dark'] .publications a.btn[href*="doi"]:hover,
+html[data-theme='dark'] .publications a.btn[href*="ieee"]:hover,
+html[data-theme='dark'] .publications a.btn[href*="springer"]:hover,
+html[data-theme='dark'] .publications a.btn[href*="acm"]:hover {
+    background: #198754;
+    border-color: #198754;
+    color: #ffffff;
 }
 
 /* Badge styling - minimal */
@@ -839,85 +873,93 @@
 </style>
 
 <script>
-// Abstract toggle functionality - enhanced version
+// Abstract toggle functionality - fixed version
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait a moment for any dynamic content to load
-    setTimeout(function() {
-        const abstractButtons = document.querySelectorAll('.abstract.btn');
-        console.log('Found abstract buttons:', abstractButtons.length);
-        
-        abstractButtons.forEach((button, index) => {
-            console.log('Setting up button', index);
-            
-            // Remove any existing listeners
-            const newButton = button.cloneNode(true);
-            button.parentNode.replaceChild(newButton, button);
-            
-            newButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Abstract button clicked');
-                
-                // Find the abstract div within the same parent structure
-                let abstractDiv = null;
-                
-                // Try finding in the parent element first
-                const parentDiv = this.parentElement;
-                abstractDiv = parentDiv.querySelector('.abstract:not(.btn)');
-                
-                // If not found, try the grandparent (in case of nested structure)
-                if (!abstractDiv) {
-                    const grandParent = parentDiv.parentElement;
-                    abstractDiv = grandParent.querySelector('.abstract:not(.btn)');
-                }
-                
-                // If still not found, try the closest li
-                if (!abstractDiv) {
-                    const parentLi = this.closest('li');
-                    if (parentLi) {
-                        abstractDiv = parentLi.querySelector('.abstract:not(.btn)');
-                    }
-                }
-                
-                console.log('Found abstract div:', abstractDiv);
-                
-                if (abstractDiv) {
-                    if (abstractDiv.classList.contains('hidden')) {
-                        abstractDiv.classList.remove('hidden');
-                        abstractDiv.style.display = 'block';
-                        this.textContent = 'Hide Abstract';
-                    } else {
-                        abstractDiv.classList.add('hidden');
-                        abstractDiv.style.display = 'none';
-                        this.textContent = 'Abstract';
-                    }
-                } else {
-                    console.error('Abstract div not found');
-                }
-            });
-        });
-    }, 500); // Increased timeout for safety
+    console.log('Research page loaded, initializing abstract buttons...');
     
-    // Remove any visible HTML tags
-    const bodyText = document.body.innerHTML;
-    if (bodyText.includes('&lt;/ol&gt;') || bodyText.includes('</ol>')) {
-        document.body.innerHTML = bodyText.replace(/&lt;\/ol&gt;/g, '').replace(/&lt;\/li&gt;/g, '');
-    }
-    
-    // Find and hide any text nodes containing HTML tags
-    const walker = document.createTreeWalker(
-        document.body,
-        NodeFilter.SHOW_TEXT,
-        null,
-        false
-    );
-    
-    while (walker.nextNode()) {
-        const node = walker.currentNode;
-        if (node.nodeValue && (node.nodeValue.includes('</ol>') || node.nodeValue.includes('</li>'))) {
-            node.nodeValue = node.nodeValue.replace(/<\/ol>/g, '').replace(/<\/li>/g, '');
+    // Add active state styling inside DOMContentLoaded
+    const style = document.createElement('style');
+    style.textContent = `
+        .publications .abstract.btn.active {
+            background: #0056b3 !important;
+            border-color: #0056b3 !important;
         }
+        
+        html[data-theme='dark'] .publications .abstract.btn.active {
+            background: #0b5ed7 !important;
+            border-color: #0b5ed7 !important;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Function to setup a single abstract button
+    function setupAbstractButton(button) {
+        // Skip if already initialized
+        if (button.dataset.initialized === 'true') return;
+        
+        button.dataset.initialized = 'true';
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Find the abstract div
+            let abstractDiv = null;
+            
+            // Look in the same list item
+            const listItem = this.closest('li');
+            if (listItem) {
+                abstractDiv = listItem.querySelector('.abstract:not(.btn)');
+            }
+            
+            // If not found, look in parent's siblings
+            if (!abstractDiv) {
+                let sibling = this.parentElement;
+                while (sibling && !abstractDiv) {
+                    sibling = sibling.nextElementSibling;
+                    if (sibling && sibling.classList && sibling.classList.contains('abstract') && !sibling.classList.contains('btn')) {
+                        abstractDiv = sibling;
+                        break;
+                    }
+                }
+            }
+            
+            if (abstractDiv) {
+                // Toggle visibility
+                if (abstractDiv.style.display === 'none' || !abstractDiv.style.display) {
+                    abstractDiv.style.display = 'block';
+                    abstractDiv.classList.remove('hidden');
+                    this.textContent = 'Hide Abstract';
+                    this.classList.add('active');
+                } else {
+                    abstractDiv.style.display = 'none';
+                    abstractDiv.classList.add('hidden');
+                    this.textContent = 'Abstract';
+                    this.classList.remove('active');
+                }
+            }
+        });
     }
+    
+    // Initialize all abstract buttons
+    function initializeAbstractButtons() {
+        // Hide all abstracts initially
+        document.querySelectorAll('.abstract:not(.btn)').forEach(abstract => {
+            abstract.style.display = 'none';
+            abstract.classList.add('hidden');
+        });
+        
+        // Setup all abstract buttons
+        document.querySelectorAll('.abstract.btn').forEach(button => {
+            setupAbstractButton(button);
+        });
+    }
+    
+    // Initialize on page load
+    initializeAbstractButtons();
+    
+    // Reinitialize after a short delay for any dynamic content
+    setTimeout(initializeAbstractButtons, 500);
 });
 </script>
 </li></ol></div>
