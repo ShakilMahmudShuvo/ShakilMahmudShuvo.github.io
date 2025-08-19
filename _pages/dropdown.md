@@ -7,6 +7,8 @@ dropdown: true
 children:
     - title: Achievements
       permalink: /achievements/
+    - title: Test Scores
+      permalink: /test_scores/
     # - title: divider
     # - title: projects
     #   permalink: /projects/
