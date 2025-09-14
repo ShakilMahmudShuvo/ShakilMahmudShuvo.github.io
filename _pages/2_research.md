@@ -107,7 +107,7 @@ My work has been published in reputable venues including **ICCA 2024**, **BIM 20
   <div class="col-md-2 col-6 mb-3">
     <div class="metric-card">
       <i class="fas fa-quote-left text-success fa-2x mb-2"></i>
-      <h4 class="metric-number">{{ site.data.scholar.citations | default: "10" }}</h4>
+      <h4 class="metric-number">{{ site.data.scholar.citations | default: "11" }}</h4>
       <p class="metric-label">Citations</p>
     </div>
   </div>
