@@ -94,6 +94,13 @@
               {%- endif -%}
               {%- endif -%}
               {% endfor -%}
+              <!-- Terminal button -->
+              <li class="toggle-container">
+                <button id="terminal-nav-btn" title="Open terminal (press /)" onclick="(function(){var o=document.getElementById('terminal-overlay');if(o)o.classList.add('open');var i=document.getElementById('terminal-input');if(i)setTimeout(function(){i.focus();},50);})()">
+                  <i class="fas fa-terminal"></i>
+                </button>
+              </li>
+
               {%- if site.enable_darkmode %}
 
               <!-- Toogle theme mode -->

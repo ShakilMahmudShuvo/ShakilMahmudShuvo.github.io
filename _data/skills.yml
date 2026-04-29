@@ -1,0 +1,49 @@
+- category: "Programming Languages"
+  icon: "fas fa-code"
+  skills:
+    - Python
+    - R
+    - SQL
+    - JavaScript
+    - Java
+    - "C / C++"
+
+- category: "ML / Deep Learning"
+  icon: "fas fa-brain"
+  skills:
+    - PyTorch
+    - TensorFlow
+    - Keras
+    - Scikit-learn
+    - Hugging Face Transformers
+    - OpenCV
+
+- category: "NLP & LLMs"
+  icon: "fas fa-comments"
+  skills:
+    - "BERT / RoBERTa / ELECTRA"
+    - "GPT / LLaMA"
+    - LangChain
+    - spaCy
+    - "Prompt Engineering"
+    - "RAG Pipelines"
+
+- category: "Data & Cloud"
+  icon: "fas fa-database"
+  skills:
+    - "Pandas / NumPy"
+    - Apache Spark
+    - AWS
+    - "Google Cloud"
+    - Docker
+    - "Git / GitHub"
+
+- category: "Research Tools"
+  icon: "fas fa-flask"
+  skills:
+    - LaTeX
+    - "Jupyter Notebook"
+    - "Weights & Biases"
+    - "Matplotlib / Seaborn"
+    - MATLAB
+    - "VS Code"

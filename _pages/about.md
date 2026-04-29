@@ -3,22 +3,17 @@ layout: about
 title: About
 permalink: /
 subtitle: <span id="dynamic-title" class="dynamic-title"></span>
-# <p>Graduate Student (M.Sc)</p>
 
 profile:
   align: left
   image: profile.jpg
-  image_circular: true # crops the image to make it circular
-  # address: >
-  #   <p style="font-weight: 400; font-style: italic">Machine Learning Engineer</p>
-  #   <p style="font-weight: 500;">ACI Limited</p>
+  image_circular: true
 
-news: false  # includes a list of news items
-latest_posts: false  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
-education: true # includes educational qualification
-social: true  # includes social icons at the bottom of the page
-
+news: false
+latest_posts: false
+selected_papers: true
+education: true
+social: true
 
 ---
 
@@ -28,41 +23,29 @@ document.addEventListener('DOMContentLoaded', function() {
         "Data Scientist",
         "Machine Learning Engineer",
         "PhD Aspirant",
-        "Machine Learning Researcher",
+        "ML Researcher",
         "Deep Learning Enthusiast",
         "Traveller"
     ];
-    
     let currentIndex = 0;
-    const dynamicTitle = document.getElementById('dynamic-title');
-    
-    function typeWriter(text, index = 0) {
-        if (index < text.length) {
-            dynamicTitle.textContent = text.substring(0, index + 1);
-            setTimeout(() => typeWriter(text, index + 1), 100);
-        } else {
-            setTimeout(() => {
-                deleteText(text);
-            }, 2000);
-        }
+    const el = document.getElementById('dynamic-title');
+    function type(text, i) {
+        if (i < text.length) { el.textContent = text.substring(0, i + 1); setTimeout(() => type(text, i + 1), 95); }
+        else { setTimeout(() => del(text, text.length), 2000); }
     }
-    
-    function deleteText(text, index = text.length) {
-        if (index > 0) {
-            dynamicTitle.textContent = text.substring(0, index - 1);
-            setTimeout(() => deleteText(text, index - 1), 50);
-        } else {
-            currentIndex = (currentIndex + 1) % titles.length;
-            setTimeout(() => typeWriter(titles[currentIndex]), 500);
-        }
+    function del(text, i) {
+        if (i > 0) { el.textContent = text.substring(0, i - 1); setTimeout(() => del(text, i - 1), 45); }
+        else { currentIndex = (currentIndex + 1) % titles.length; setTimeout(() => type(titles[currentIndex], 0), 500); }
     }
-    
-    // Start the animation
-    typeWriter(titles[currentIndex]);
+    type(titles[0], 0);
 });
 </script>
 
 <style>
+/* Fix al-folio's text-align: justify on the content wrapper */
+.clearfix { text-align: left !important; }
+
+/* ── Typewriter ─────────────────────────────────────────────────────────── */
 .dynamic-title {
     color: #495057;
     font-weight: 400;
@@ -70,78 +53,322 @@ document.addEventListener('DOMContentLoaded', function() {
     display: inline-block;
     position: relative;
 }
-
 .dynamic-title::after {
     content: '|';
     position: absolute;
     right: -10px;
     animation: blink 1s infinite;
-    color: #6c757d;
+    color: #adb5bd;
+}
+@keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+/* ── Status badge ───────────────────────────────────────────────────────── */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 0.8rem;
+    color: #15803d;
+}
+.status-dot {
+    width: 7px; height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+    0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+    70%  { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+    100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+html[data-theme='dark'] .status-indicator { background: #052e16; border-color: #166534; color: #86efac; }
+
+/* ── Stats strip ────────────────────────────────────────────────────────── */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--global-divider-color, #e9ecef);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1.75rem 0;
+}
+.stat-item {
+    padding: 1rem 0.5rem;
+    text-align: center;
+    border-right: 1px solid var(--global-divider-color, #e9ecef);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0d9488;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.5px;
+}
+.stat-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--global-text-color-light, #6c757d);
+}
+html[data-theme='dark'] .about-stats { border-color: #2a2a2a; }
+html[data-theme='dark'] .stat-item  { border-right-color: #2a2a2a; }
+@media (max-width: 576px) {
+    .about-stats { grid-template-columns: repeat(3, 1fr); }
 }
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
-/* Add some style to the subtitle area */
-.page-title .page-description {
-    min-height: 2em;
-}
-
-/* Research highlight box */
-.research-highlight {
-    background: #f8f9fa;
-    border-left: 2px solid #dee2e6;
-    padding: 1rem 1.5rem;
+/* ── PhD goal card ──────────────────────────────────────────────────────── */
+.phd-card {
+    background: #f0fdfa;
+    border: 1px solid #ccfbf1;
+    border-left: 4px solid #0d9488;
+    border-radius: 0 8px 8px 0;
+    padding: 1.1rem 1.4rem;
     margin: 1.5rem 0;
-    border-radius: 0;
 }
+.phd-card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #0d9488;
+    margin-bottom: 0.45rem;
+}
+.phd-card p {
+    font-size: 0.9rem;
+    color: #134e4a;
+    line-height: 1.65;
+    margin: 0;
+}
+html[data-theme='dark'] .phd-card {
+    background: #0d2220;
+    border-color: #1a4a44;
+    border-left-color: #2dd4bf;
+}
+html[data-theme='dark'] .phd-card-label { color: #2dd4bf; }
+html[data-theme='dark'] .phd-card p { color: #99f6e4; }
 
-.research-highlight h4 {
-    color: #212529;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+/* ── Research interests ─────────────────────────────────────────────────── */
+.interests-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--global-text-color-light, #6c757d);
+    margin-bottom: 0.6rem;
 }
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 1.75rem;
+}
+.interest-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 0.8rem;
+    color: #0d6e68;
+    font-weight: 500;
+    transition: border-color 0.15s, background 0.15s;
+}
+.interest-tag i { font-size: 0.72rem; color: #0d9488; }
+.interest-tag:hover { border-color: #0d9488; background: #ccfbf1; }
+html[data-theme='dark'] .interest-tag { background: #0d2220; border-color: #1a5c56; color: #5eead4; }
+html[data-theme='dark'] .interest-tag:hover { background: #134e4a; border-color: #2dd4bf; }
+
+/* ── CTA buttons ────────────────────────────────────────────────────────── */
+.about-cta {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin: 0.25rem 0 0.5rem;
+}
+.cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    background: #0d9488;
+    color: #fff;
+    border: 1px solid #0d9488;
+    transition: background 0.15s, border-color 0.15s;
+}
+.cta-primary:hover { background: #0b7a72; border-color: #0b7a72; color: #fff; text-decoration: none; }
+.cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    background: transparent;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    transition: all 0.15s;
+}
+.cta-secondary:hover { border-color: #0d9488; color: #0d9488; background: #f0fdfa; text-decoration: none; }
+html[data-theme='dark'] .cta-primary { background: #0d9488; border-color: #0d9488; color: #fff; }
+html[data-theme='dark'] .cta-primary:hover { background: #0b7a72; }
+html[data-theme='dark'] .cta-secondary { border-color: #2d3748; color: #cbd5e1; }
+html[data-theme='dark'] .cta-secondary:hover { border-color: #2dd4bf; color: #2dd4bf; background: #0d2220; }
+
+/* ── Dhaka clock ────────────────────────────────────────────────────────── */
+.dhaka-clock {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8fafb;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-variant-numeric: tabular-nums;
+}
+.dhaka-clock i { color: #0d9488; font-size: 0.75rem; }
+.dhaka-clock-time { color: #1e293b; font-weight: 600; letter-spacing: 0.3px; }
+html[data-theme='dark'] .dhaka-clock { background: #1a1a1a; border-color: #2d3748; color: #94a3b8; }
+html[data-theme='dark'] .dhaka-clock-time { color: #e2e8f0; }
+
+/* ── Contact form ───────────────────────────────────────────────────────── */
+.contact-form .form-control {
+    border-radius: 5px;
+    border-color: var(--global-divider-color, #dee2e6);
+    font-size: 0.875rem;
+    background: var(--global-card-bg-color, #fff);
+    color: var(--global-text-color);
+}
+.contact-form .form-control:focus { border-color: #0d9488; box-shadow: 0 0 0 2px rgba(13,148,136,0.12); }
+html[data-theme='dark'] .contact-form .form-control { background: #252525; border-color: #3a3a3a; color: #e0e0e0; }
 </style>
 
-## About Me
-
-As a passionate **Machine Learning Researcher**, I thrive on pushing the boundaries of AI to solve real-world challenges. My research journey has led me through diverse areas of machine learning, from medical imaging and natural language processing to computer vision, resulting in **6 peer-reviewed publications** where I've contributed as both lead and collaborative researcher.
-
-My professional experience spans both academia and industry. Currently, I work as an **Associate Data Scientist** at [Cognitus Consulting LLC](https://cognitus.com), where I architect large language model solutions for Fortune 500 clients. This role has deepened my understanding of practical AI deployment while reinforcing my belief that the most impactful research bridges theoretical innovation with real-world application.
-
-<div class="research-highlight">
-    <h4><i class="fas fa-lightbulb mr-2"></i>Research Philosophy</h4>
-    <p class="mb-0">I believe in the transformative power of machine learning across domains. While my published work focuses on healthcare AI, I'm <strong>eager to explore new frontiers in ML</strong> - from reinforcement learning and generative models to emerging paradigms in AI. Every new challenge is an opportunity to learn, adapt, and innovate.</p>
+<div class="mb-4" style="display:flex;align-items:center;flex-wrap:wrap;gap:0.6rem;">
+  <span class="status-indicator">
+    <span class="status-dot"></span>
+    Open to PhD opportunities &ensp;·&ensp; Research collaborations welcome
+  </span>
+  <span class="dhaka-clock">
+    <i class="fas fa-clock"></i>
+    <span class="dhaka-clock-time" id="dhaka-time">--:-- --</span>
+    &nbsp;Dhaka
+  </span>
 </div>
 
-My academic foundation was built at [Rajshahi University of Engineering & Technology (RUET)](https://www.ruet.ac.bd/), where I earned my **B.Sc. in Computer Science & Engineering**. During my time there, I served as a research assistant at the *Young Learners' Research Lab*, where I discovered my passion for pushing the boundaries of what's possible with AI.
+<script>
+(function() {
+  function updateDhakaClock() {
+    var el = document.getElementById('dhaka-time');
+    if (!el) return;
+    var now = new Date();
+    var opts = { timeZone: 'Asia/Dhaka', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    el.textContent = now.toLocaleTimeString('en-US', opts);
+  }
+  updateDhakaClock();
+  setInterval(updateDhakaClock, 1000);
+})();
+</script>
 
-## Research Journey & Aspirations
+I'm a machine learning engineer and researcher based in Dhaka, Bangladesh. During the day I work as an **Associate Data Scientist** at [Cognitus Consulting](https://cognitus.com), building LLM-powered tools for enterprise clients — RAG pipelines, MCP-server workflows, and contract intelligence systems for companies like Lockheed Martin.
 
-Throughout my research career, I've developed expertise in:
+Outside of work, my attention goes toward research. My background is in **healthcare AI** — I got into it through the Young Learners' Research Lab at [RUET](https://www.ruet.ac.bd/) in Bangladesh, and it kind of stuck. Over the last two years I've published papers on brain tumor classification, retinal disease detection, and suicidal ideation detection in social media. That last one is the work I'm most proud of.
 
-- **Medical AI Systems**: Creating innovative architectures for brain tumor classification, retinal disease detection, and glioma segmentation
-- **NLP Applications**: Building BERT-based models for mental health applications, including early detection of suicidal ideation
-- **Computer Vision**: Implementing attention mechanisms and fusion techniques for enhanced image analysis
-- **Cross-Domain Learning**: Applying transfer learning and ensemble methods across different problem spaces
-
-What excites me most is the **unexplored potential** of machine learning. I'm actively seeking **PhD opportunities** where I can contribute to cutting-edge research while continuously expanding my horizons. Whether it's developing novel architectures, exploring theoretical foundations, or applying ML to entirely new domains, I approach each challenge with curiosity and determination.
-
-<div class="research-highlight">
-    <h4><i class="fas fa-rocket mr-2"></i>Looking Forward</h4>
-    <p class="mb-0">I'm particularly interested in emerging areas like federated learning, multimodal AI, explainable AI systems, and the intersection of ML with other fields. My goal is not just to advance the state-of-the-art, but to ensure AI technologies are accessible, interpretable, and beneficial for all.</p>
+<div class="about-stats">
+  <div class="stat-item">
+    <span class="stat-num">7</span>
+    <span class="stat-label">Publications</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Venues</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">2+</span>
+    <span class="stat-label">Yrs Research</span>
+  </div>
 </div>
 
-<div class="text-center mt-4 mb-4">
-    <a href="/research/" class="btn btn-outline-secondary">
-        <i class="fas fa-microscope mr-2"></i>View My Research
-    </a>
+<div class="phd-card">
+  <div class="phd-card-label">&#128270; What I'm working toward</div>
+  <p>Actively looking for <strong>PhD programs</strong> in ML and AI. A year in industry has been useful — I've shipped real things and learned how messy deployment gets — but I want to go deeper. The questions that bother me most aren't the ones I get to work on day-to-day.</p>
+</div>
+
+<div class="interests-label">Research Interests</div>
+<div class="interest-tags">
+  <span class="interest-tag"><i class="fas fa-network-wired"></i> Federated Learning</span>
+  <span class="interest-tag"><i class="fas fa-brain"></i> Medical Imaging</span>
+  <span class="interest-tag"><i class="fas fa-comments"></i> NLP for Mental Health</span>
+  <span class="interest-tag"><i class="fas fa-search"></i> Explainable AI</span>
+  <span class="interest-tag"><i class="fas fa-layer-group"></i> Multimodal Reasoning</span>
+</div>
+
+<div class="about-cta">
+  <a href="/research/" class="cta-primary"><i class="fas fa-microscope"></i> Research</a>
+  <a href="/cv/" class="cta-secondary"><i class="fas fa-file-alt"></i> CV</a>
+  <a href="/experience/" class="cta-secondary"><i class="fas fa-briefcase"></i> Experience</a>
 </div>
 
 ---
 
-<!-- Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+## Get in Touch
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+Email me at [sshuvo.cse@gmail.com](mailto:sshuvo.cse@gmail.com) or use the form below.
+
+<div data-fs-success style="display:none" class="alert alert-success mt-3">
+  <i class="fas fa-check-circle mr-2"></i> Thanks! I'll get back to you soon.
+</div>
+<div data-fs-error style="display:none" class="alert alert-danger mt-3"></div>
+
+<form id="contact-form" class="contact-form mt-3">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="text" name="name" class="form-control" placeholder="Name" data-fs-field required>
+      <span data-fs-error="name" class="text-danger" style="font-size:0.8rem"></span>
+    </div>
+    <div class="form-group col-md-6">
+      <input type="email" name="email" class="form-control" placeholder="Email" data-fs-field required>
+      <span data-fs-error="email" class="text-danger" style="font-size:0.8rem"></span>
+    </div>
+  </div>
+  <div class="form-group mt-2">
+    <select name="subject" class="form-control" data-fs-field>
+      <option value="" disabled selected>Subject</option>
+      <option>PhD Opportunity / Advising</option>
+      <option>Research Collaboration</option>
+      <option>Job / Internship</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group mt-2">
+    <textarea name="message" class="form-control" rows="4" placeholder="Message" data-fs-field required></textarea>
+    <span data-fs-error="message" class="text-danger" style="font-size:0.8rem"></span>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm mt-2" data-fs-submit-btn>
+    <i class="fas fa-paper-plane mr-1"></i> Send
+  </button>
+</form>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'meenjozr' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>

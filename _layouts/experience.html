@@ -12,82 +12,68 @@ layout: default
     {% if site.data.experience %}
       {% assign sorted_experiences = site.data.experience | sort: 'order' %}
       {% for experience in sorted_experiences %}
-        <div class="experience-item mb-4">
-          <div class="d-flex align-items-start mb-3">
+        <div class="exp-item">
+
+          <div class="exp-header">
             {% if experience.logo %}
-              <div class="company-logo me-4 flex-shrink-0">
-                <img src="{{ experience.logo | relative_url }}" 
-                     alt="{{ experience.company }} logo"
-                     class="rounded"
-                     style="width: 80px; height: 80px; object-fit: contain;">
+              <div class="exp-logo">
+                <a href="{{ experience.website }}" target="_blank" rel="noopener">
+                  <img src="{{ experience.logo | relative_url }}"
+                       alt="{{ experience.company }}"
+                       onerror="this.style.display='none'">
+                </a>
               </div>
             {% endif %}
-            <div class="experience-content flex-grow-1">
-              <h3 class="experience-title mb-1">
-                {{ experience.position }}
-              </h3>
-              <h5 class="mb-0 experience-company">
-                {% if experience.website %}
-                  <a href="{{ experience.website }}" target="_blank" class="text-decoration-none">
-                    {{ experience.company }}
-                  </a>
-                {% else %}
-                  {{ experience.company }}
-                {% endif %}
-              </h5>
-              <div class="experience-meta mb-3">
-                <span class="badge bg-secondary me-2">
-                  <i class="fas fa-calendar-alt me-1"></i>{{ experience.duration }}
-                </span>
-                <span class="badge bg-secondary">
-                  <i class="fas fa-map-marker-alt me-1"></i>{{ experience.location }}
-                </span>
+
+            <div class="exp-meta">
+              <div class="exp-top-row">
+                <div>
+                  <h3 class="exp-role">{{ experience.position }}</h3>
+                  <p class="exp-company">
+                    {% if experience.website %}
+                      <a href="{{ experience.website }}" target="_blank" rel="noopener">{{ experience.company }}</a>
+                    {% else %}
+                      {{ experience.company }}
+                    {% endif %}
+                  </p>
+                </div>
+                <div class="exp-date-loc">
+                  <span class="exp-duration"><i class="fas fa-calendar-alt"></i>{{ experience.duration }}</span>
+                  <span class="exp-location"><i class="fas fa-map-marker-alt"></i>{{ experience.location }}</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="experience-details">
-            <h5 class="mb-2" style="color: var(--global-text-color);">Key Responsibilities:</h5>
-            <!-- Main responsibilities -->
-            <ul class="list-unstyled ms-3">
-              {% for resp in experience.top_responsibilities %}
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                {{ resp }}
-              </li>
-              {% endfor %}
-            </ul>
+          <ul class="exp-list">
+            {% for resp in experience.top_responsibilities %}
+            <li>{{ resp }}</li>
+            {% endfor %}
+          </ul>
 
-            {% if experience.additional_responsibilities and experience.additional_responsibilities.size > 0 %}
-              <div class="mt-3">
-                <button class="btn btn-sm btn-outline-secondary mt-2" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target="#additional-{{ forloop.index }}" 
-                        aria-expanded="false" 
-                        aria-controls="additional-{{ forloop.index }}">
-                  <i class="fas fa-plus me-1"></i>View more
-                </button>
-                <div class="collapse mt-3" id="additional-{{ forloop.index }}">
-                  <div class="card card-body" style="background-color: var(--global-bg-color); border-color: var(--global-divider-color);">
-                    <!-- Additional responsibilities -->
-                    <ul class="list-unstyled ms-3">
-                      {% for resp in experience.additional_responsibilities %}
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        {{ resp }}
-                      </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-                </div>
+          {% if experience.additional_responsibilities and experience.additional_responsibilities.size > 0 %}
+            <div class="exp-more-wrap">
+              <button class="exp-more-btn"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#exp-extra-{{ forloop.index }}"
+                      aria-expanded="false">
+                <i class="fas fa-chevron-down"></i> Show more
+              </button>
+              <div class="collapse" id="exp-extra-{{ forloop.index }}">
+                <ul class="exp-list exp-list-extra">
+                  {% for resp in experience.additional_responsibilities %}
+                  <li>{{ resp }}</li>
+                  {% endfor %}
+                </ul>
               </div>
-            {% endif %}
-          </div>
+            </div>
+          {% endif %}
+
         </div>
-        
+
         {% unless forloop.last %}
-          <hr class="my-4" style="border-color: var(--global-divider-color);">
+          <div class="exp-divider"></div>
         {% endunless %}
       {% endfor %}
     {% endif %}
@@ -95,117 +81,243 @@ layout: default
 </div>
 
 <style>
-.experience-item {
-  padding: 1.5rem 0;
+/* ── Experience item ─────────────────────────────────────────────────────── */
+.exp-item {
+  padding: 1.75rem 1.5rem;
+  border-left: 3px solid #0d9488;
+  border-radius: 0 10px 10px 0;
+  background: var(--global-card-bg-color, #fff);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 2rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #0d9488;
+  border: 2px solid #f0fdfa;
+}
+.exp-item:hover { box-shadow: 0 3px 14px rgba(13,148,136,0.1); }
+html[data-theme='dark'] .exp-item { background: #1e1e1e; box-shadow: 0 1px 4px rgba(0,0,0,0.25); }
+html[data-theme='dark'] .exp-item::before { border-color: #1a1a1a; }
+
+.exp-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-.experience-title {
-  font-size: 1.25rem;
+/* Logo */
+.exp-logo {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--global-divider-color, #e9ecef);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 4px;
+}
+
+.exp-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.exp-logo:hover img {
+  transform: scale(1.08);
+}
+
+html[data-theme='dark'] .exp-logo {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+/* Meta */
+.exp-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-size: 1.05rem;
   font-weight: 600;
+  color: var(--global-text-color);
+  margin: 0 0 2px 0;
+  line-height: 1.3;
+}
+
+.exp-company {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light, #6c757d);
+  margin: 0;
+  font-weight: 400;
+}
+
+.exp-company a {
+  color: var(--global-theme-color, #0066cc);
+  text-decoration: none;
+}
+
+.exp-company a:hover {
+  text-decoration: underline;
+}
+
+html[data-theme='dark'] .exp-company a {
+  color: #66b3ff;
+}
+
+/* Date & Location */
+.exp-date-loc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.exp-duration,
+.exp-location {
+  font-size: 0.8rem;
+  color: var(--global-text-color-light, #6c757d);
+  white-space: nowrap;
+}
+
+.exp-duration i,
+.exp-location i {
+  font-size: 0.72rem;
+  margin-right: 4px;
+  color: #0d9488;
+  opacity: 1;
+}
+
+/* Responsibility list */
+.exp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0 0;
+}
+
+.exp-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--global-text-color);
 }
 
-.experience-company {
-  font-size: 1.1rem;
-  font-weight: 500;
+.exp-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #0d9488;
+  font-weight: 700;
 }
 
-.experience-company a {
-  color: #0066cc !important;
-  transition: color 0.3s ease;
+.exp-list-extra {
+  margin-top: 0.5rem;
 }
 
-.experience-company a:hover {
-  color: #0052a3 !important;
-  text-decoration: underline !important;
+/* Show more button */
+.exp-more-wrap {
+  margin-top: 0.6rem;
 }
 
-.company-logo img {
-  transition: transform 0.3s ease;
+.exp-more-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.82rem;
+  color: #0d9488;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
 }
 
-.company-logo img:hover {
-  transform: scale(1.05);
+.exp-more-btn:hover {
+  color: #0b7a72;
 }
 
-.badge {
-  font-size: 0.875rem;
-  font-weight: 500;
+.exp-more-btn i {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
 }
 
-/* Professional badge styling */
-.badge.bg-secondary {
-  background-color: #f8f9fa !important;
-  color: #495057 !important;
-  border: 1px solid #dee2e6 !important;
-  font-weight: 400 !important;
+.exp-more-btn[aria-expanded="true"] i {
+  transform: rotate(180deg);
 }
 
-/* Dark mode badge styling */
-html[data-theme='dark'] .badge.bg-secondary {
-  background-color: #343a40 !important;
-  color: #dee2e6 !important;
-  border: 1px solid #495057 !important;
+/* Divider */
+.exp-divider {
+  border: none;
+  height: 0.75rem;
+  margin: 0;
 }
 
-.responsibilities ul li {
-  line-height: 1.6;
-}
-
-.btn-outline-primary {
-  border-color: #6c757d;
-  color: #6c757d;
-}
-
-.btn-outline-primary:hover {
-  background-color: #6c757d;
-  border-color: #6c757d;
-  color: #ffffff;
-}
-
-.btn-outline-secondary {
-  border-color: #6c757d;
-  color: #6c757d;
-}
-
-.btn-outline-secondary:hover {
-  background-color: #6c757d;
-  border-color: #6c757d;
-  color: #ffffff;
-}
-
-/* Dark mode adjustments */
-html[data-theme='dark'] .experience-company a {
-  color: #66b3ff !important;
-}
-
-html[data-theme='dark'] .experience-company a:hover {
-  color: #99ccff !important;
-}
-
-html[data-theme='dark'] .btn-outline-secondary {
-  border-color: #adb5bd;
-  color: #adb5bd;
-}
-
-html[data-theme='dark'] .btn-outline-secondary:hover {
-  background-color: #adb5bd;
-  border-color: #adb5bd;
-  color: #212529;
-}
-
-@media (max-width: 768px) {
-  .d-flex {
+/* Responsive */
+@media (max-width: 600px) {
+  .exp-top-row {
     flex-direction: column;
+    gap: 0.25rem;
   }
-  
-  .company-logo {
-    margin-bottom: 1rem;
-    align-self: center;
-  }
-  
-  .experience-content {
-    text-align: center;
+
+  .exp-date-loc {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 0.75rem;
   }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.exp-more-btn').forEach(function (btn) {
+    var targetId = btn.getAttribute('data-target');
+    var target = document.querySelector(targetId);
+    if (!target) return;
+
+    target.addEventListener('show.bs.collapse', function () {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.innerHTML = '<i class="fas fa-chevron-down"></i> Show less';
+    });
+    target.addEventListener('hide.bs.collapse', function () {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '<i class="fas fa-chevron-down"></i> Show more';
+    });
+
+    /* Bootstrap 4 fallback */
+    if (typeof $ !== 'undefined') {
+      $(target).on('show.bs.collapse', function () {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = '<i class="fas fa-chevron-down"></i> Show less';
+      });
+      $(target).on('hide.bs.collapse', function () {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-chevron-down"></i> Show more';
+      });
+    }
+  });
+});
+</script>

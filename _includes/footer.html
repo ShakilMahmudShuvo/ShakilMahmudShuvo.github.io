@@ -1,25 +1,60 @@
-    {% if site.footer_fixed %}
-    <footer class="fixed-bottom">
-      <div class="container mt-0">
-        &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}. {{ site.footer_text }}
-        {%- if site.impressum_path -%}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-        {%- endif -%}
-        {%- if site.last_updated -%}
-        Last updated: {{ "now" | date: '%B %d, %Y' }}.
-        {%- endif %}
+{% if site.footer_fixed %}
+<footer class="fixed-bottom">
+{% else %}
+<footer class="sticky-bottom mt-5">
+{% endif %}
+
+  <style>
+  footer {
+    background: #1e293b !important;
+    border-top: none !important;
+    padding: 1.1rem 0 !important;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-style: italic;
+  }
+  .footer-tagline span {
+    color: #2dd4bf;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .footer-right {
+    font-size: 0.76rem;
+    color: #64748b;
+    text-align: right;
+  }
+  .footer-right a {
+    color: #64748b !important;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-right a:hover { color: #2dd4bf !important; }
+  @media (max-width: 600px) {
+    .footer-inner { justify-content: center; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+  </style>
+
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-tagline">
+        Writing code. Reading papers. Trying to do work that <span>actually matters</span>.
       </div>
-    </footer>
-    {%- else -%}
-    <footer class="sticky-bottom mt-5">
-      <div class="container">
-        &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}. {{ site.footer_text }}
-        {%- if site.impressum_path -%}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-        {%- endif -%}
-        {%- if site.last_updated -%}
-        Last updated: {{ "now" | date: '%B %d, %Y' }}.
-        {%- endif %}
+      <div class="footer-right">
+        &copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}
+        &ensp;&middot;&ensp; Dhaka, Bangladesh
+        &ensp;&middot;&ensp; <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       </div>
-    </footer>
-    {%- endif %}
+    </div>
+  </div>
+
+</footer>
