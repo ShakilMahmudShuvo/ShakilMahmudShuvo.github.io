@@ -2,7 +2,7 @@
 layout: page
 permalink: /research/
 title: Research
-description: Machine learning research in healthcare AI — medical imaging, NLP for mental health, and deep learning systems.
+description: Machine learning research in healthcare AI. medical imaging, NLP for mental health, and deep learning systems.
 nav: true
 nav_order: 2
 ---
@@ -267,6 +267,32 @@ html[data-theme='dark'] .pub-abstract-text {
   background: #161616;
 }
 
+/* ── ML history bar ──────────────────────────────────────────────────── */
+.ml-history-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  background: #f8fafb;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #0d9488;
+  border-radius: 0 8px 8px 0;
+  padding: 0.6rem 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #475569;
+  flex-wrap: wrap;
+}
+.ml-history-bar-label {
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.7px;
+  color: #0d9488; white-space: nowrap; flex-shrink: 0;
+}
+.ml-history-bar-text { flex: 1; min-width: 0; }
+.ml-history-bar-year { font-size: 0.7rem; color: #94a3b8; white-space: nowrap; flex-shrink: 0; }
+html[data-theme='dark'] .ml-history-bar { background: #141414; border-color: #2d3748; border-left-color: #2dd4bf; color: #94a3b8; }
+html[data-theme='dark'] .ml-history-bar-label { color: #2dd4bf; }
+
 /* ── Surprise me button ──────────────────────────────────────────────── */
 #surprise-btn {
   display: inline-flex;
@@ -329,6 +355,12 @@ html[data-theme='dark'] #surprise-btn:hover { border-color: #2dd4bf; color: #2dd
 </style>
 
 <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<div class="ml-history-bar" id="ml-history-bar" style="display:none">
+  <span class="ml-history-bar-label"><i class="fas fa-history"></i>&nbsp; On this day in ML / AI</span>
+  <span class="ml-history-bar-text" id="ml-history-bar-text"></span>
+  <span class="ml-history-bar-year" id="ml-history-bar-year"></span>
+</div>
 
 <div class="research-meta">
   <a href="https://scholar.google.com/citations?user=EOsiW3sAAAAJ&hl=en" target="_blank" class="scholar-link">
@@ -537,6 +569,49 @@ document.querySelectorAll('.pub-btn-cite').forEach(function (btn) {
     });
   });
 });
+
+(function () {
+  var ML = [
+    { m:1,  d:8,  year:2018, text:'Google DeepMind published AlphaZero. it learned chess, shogi, and Go from scratch in hours, then demolished every specialist program.' },
+    { m:1,  d:11, year:2021, text:'OpenAI released CLIP. teaching neural nets to understand images using natural language.' },
+    { m:1,  d:24, year:2023, text:'Microsoft announced a $10B investment in OpenAI, supercharging the global AI race.' },
+    { m:2,  d:10, year:1996, text:'IBM Deep Blue defeated world chess champion Garry Kasparov in game 1. a first for machines over a reigning human champion.' },
+    { m:2,  d:14, year:2019, text:'OpenAI released GPT-2 and partly withheld it. sparking the first mainstream AI safety debate.' },
+    { m:3,  d:9,  year:2016, text:'AlphaGo defeated Go world champion Lee Sedol in game 1. move 37 was so unexpected the commentators fell silent.' },
+    { m:3,  d:14, year:2023, text:'GPT-4 was released. passing the bar exam and fundamentally shifting expectations of what AI can do.' },
+    { m:3,  d:21, year:2016, text:'AlphaGo won its match 4-1 vs Lee Sedol. Game 4\'s "Move 78" by Sedol became known as the "God move."' },
+    { m:4,  d:6,  year:1992, text:'Microsoft Research was founded. it would produce landmark work in NLP, computer vision, and AI.' },
+    { m:4,  d:23, year:2014, text:'Facebook AI Research (FAIR) was announced. Big Tech\'s first serious commitment to fundamental AI research.' },
+    { m:5,  d:11, year:1997, text:'IBM Deep Blue defeated Garry Kasparov in the final rematch game, winning 3.5–2.5. He never played a computer again.' },
+    { m:5,  d:28, year:2020, text:'GPT-3 paper published. 175 billion parameters and the first glimpse of emergent AI capabilities.' },
+    { m:6,  d:10, year:2014, text:'Ian Goodfellow et al. submitted the GAN paper after conceiving the idea in a late-night bar discussion. One of the most cited DL papers.' },
+    { m:6,  d:12, year:2017, text:'"Attention Is All You Need" submitted to arXiv. the Transformer architecture that powers every modern LLM.' },
+    { m:6,  d:23, year:1912, text:'Alan Turing was born in London. He would lay the theoretical foundations of computation and AI.' },
+    { m:7,  d:9,  year:1956, text:'The Dartmouth Workshop on AI began. the event that gave the field its name, organized by John McCarthy.' },
+    { m:7,  d:17, year:2007, text:'Fei-Fei Li formally proposed the ImageNet project. the dataset that fueled the deep learning revolution.' },
+    { m:8,  d:4,  year:2020, text:'The GPT-3 API opened to the public, revealing just how capable large language models had become.' },
+    { m:9,  d:3,  year:2014, text:'DeepFace, Facebook\'s facial recognition at 97.35% accuracy on LFW, was published. near-human level.' },
+    { m:9,  d:25, year:2014, text:'GoogLeNet (Inception) submitted to arXiv. the Inception module slashed parameters vs AlexNet 10×.' },
+    { m:10, d:11, year:2018, text:'BERT submitted to arXiv by Devlin et al.. bidirectional Transformers that became the backbone of NLP.' },
+    { m:10, d:17, year:2012, text:'AlexNet won ILSVRC 2012 with 15.3% error. 10.8 points better than second place. The moment deep learning took over.' },
+    { m:11, d:17, year:2015, text:'Google open-sourced TensorFlow, putting powerful deep learning tools in the hands of every researcher.' },
+    { m:11, d:30, year:2022, text:'ChatGPT launched by OpenAI. 1 million users in 5 days. It permanently changed how the world thinks about AI.' },
+    { m:12, d:1,  year:2015, text:'"Deep Residual Learning for Image Recognition" (ResNet) submitted. skip connections solved the vanishing gradient problem.' },
+    { m:12, d:10, year:2015, text:'OpenAI was founded with a $1B pledge from Elon Musk, Sam Altman, and others, as a nonprofit AI lab.' },
+  ];
+  var now = new Date(), mo = now.getMonth() + 1, dy = now.getDate();
+  var match = ML.filter(function(e){ return e.m === mo && e.d === dy; });
+  var entry = match.length ? match[0] : ML[Math.floor(Math.random() * ML.length)];
+  var bar = document.getElementById('ml-history-bar');
+  var tEl = document.getElementById('ml-history-bar-text');
+  var yEl = document.getElementById('ml-history-bar-year');
+  if (bar && tEl && yEl) {
+    tEl.textContent = entry.text;
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    yEl.textContent = (match.length ? 'Today · ' : 'Random · ') + months[entry.m-1] + ' ' + entry.d + ', ' + entry.year;
+    bar.style.display = 'flex';
+  }
+})();
 
 (function () {
   var surpriseBtn = document.getElementById('surprise-btn');

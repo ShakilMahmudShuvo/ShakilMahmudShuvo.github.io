@@ -232,23 +232,26 @@ html[data-theme='dark'] .cta-primary:hover { background: #0b7a72; }
 html[data-theme='dark'] .cta-secondary { border-color: #2d3748; color: #cbd5e1; }
 html[data-theme='dark'] .cta-secondary:hover { border-color: #2dd4bf; color: #2dd4bf; background: #0d2220; }
 
-/* ── Dhaka clock ────────────────────────────────────────────────────────── */
+/* ── Dual clock ─────────────────────────────────────────────────────────── */
 .dhaka-clock {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
     background: #f8fafb;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
     padding: 5px 13px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: #64748b;
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
-.dhaka-clock i { color: #0d9488; font-size: 0.75rem; }
-.dhaka-clock-time { color: #1e293b; font-weight: 600; letter-spacing: 0.3px; }
+.dhaka-clock i { color: #0d9488; font-size: 0.72rem; }
+.clock-time { color: #1e293b; font-weight: 600; letter-spacing: 0.3px; }
+.clock-label { font-size: 0.68rem; opacity: 0.75; }
+.clock-sep { color: #cbd5e1; margin: 0 2px; }
 html[data-theme='dark'] .dhaka-clock { background: #1a1a1a; border-color: #2d3748; color: #94a3b8; }
-html[data-theme='dark'] .dhaka-clock-time { color: #e2e8f0; }
+html[data-theme='dark'] .clock-time { color: #e2e8f0; }
 
 /* ── Contact form ───────────────────────────────────────────────────────── */
 .contact-form .form-control {
@@ -267,30 +270,44 @@ html[data-theme='dark'] .contact-form .form-control { background: #252525; borde
     <span class="status-dot"></span>
     Open to PhD opportunities &ensp;·&ensp; Research collaborations welcome
   </span>
-  <span class="dhaka-clock">
+  <span class="dhaka-clock" title="Your local time vs Dhaka time">
     <i class="fas fa-clock"></i>
-    <span class="dhaka-clock-time" id="dhaka-time">--:-- --</span>
-    &nbsp;Dhaka
+    <span class="clock-label" id="your-tz-label">You</span>
+    <span class="clock-time" id="your-time">--:-- --</span>
+    <span class="clock-sep">·</span>
+    <span class="clock-time" id="dhaka-time">--:-- --</span>
+    <span class="clock-label">Dhaka</span>
   </span>
 </div>
 
 <script>
 (function() {
-  function updateDhakaClock() {
-    var el = document.getElementById('dhaka-time');
-    if (!el) return;
-    var now = new Date();
-    var opts = { timeZone: 'Asia/Dhaka', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-    el.textContent = now.toLocaleTimeString('en-US', opts);
+  /* ── Dual clock ── */
+  var tzLabel = document.getElementById('your-tz-label');
+  if (tzLabel) {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      var city = tz.split('/').pop().replace(/_/g, ' ');
+      tzLabel.textContent = city.length > 10 ? 'You' : city;
+    } catch(e) {}
   }
-  updateDhakaClock();
-  setInterval(updateDhakaClock, 1000);
+  function updateClocks() {
+    var now = new Date();
+    var yt = document.getElementById('your-time');
+    var dt = document.getElementById('dhaka-time');
+    var opts = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    if (yt) yt.textContent = now.toLocaleTimeString('en-US', opts);
+    if (dt) dt.textContent = now.toLocaleTimeString('en-US', Object.assign({}, opts, { timeZone: 'Asia/Dhaka' }));
+  }
+  updateClocks();
+  setInterval(updateClocks, 1000);
+
 })();
 </script>
 
-I'm a machine learning engineer and researcher based in Dhaka, Bangladesh. During the day I work as an **Associate Data Scientist** at [Cognitus Consulting](https://cognitus.com), building LLM-powered tools for enterprise clients — RAG pipelines, MCP-server workflows, and contract intelligence systems for companies like Lockheed Martin.
+I'm a machine learning engineer and researcher based in Dhaka, Bangladesh. During the day I work as an **Associate Data Scientist** at [Cognitus Consulting](https://cognitus.com), building LLM-powered tools for enterprise clients: RAG pipelines, MCP-server workflows, and contract intelligence systems for companies like Lockheed Martin.
 
-Outside of work, my attention goes toward research. My background is in **healthcare AI** — I got into it through the Young Learners' Research Lab at [RUET](https://www.ruet.ac.bd/) in Bangladesh, and it kind of stuck. Over the last two years I've published papers on brain tumor classification, retinal disease detection, and suicidal ideation detection in social media. That last one is the work I'm most proud of.
+Outside of work, my attention goes toward research. My background is in **healthcare AI**; I got into it through the Young Learners' Research Lab at [RUET](https://www.ruet.ac.bd/) in Bangladesh, and it kind of stuck. Over the last two years I've published papers on brain tumor classification, retinal disease detection, and suicidal ideation detection in social media. That last one is the work I'm most proud of.
 
 <div class="about-stats">
   <div class="stat-item">
@@ -309,7 +326,7 @@ Outside of work, my attention goes toward research. My background is in **health
 
 <div class="phd-card">
   <div class="phd-card-label">&#128270; What I'm working toward</div>
-  <p>Actively looking for <strong>PhD programs</strong> in ML and AI. A year in industry has been useful — I've shipped real things and learned how messy deployment gets — but I want to go deeper. The questions that bother me most aren't the ones I get to work on day-to-day.</p>
+  <p>Actively looking for <strong>PhD programs</strong> in ML and AI. A year in industry has been useful; I've shipped real things and learned how messy deployment gets, but I want to go deeper. The questions that bother me most aren't the ones I get to work on day-to-day.</p>
 </div>
 
 <div class="interests-label">Research Interests</div>

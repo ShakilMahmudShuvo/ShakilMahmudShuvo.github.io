@@ -4,7 +4,7 @@ title: CV
 permalink: /cv/
 nav: true
 nav_order: 1
-description: Curriculum Vitae — Shakil Mahmud Shuvo
+description: Curriculum Vitae, Shakil Mahmud Shuvo
 ---
 
 <script>
@@ -441,7 +441,8 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
 <div class="cv-wrap">
 
 <!-- ── HERO ──────────────────────────────────────────────────────────── -->
-<div class="cv-hero">
+<div class="cv-hero" id="cv-sec-hero">
+  <canvas id="nn-canvas" style="position:absolute;inset:0;pointer-events:none;opacity:0.45;"></canvas>
   <img src="/assets/img/profile.jpg" alt="Shakil Mahmud Shuvo" class="cv-photo">
   <div class="cv-hero-info">
     <h1 class="cv-name">Shakil Mahmud Shuvo</h1>
@@ -478,7 +479,7 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
   <div class="cv-main">
 
     <!-- Summary -->
-    <div class="cv-section">
+    <div class="cv-section" id="cv-sec-summary">
       <div class="cv-sh"><i class="fas fa-user"></i> Professional Summary</div>
       <p style="font-size:0.88rem;line-height:1.8;color:#374151;margin:0;">
         Machine learning engineer and researcher with hands-on experience building LLM-powered enterprise systems and a research background in healthcare AI. Published 6 peer-reviewed papers (ACM, IEEE, Springer) on medical imaging, deep learning, and NLP for mental health detection. Currently seeking PhD programs in ML/AI to pursue research in federated learning, multimodal reasoning, and explainable medical AI.
@@ -486,7 +487,7 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
     </div>
 
     <!-- Experience -->
-    <div class="cv-section">
+    <div class="cv-section" id="cv-sec-experience">
       <div class="cv-sh"><i class="fas fa-briefcase"></i> Work Experience</div>
 
       <div class="cv-item">
@@ -497,7 +498,7 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
         <div class="cv-item-sub"><a href="https://cognitusconsulting.com/" target="_blank">Cognitus Consulting LLC</a></div>
         <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Dallas, TX &nbsp;·&nbsp; Remote</div>
         <ul class="cv-list">
-          <li>Led data integration for <strong>LambdaX</strong>, an AI-powered Contract Lifecycle Management platform — deployed at Lockheed Martin</li>
+          <li>Led data integration for <strong>LambdaX</strong>, an AI-powered Contract Lifecycle Management platform, deployed at Lockheed Martin</li>
           <li>Built LLM-powered workflow generation system using MCP server architecture; intelligent chatbot for automated workflow creation</li>
           <li>Designed custom ML-driven data workflows and automation pipelines for enterprise clients</li>
           <li>Built scalable ETL pipelines ingesting contract data from SAP, Salesforce, and internal systems</li>
@@ -513,7 +514,7 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
         <div class="cv-item-sub"><a href="https://outlier.ai/" target="_blank">Outlier</a></div>
         <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> San Francisco, CA &nbsp;·&nbsp; Remote</div>
         <ul class="cv-list">
-          <li>Advanced AI model training via structured text conversations — expert feedback on LLM performance and accuracy</li>
+          <li>Advanced AI model training via structured text conversations; expert feedback on LLM performance and accuracy</li>
           <li>Hallucination detection and comprehensive AI response evaluation (factual accuracy, grammar, tone alignment)</li>
           <li>Systematic AI voice response analysis across instruction adherence, truthfulness, and harmlessness</li>
         </ul>
@@ -521,13 +522,13 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
 
       <div class="cv-item">
         <div class="cv-item-head">
-          <h3 class="cv-item-title">Associate Software Engineer — Machine Learning</h3>
+          <h3 class="cv-item-title">Associate Software Engineer, Machine Learning</h3>
           <span class="cv-item-meta">Nov 2023 – Aug 2024</span>
         </div>
         <div class="cv-item-sub"><a href="https://ideascale.com/" target="_blank">IdeaScale Bangladesh Limited</a></div>
         <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
         <ul class="cv-list">
-          <li>Built ML recommendation models — increased user engagement 15% through personalized suggestions</li>
+          <li>Built ML recommendation models, increasing user engagement 15% through personalized suggestions</li>
           <li>Designed contextual NLP + deep learning recommendation PoC, improving relevance by 20%</li>
           <li>Integrated OpenSearch as vector database for embedding storage and semantic retrieval pipelines</li>
           <li>Deployed ML solutions via REST APIs with model versioning; collaborated on microservice architecture</li>
@@ -543,7 +544,7 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
         <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Rajshahi, Bangladesh</div>
         <ul class="cv-list">
           <li>Research in medical imaging, deep learning, computer vision, and NLP for mental health</li>
-          <li>Developed CNN and attention-based models for medical image analysis — 18% diagnostic accuracy improvement</li>
+          <li>Developed CNN and attention-based models for medical image analysis, achieving 18% diagnostic accuracy improvement</li>
           <li>Contributed to 6 academic publications (2 first-author) published in ACM, IEEE, and Springer</li>
           <li>Mentored junior researchers on ML methodologies, experimental design, and academic writing</li>
         </ul>
@@ -552,7 +553,7 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
     </div>
 
     <!-- Education -->
-    <div class="cv-section">
+    <div class="cv-section" id="cv-sec-education">
       <div class="cv-sh"><i class="fas fa-graduation-cap"></i> Education</div>
 
       <div class="cv-item cv-edu-item">
@@ -566,27 +567,27 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
           <li>CGPA <strong>3.22</strong>/4.00 &ensp;·&ensp; Last 60 credit average <strong>3.71</strong>/4.00</li>
           <li><strong>Thesis:</strong> A Two-Phase Framework for Multi-Class Brain Tumor Detection using DenseNet-121 Features and ML Ensembles</li>
           <li><strong>Supervisor:</strong> Md. Farukuzzaman Faruk, Asst. Professor, Dept. of CSE, RUET</li>
-          <li>Mentor — RUET Analytical Programming Lab &ensp;·&ensp; Organizing Member — RUET e-Sports Club</li>
+          <li>Mentor at RUET Analytical Programming Lab &ensp;·&ensp; Organizing Member at RUET e-Sports Club</li>
         </ul>
       </div>
 
       <div class="cv-item cv-edu-item">
         <div class="cv-item-head">
-          <h3 class="cv-item-title">Higher Secondary Certificate — Science</h3>
+          <h3 class="cv-item-title">Higher Secondary Certificate, Science</h3>
           <span class="cv-item-meta">2017</span>
         </div>
         <div class="cv-item-sub"><a href="https://ndc.edu.bd/" target="_blank">Notre Dame College</a></div>
         <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
         <ul class="cv-list">
           <li>GPA <strong>5.00</strong>/5.00</li>
-          <li>Group Representative — Outward Bound Adventure Club, Notre Dame College</li>
+          <li>Group Representative at Outward Bound Adventure Club, Notre Dame College</li>
         </ul>
       </div>
 
     </div>
 
     <!-- Publications -->
-    <div class="cv-section">
+    <div class="cv-section" id="cv-sec-publications">
       <div class="cv-sh"><i class="fas fa-book-open"></i> Publications</div>
 
       <div class="pub-cat-header">
@@ -723,8 +724,8 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
     <div class="cv-aside-section">
       <div class="cv-aside-sh"><i class="fas fa-language"></i> Languages</div>
       <div class="interest-pills">
-        <span class="interest-pill">Bengali — Native</span>
-        <span class="interest-pill">English — Fluent</span>
+        <span class="interest-pill">Bengali (Native)</span>
+        <span class="interest-pill">English (Fluent)</span>
       </div>
     </div>
 
@@ -745,3 +746,139 @@ html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
 
 </div><!-- /cv-body -->
 </div><!-- /cv-wrap -->
+
+<!-- ── Section dot navigation ─────────────────────────────────────────── -->
+<style>
+#cv-dot-nav {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 500;
+}
+.cv-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none; padding: 0; cursor: pointer;
+  transition: background 0.2s, transform 0.2s, width 0.25s;
+  position: relative;
+}
+.cv-dot::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 16px; top: 50%;
+  transform: translateY(-50%);
+  background: #1e293b; color: #e2e8f0;
+  font-size: 0.68rem; font-weight: 500;
+  padding: 3px 8px; border-radius: 4px;
+  white-space: nowrap; opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  font-family: inherit;
+}
+.cv-dot:hover::after { opacity: 1; }
+.cv-dot:hover { background: #0d9488; transform: scale(1.3); }
+.cv-dot.active { background: #0d9488; transform: scale(1.4); }
+@media (max-width: 768px) { #cv-dot-nav { display: none; } }
+</style>
+
+<div id="cv-dot-nav">
+  <button class="cv-dot active" data-target="cv-sec-hero"        data-label="Hero"></button>
+  <button class="cv-dot"        data-target="cv-sec-summary"     data-label="Summary"></button>
+  <button class="cv-dot"        data-target="cv-sec-experience"  data-label="Experience"></button>
+  <button class="cv-dot"        data-target="cv-sec-education"   data-label="Education"></button>
+  <button class="cv-dot"        data-target="cv-sec-publications" data-label="Publications"></button>
+</div>
+
+<script>
+/* ── Neural network canvas ── */
+(function () {
+  var canvas = document.getElementById('nn-canvas');
+  if (!canvas) return;
+  var hero = canvas.parentElement;
+  var ctx  = canvas.getContext('2d');
+  var nodes = [];
+
+  function resize() {
+    canvas.width  = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+  }
+
+  function initNodes() {
+    nodes = [];
+    for (var i = 0; i < 32; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        r: Math.random() * 1.8 + 0.8
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        var dx = nodes[i].x - nodes[j].x;
+        var dy = nodes[i].y - nodes[j].y;
+        var d  = Math.sqrt(dx*dx + dy*dy);
+        if (d < 110) {
+          ctx.strokeStyle = 'rgba(45,212,191,' + ((1 - d/110) * 0.4) + ')';
+          ctx.lineWidth = 0.7;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    nodes.forEach(function (n) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(45,212,191,0.65)';
+      ctx.fill();
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > canvas.width)  n.vx *= -1;
+      if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+    });
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  initNodes();
+  draw();
+  window.addEventListener('resize', function () { resize(); initNodes(); });
+})();
+
+/* ── Section dot navigation ── */
+(function () {
+  var dots = Array.from(document.querySelectorAll('.cv-dot'));
+  var sections = dots.map(function (d) { return document.getElementById(d.dataset.target); });
+
+  dots.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.dataset.target);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.id;
+        dots.forEach(function (d) {
+          d.classList.toggle('active', d.dataset.target === id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(function (s) { if (s) observer.observe(s); });
+})();
+</script>

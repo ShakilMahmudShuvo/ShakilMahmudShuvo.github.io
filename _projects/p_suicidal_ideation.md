@@ -25,7 +25,7 @@ category: previous
 
 ## Overview
 
-This research addresses a critical mental health challenge by developing an advanced NLP system for early detection of suicidal ideation in social media posts. Published at **ICCA 2024** as a **first-author paper**, this work combines state-of-the-art language models with Bidirectional GRU networks to achieve remarkable detection accuracy while minimizing false negatives—crucial for potentially life-saving interventions.
+This research addresses a critical mental health challenge by developing an advanced NLP system for early detection of suicidal ideation in social media posts. Published at **ICCA 2024** as a **first-author paper**, this work combines state-of-the-art language models with Bidirectional GRU networks to achieve remarkable detection accuracy while minimizing false negatives, crucial for potentially life-saving interventions.
 
 The system analyzes Reddit posts to identify linguistic patterns and emotional markers associated with suicidal ideation, providing a scalable solution for mental health monitoring in online communities.
 

@@ -12,7 +12,7 @@ nav_order: 6
 <!-- Honors and Awards Section -->
 <div class="row mt-4">
     <div class="col-12">
-        <h2 class="section-title"><i class="fas fa-trophy text-warning"></i> Honors & Awards</h2>
+        <h2 class="section-title"><i class="fas fa-trophy" style="color:#d97706;"></i> Honors & Awards</h2>
         <div class="awards-list mt-3">
             
             <div class="award-item mb-4">
@@ -25,7 +25,7 @@ nav_order: 6
                             <li>Team Name: <code>k3rnel_pan1c</code> - demonstrated collaborative problem-solving and algorithmic thinking skills</li>
                         </ul>
                     </div>
-                    <span class="badge bg-primary">2019</span>
+                    <span class="badge ach-badge-year">2019</span>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@ nav_order: 6
                             <li>Received approximately $350 USD scholarship for outstanding academic performance</li>
                         </ul>
                     </div>
-                    <span class="badge bg-success">2015</span>
+                    <span class="badge ach-badge-scholarship">2015</span>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@ nav_order: 6
                             <li>Received full tuition fee waiver with $71 USD annual stipend (2013-2014)</li>
                         </ul>
                     </div>
-                    <span class="badge bg-success">2012</span>
+                    <span class="badge ach-badge-scholarship">2012</span>
                 </div>
             </div>
             
@@ -66,7 +66,7 @@ nav_order: 6
 <!-- Volunteer Experience Section -->
 <div class="row">
     <div class="col-12">
-        <h2 class="section-title"><i class="fas fa-hands-helping text-info"></i> Volunteer Experience</h2>
+        <h2 class="section-title"><i class="fas fa-hands-helping" style="color:#0d9488;"></i> Volunteer Experience</h2>
         <div class="volunteer-list mt-3">
             
             <div class="volunteer-item mb-4">
@@ -76,7 +76,7 @@ nav_order: 6
                         <p class="text-muted mb-1"><a href="https://rapl.site/" target="_blank" class="text-decoration-none">RUET Analytical Programming Lab (RAPL)</a></p>
                         <p class="mb-0">Guided students in problem-solving and programming competitions.</p>
                     </div>
-                    <span class="badge bg-secondary">Jan 2019 - Jun 2021</span>
+                    <span class="badge ach-badge-date">Jan 2019 - Jun 2021</span>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@ nav_order: 6
                         <p class="text-muted mb-1"><a href="https://www.facebook.com/ruetesports/" target="_blank" class="text-decoration-none">RUET e-Sports Club</a></p>
                         <p class="mb-0">Organized gaming events and managed club activities.</p>
                     </div>
-                    <span class="badge bg-secondary">Nov 2022 - Present</span>
+                    <span class="badge ach-badge-date">Nov 2022 - Present</span>
                 </div>
             </div>
 
@@ -98,7 +98,7 @@ nav_order: 6
                         <p class="text-muted mb-1"><a href="https://ndc.edu.bd/club/news/list/11" target="_blank" class="text-decoration-none">Outward Bound Adventure Club</a>, Notre Dame College</p>
                         <p class="mb-0">Led group activities and ensured team coordination.</p>
                     </div>
-                    <span class="badge bg-secondary">Feb 2016 - Jun 2017</span>
+                    <span class="badge ach-badge-date">Feb 2016 - Jun 2017</span>
                 </div>
             </div>
             
@@ -111,7 +111,7 @@ nav_order: 6
 <!-- Certifications Section -->
 <div class="row">
     <div class="col-12">
-        <h2 class="section-title"><i class="fas fa-certificate text-success"></i> Certifications</h2>
+        <h2 class="section-title"><i class="fas fa-certificate" style="color:#0d9488;"></i> Certifications</h2>
         <div class="row mt-3">
             
             <div class="col-md-6 mb-4">
@@ -122,7 +122,7 @@ nav_order: 6
                             <i class="fas fa-building"></i> <strong>Certifying Body:</strong> Codecademy<br>
                             <i class="fas fa-tools"></i> <strong>Skills Covered:</strong> Deep Learning, Feature Engineering, A/B Testing
                         </p>
-                        <span class="badge bg-info">Jun 2020</span>
+                        <span class="badge ach-badge-cert">Jun 2020</span>
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@ nav_order: 6
                             <i class="fas fa-building"></i> <strong>Certifying Body:</strong> Coursera<br>
                             <i class="fas fa-tools"></i> <strong>Skills Covered:</strong> SQL Database Management and Data Analysis
                         </p>
-                        <span class="badge bg-info">Apr 2020</span>
+                        <span class="badge ach-badge-cert">Apr 2020</span>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@ nav_order: 6
 <!-- Additional Information Section -->
 <div class="row mb-5">
     <div class="col-12">
-        <h2 class="section-title"><i class="fas fa-info-circle text-primary"></i> Additional Information</h2>
+        <h2 class="section-title"><i class="fas fa-info-circle" style="color:#0d9488;"></i> Additional Information</h2>
         <div class="row mt-3">
             
             <div class="col-md-4 mb-3">
@@ -209,13 +209,15 @@ nav_order: 6
 }
 
 .cert-card {
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     border: 1px solid var(--global-divider-color);
+    border-top: 3px solid #0d9488;
 }
 
 .cert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(13,148,136,0.1);
+    border-top-color: #2dd4bf;
 }
 
 .info-card {
@@ -224,12 +226,23 @@ nav_order: 6
     border-radius: 8px;
     height: 100%;
     border: 1px solid var(--global-divider-color);
+    border-top: 3px solid #0d9488;
 }
 
 .badge {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
 }
+
+/* Teal-aligned badge palette */
+.ach-badge-year       { background: #0d9488; color: #fff; }
+.ach-badge-scholarship { background: #0f766e; color: #fff; }
+.ach-badge-cert       { background: #0e7490; color: #fff; }
+.ach-badge-date       { background: #475569; color: #fff; }
+html[data-theme='dark'] .ach-badge-year        { background: #0f766e; }
+html[data-theme='dark'] .ach-badge-scholarship { background: #134e4a; border: 1px solid #2dd4bf; color: #2dd4bf; }
+html[data-theme='dark'] .ach-badge-cert        { background: #0c4a6e; color: #7dd3fc; }
+html[data-theme='dark'] .ach-badge-date        { background: #334155; color: #94a3b8; }
 
 code {
     background-color: var(--global-code-bg-color);
