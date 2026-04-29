@@ -13,6 +13,40 @@
     <meta name="author" content="Shakil Mahmud Shuvo" />
     <meta name="description" content="My professional experience." />
 
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Shakil Mahmud Shuvo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shakil Mahmud Shuvo | Experience" />
+    <meta property="og:url" content="https://shakilmahmudshuvo.github.io/experience/" />
+    <meta property="og:description" content="My professional experience." />
+    <meta property="og:image" content="profile.jpg" />
+    <meta property="og:locale" content="en" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Experience" />
+    <meta name="twitter:description" content="My professional experience." />
+    <meta name="twitter:image" content="profile.jpg" />
+    
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "author":
+        {
+          "@type": "Person",
+          "name": "Shakil Mahmud Shuvo"
+        },
+        "url": "https://shakilmahmudshuvo.github.io/experience/",
+        "@type": "WebSite",
+        "description": "My professional experience.",
+        "headline": "Experience",
+        "sameAs": ["https://scholar.google.com/citations?user=EOsiW3sAAAAJ", "https://github.com/ShakilMahmudShuvo", "https://www.linkedin.com/in/smshuv0"],
+        "name": "Shakil Mahmud Shuvo",
+        "@context": "https://schema.org"
+      }
+    </script>
+
 
     <!-- Bootstrap & MDB -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
@@ -94,6 +128,11 @@
                   <a class="dropdown-item" href="/achievements/">Achievements</a>
                   <a class="dropdown-item" href="/test_scores/">Test Scores</a>
                 </div>
+              </li><!-- Terminal button -->
+              <li class="toggle-container">
+                <button id="terminal-nav-btn" title="Open terminal (press /)" onclick="(function(){var o=document.getElementById('terminal-overlay');if(o)o.classList.add('open');var i=document.getElementById('terminal-input');if(i)setTimeout(function(){i.focus();},50);})()">
+                  <i class="fas fa-terminal"></i>
+                </button>
               </li>
 
               <!-- Toogle theme mode -->
@@ -130,406 +169,290 @@
     
       
       
-        <div class="experience-item mb-4">
-          <div class="d-flex align-items-start mb-3">
+        <div class="exp-item">
+
+          <div class="exp-header">
             
-              <div class="company-logo me-4 flex-shrink-0">
-                <img src="/assets/img/logos/cognitus.png" 
-                     alt="Cognitus Consulting LLC logo"
-                     class="rounded"
-                     style="width: 80px; height: 80px; object-fit: contain;">
+              <div class="exp-logo">
+                <a href="https://cognitusconsulting.com/" target="_blank" rel="noopener">
+                  <img src="/assets/img/logos/cognitus.png"
+                       alt="Cognitus Consulting LLC"
+                       onerror="this.style.display='none'">
+                </a>
               </div>
             
-            <div class="experience-content flex-grow-1">
-              <h3 class="experience-title mb-1">
-                Associate Data Scientist
-              </h3>
-              <h5 class="mb-0 experience-company">
-                
-                  <a href="https://cognitusconsulting.com/" target="_blank" class="text-decoration-none">
-                    Cognitus Consulting LLC
-                  </a>
-                
-              </h5>
-              <div class="experience-meta mb-3">
-                <span class="badge bg-secondary me-2">
-                  <i class="fas fa-calendar-alt me-1"></i>Sept 2024 – Present
-                </span>
-                <span class="badge bg-secondary">
-                  <i class="fas fa-map-marker-alt me-1"></i>Dallas Parkway, Suite 200, Dallas, TX 75248 (Remote)
-                </span>
+
+            <div class="exp-meta">
+              <div class="exp-top-row">
+                <div>
+                  <h3 class="exp-role">Associate Data Scientist</h3>
+                  <p class="exp-company">
+                    
+                      <a href="https://cognitusconsulting.com/" target="_blank" rel="noopener">Cognitus Consulting LLC</a>
+                    
+                  </p>
+                </div>
+                <div class="exp-date-loc">
+                  <span class="exp-duration"><i class="fas fa-calendar-alt"></i>Sept 2024 – Present</span>
+                  <span class="exp-location"><i class="fas fa-map-marker-alt"></i>Dallas Parkway, Suite 200, Dallas, TX 75248 (Remote)</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="experience-details">
-            <h5 class="mb-2" style="color: var(--global-text-color);">Key Responsibilities:</h5>
-            <!-- Main responsibilities -->
-            <ul class="list-unstyled ms-3">
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Played a pivotal role in guiding the conceptualization and development phases, actively contributing to the seamless implementation of <strong>LambdaX</strong> at industry leaders like <a href='https://www.lockheedmartin.com/' target='_blank' class='text-decoration-none'>Lockheed Martin</a>.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Led data integration optimization for <strong>LambdaX</strong>, an <strong>AI-powered Contract Lifecycle Management</strong> platform.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Partnered with clients to design custom data workflows through <strong>automation</strong> and <strong>machine learning-driven</strong> process optimization.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Developed <strong>LLM-powered</strong> workflow generation system using <strong>MCP server-based architecture</strong>, creating an intelligent chatbot for automated workflow creation and optimization.
-              </li>
-              
-            </ul>
+          <ul class="exp-list">
+            
+            <li>Played a pivotal role in guiding the conceptualization and development phases, actively contributing to the seamless implementation of <strong>LambdaX</strong> at industry leaders like <a href='https://www.lockheedmartin.com/' target='_blank' class='text-decoration-none'>Lockheed Martin</a>.</li>
+            
+            <li>Led data integration optimization for <strong>LambdaX</strong>, an <strong>AI-powered Contract Lifecycle Management</strong> platform.</li>
+            
+            <li>Partnered with clients to design custom data workflows through <strong>automation</strong> and <strong>machine learning-driven</strong> process optimization.</li>
+            
+            <li>Developed <strong>LLM-powered</strong> workflow generation system using <strong>MCP server-based architecture</strong>, creating an intelligent chatbot for automated workflow creation and optimization.</li>
+            
+          </ul>
 
-            
-              <div class="mt-3">
-                <button class="btn btn-sm btn-outline-secondary mt-2" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target="#additional-1" 
-                        aria-expanded="false" 
-                        aria-controls="additional-1">
-                  <i class="fas fa-plus me-1"></i>View more
-                </button>
-                <div class="collapse mt-3" id="additional-1">
-                  <div class="card card-body" style="background-color: var(--global-bg-color); border-color: var(--global-divider-color);">
-                    <!-- Additional responsibilities -->
-                    <ul class="list-unstyled ms-3">
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Built and maintained scalable <strong>ETL pipelines</strong> for contract data from <strong>SAP</strong>, <strong>Salesforce</strong>, and internal systems.
-                      </li>
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Automated contract lifecycle processes to streamline operations using <strong>AI-powered document processing</strong>.
-                      </li>
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Collaborated with cross-functional global teams (engineering, product, QA) in a remote setting to ensure data accuracy and alignment with business goals.
-                      </li>
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Implemented centralized contract data management for <strong>real-time access</strong> and <strong>predictive analytics</strong>.
-                      </li>
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Optimized system performance by resolving operational bottlenecks through <strong>algorithmic approaches</strong>.
-                      </li>
-                      
-                    </ul>
-                  </div>
-                </div>
+          
+            <div class="exp-more-wrap">
+              <button class="exp-more-btn"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#exp-extra-1"
+                      aria-expanded="false">
+                <i class="fas fa-chevron-down"></i> Show more
+              </button>
+              <div class="collapse" id="exp-extra-1">
+                <ul class="exp-list exp-list-extra">
+                  
+                  <li>Built and maintained scalable <strong>ETL pipelines</strong> for contract data from <strong>SAP</strong>, <strong>Salesforce</strong>, and internal systems.</li>
+                  
+                  <li>Automated contract lifecycle processes to streamline operations using <strong>AI-powered document processing</strong>.</li>
+                  
+                  <li>Collaborated with cross-functional global teams (engineering, product, QA) in a remote setting to ensure data accuracy and alignment with business goals.</li>
+                  
+                  <li>Implemented centralized contract data management for <strong>real-time access</strong> and <strong>predictive analytics</strong>.</li>
+                  
+                  <li>Optimized system performance by resolving operational bottlenecks through <strong>algorithmic approaches</strong>.</li>
+                  
+                </ul>
               </div>
-            
-          </div>
+            </div>
+          
+
         </div>
+
         
-        
-          <hr class="my-4" style="border-color: var(--global-divider-color);">
+          <div class="exp-divider"></div>
         
       
-        <div class="experience-item mb-4">
-          <div class="d-flex align-items-start mb-3">
+        <div class="exp-item">
+
+          <div class="exp-header">
             
-              <div class="company-logo me-4 flex-shrink-0">
-                <img src="/assets/img/logos/ideascale.png" 
-                     alt="IdeaScale Bangladesh Limited logo"
-                     class="rounded"
-                     style="width: 80px; height: 80px; object-fit: contain;">
+              <div class="exp-logo">
+                <a href="https://ideascale.com/" target="_blank" rel="noopener">
+                  <img src="/assets/img/logos/ideascale.png"
+                       alt="IdeaScale Bangladesh Limited"
+                       onerror="this.style.display='none'">
+                </a>
               </div>
             
-            <div class="experience-content flex-grow-1">
-              <h3 class="experience-title mb-1">
-                Associate Software Engineer - Machine Learning
-              </h3>
-              <h5 class="mb-0 experience-company">
-                
-                  <a href="https://ideascale.com/" target="_blank" class="text-decoration-none">
-                    IdeaScale Bangladesh Limited
-                  </a>
-                
-              </h5>
-              <div class="experience-meta mb-3">
-                <span class="badge bg-secondary me-2">
-                  <i class="fas fa-calendar-alt me-1"></i>Nov 2023 – Aug 2024
-                </span>
-                <span class="badge bg-secondary">
-                  <i class="fas fa-map-marker-alt me-1"></i>Dhaka, Bangladesh
-                </span>
+
+            <div class="exp-meta">
+              <div class="exp-top-row">
+                <div>
+                  <h3 class="exp-role">Associate Software Engineer - Machine Learning</h3>
+                  <p class="exp-company">
+                    
+                      <a href="https://ideascale.com/" target="_blank" rel="noopener">IdeaScale Bangladesh Limited</a>
+                    
+                  </p>
+                </div>
+                <div class="exp-date-loc">
+                  <span class="exp-duration"><i class="fas fa-calendar-alt"></i>Nov 2023 – Aug 2024</span>
+                  <span class="exp-location"><i class="fas fa-map-marker-alt"></i>Dhaka, Bangladesh</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="experience-details">
-            <h5 class="mb-2" style="color: var(--global-text-color);">Key Responsibilities:</h5>
-            <!-- Main responsibilities -->
-            <ul class="list-unstyled ms-3">
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Developed and enhanced <strong>machine learning models</strong> for <strong>recommendation systems</strong>, increasing user engagement by 15% through personalized suggestions.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Designed a contextual recommendation system (proof-of-concept/research) powered by <strong>NLP</strong> and <strong>deep learning</strong>, improving recommendation relevance by 20%.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Integrated <strong>OpenSearch</strong> as a <strong>vector database</strong> for data collection and embedding storage.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Optimized text processing and embedding generation pipelines using <strong>transformer-based models</strong>.
-              </li>
-              
-            </ul>
+          <ul class="exp-list">
+            
+            <li>Developed and enhanced <strong>machine learning models</strong> for <strong>recommendation systems</strong>, increasing user engagement by 15% through personalized suggestions.</li>
+            
+            <li>Designed a contextual recommendation system (proof-of-concept/research) powered by <strong>NLP</strong> and <strong>deep learning</strong>, improving recommendation relevance by 20%.</li>
+            
+            <li>Integrated <strong>OpenSearch</strong> as a <strong>vector database</strong> for data collection and embedding storage.</li>
+            
+            <li>Optimized text processing and embedding generation pipelines using <strong>transformer-based models</strong>.</li>
+            
+          </ul>
 
-            
-              <div class="mt-3">
-                <button class="btn btn-sm btn-outline-secondary mt-2" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target="#additional-2" 
-                        aria-expanded="false" 
-                        aria-controls="additional-2">
-                  <i class="fas fa-plus me-1"></i>View more
-                </button>
-                <div class="collapse mt-3" id="additional-2">
-                  <div class="card card-body" style="background-color: var(--global-bg-color); border-color: var(--global-divider-color);">
-                    <!-- Additional responsibilities -->
-                    <ul class="list-unstyled ms-3">
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Deployed machine learning solutions via <strong>REST APIs</strong> with proper model versioning.
-                      </li>
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Collaborated on <strong>microservice</strong> management to ensure system reliability in distributed <strong>ML environments</strong>.
-                      </li>
-                      
-                    </ul>
-                  </div>
-                </div>
+          
+            <div class="exp-more-wrap">
+              <button class="exp-more-btn"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#exp-extra-2"
+                      aria-expanded="false">
+                <i class="fas fa-chevron-down"></i> Show more
+              </button>
+              <div class="collapse" id="exp-extra-2">
+                <ul class="exp-list exp-list-extra">
+                  
+                  <li>Deployed machine learning solutions via <strong>REST APIs</strong> with proper model versioning.</li>
+                  
+                  <li>Collaborated on <strong>microservice</strong> management to ensure system reliability in distributed <strong>ML environments</strong>.</li>
+                  
+                </ul>
               </div>
-            
-          </div>
+            </div>
+          
+
         </div>
+
         
-        
-          <hr class="my-4" style="border-color: var(--global-divider-color);">
+          <div class="exp-divider"></div>
         
       
-        <div class="experience-item mb-4">
-          <div class="d-flex align-items-start mb-3">
+        <div class="exp-item">
+
+          <div class="exp-header">
             
-              <div class="company-logo me-4 flex-shrink-0">
-                <img src="/assets/img/logos/ylrlab.png" 
-                     alt="Young Learners' Research Lab logo"
-                     class="rounded"
-                     style="width: 80px; height: 80px; object-fit: contain;">
+              <div class="exp-logo">
+                <a href="https://www.linkedin.com/company/aysrizon-ylrl/" target="_blank" rel="noopener">
+                  <img src="/assets/img/logos/ylrlab.png"
+                       alt="Young Learners' Research Lab"
+                       onerror="this.style.display='none'">
+                </a>
               </div>
             
-            <div class="experience-content flex-grow-1">
-              <h3 class="experience-title mb-1">
-                Research Assistant
-              </h3>
-              <h5 class="mb-0 experience-company">
-                
-                  <a href="https://www.linkedin.com/company/aysrizon-ylrl/" target="_blank" class="text-decoration-none">
-                    Young Learners' Research Lab
-                  </a>
-                
-              </h5>
-              <div class="experience-meta mb-3">
-                <span class="badge bg-secondary me-2">
-                  <i class="fas fa-calendar-alt me-1"></i>Jan 2023 – Present
-                </span>
-                <span class="badge bg-secondary">
-                  <i class="fas fa-map-marker-alt me-1"></i>Rajshahi, Bangladesh
-                </span>
+
+            <div class="exp-meta">
+              <div class="exp-top-row">
+                <div>
+                  <h3 class="exp-role">Research Assistant</h3>
+                  <p class="exp-company">
+                    
+                      <a href="https://www.linkedin.com/company/aysrizon-ylrl/" target="_blank" rel="noopener">Young Learners' Research Lab</a>
+                    
+                  </p>
+                </div>
+                <div class="exp-date-loc">
+                  <span class="exp-duration"><i class="fas fa-calendar-alt"></i>Jan 2023 – Present</span>
+                  <span class="exp-location"><i class="fas fa-map-marker-alt"></i>Rajshahi, Bangladesh</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="experience-details">
-            <h5 class="mb-2" style="color: var(--global-text-color);">Key Responsibilities:</h5>
-            <!-- Main responsibilities -->
-            <ul class="list-unstyled ms-3">
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Focused on <strong>Medical Imaging</strong>, <strong>Machine and Deep Learning</strong>, <strong>Computer Vision</strong>, character & pattern recognition, and <strong>Natural Language Processing</strong>.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Developed <strong>deep learning models</strong> for medical image analysis using <strong>CNNs</strong> and <strong>attention mechanisms</strong>, improving diagnostic accuracy by 18%.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Implemented <strong>computer vision algorithms</strong> for pattern recognition in clinical datasets using <strong>state-of-the-art architectures</strong>.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Collaborated with medical professionals to design and validate <strong>AI-assisted diagnostic tools</strong>.
-              </li>
-              
-            </ul>
+          <ul class="exp-list">
+            
+            <li>Focused on <strong>Medical Imaging</strong>, <strong>Machine and Deep Learning</strong>, <strong>Computer Vision</strong>, character & pattern recognition, and <strong>Natural Language Processing</strong>.</li>
+            
+            <li>Developed <strong>deep learning models</strong> for medical image analysis using <strong>CNNs</strong> and <strong>attention mechanisms</strong>, improving diagnostic accuracy by 18%.</li>
+            
+            <li>Implemented <strong>computer vision algorithms</strong> for pattern recognition in clinical datasets using <strong>state-of-the-art architectures</strong>.</li>
+            
+            <li>Collaborated with medical professionals to design and validate <strong>AI-assisted diagnostic tools</strong>.</li>
+            
+          </ul>
 
-            
-              <div class="mt-3">
-                <button class="btn btn-sm btn-outline-secondary mt-2" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target="#additional-3" 
-                        aria-expanded="false" 
-                        aria-controls="additional-3">
-                  <i class="fas fa-plus me-1"></i>View more
-                </button>
-                <div class="collapse mt-3" id="additional-3">
-                  <div class="card card-body" style="background-color: var(--global-bg-color); border-color: var(--global-divider-color);">
-                    <!-- Additional responsibilities -->
-                    <ul class="list-unstyled ms-3">
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Created <strong>NLP pipelines</strong> for processing and analyzing medical literature and clinical notes.
-                      </li>
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Presented research findings at departmental seminars and contributed to <strong>6 academic publications</strong> (2 first-author).
-                      </li>
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Mentored junior researchers on <strong>machine learning methodologies</strong> and best practices.
-                      </li>
-                      
-                    </ul>
-                  </div>
-                </div>
+          
+            <div class="exp-more-wrap">
+              <button class="exp-more-btn"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#exp-extra-3"
+                      aria-expanded="false">
+                <i class="fas fa-chevron-down"></i> Show more
+              </button>
+              <div class="collapse" id="exp-extra-3">
+                <ul class="exp-list exp-list-extra">
+                  
+                  <li>Created <strong>NLP pipelines</strong> for processing and analyzing medical literature and clinical notes.</li>
+                  
+                  <li>Presented research findings at departmental seminars and contributed to <strong>6 academic publications</strong> (2 first-author).</li>
+                  
+                  <li>Mentored junior researchers on <strong>machine learning methodologies</strong> and best practices.</li>
+                  
+                </ul>
               </div>
-            
-          </div>
+            </div>
+          
+
         </div>
+
         
-        
-          <hr class="my-4" style="border-color: var(--global-divider-color);">
+          <div class="exp-divider"></div>
         
       
-        <div class="experience-item mb-4">
-          <div class="d-flex align-items-start mb-3">
+        <div class="exp-item">
+
+          <div class="exp-header">
             
-              <div class="company-logo me-4 flex-shrink-0">
-                <img src="/assets/img/logos/outlier.png" 
-                     alt="Outlier logo"
-                     class="rounded"
-                     style="width: 80px; height: 80px; object-fit: contain;">
+              <div class="exp-logo">
+                <a href="https://outlier.ai/" target="_blank" rel="noopener">
+                  <img src="/assets/img/logos/outlier.png"
+                       alt="Outlier"
+                       onerror="this.style.display='none'">
+                </a>
               </div>
             
-            <div class="experience-content flex-grow-1">
-              <h3 class="experience-title mb-1">
-                Generative AI Trainer (Part Time)
-              </h3>
-              <h5 class="mb-0 experience-company">
-                
-                  <a href="https://outlier.ai/" target="_blank" class="text-decoration-none">
-                    Outlier
-                  </a>
-                
-              </h5>
-              <div class="experience-meta mb-3">
-                <span class="badge bg-secondary me-2">
-                  <i class="fas fa-calendar-alt me-1"></i>Jun 2024 – Present
-                </span>
-                <span class="badge bg-secondary">
-                  <i class="fas fa-map-marker-alt me-1"></i>San Francisco, CA (Remote)
-                </span>
+
+            <div class="exp-meta">
+              <div class="exp-top-row">
+                <div>
+                  <h3 class="exp-role">Generative AI Trainer (Part Time)</h3>
+                  <p class="exp-company">
+                    
+                      <a href="https://outlier.ai/" target="_blank" rel="noopener">Outlier</a>
+                    
+                  </p>
+                </div>
+                <div class="exp-date-loc">
+                  <span class="exp-duration"><i class="fas fa-calendar-alt"></i>Jun 2024 – Present</span>
+                  <span class="exp-location"><i class="fas fa-map-marker-alt"></i>San Francisco, CA (Remote)</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="experience-details">
-            <h5 class="mb-2" style="color: var(--global-text-color);">Key Responsibilities:</h5>
-            <!-- Main responsibilities -->
-            <ul class="list-unstyled ms-3">
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Engaged in advanced <strong>AI model training</strong> through structured text conversations, providing expert feedback on <strong>language model</strong> performance, accuracy, and cultural/linguistic understanding.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Conducted comprehensive <strong>AI response evaluation</strong> and <strong>hallucination detection</strong>, reviewing prompts and outputs for factual accuracy, grammatical correctness, and appropriate tone alignment.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Performed systematic <strong>AI voice response analysis</strong>, evaluating models across multiple dimensions including instruction adherence, relevance, truthfulness, and harmlessness detection.
-              </li>
-              
-              <li class="mb-2">
-                <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                Collaborated with <strong>AI development teams</strong> to enhance <strong>large language model</strong> capabilities through iterative feedback and quality assessment protocols.
-              </li>
-              
-            </ul>
+          <ul class="exp-list">
+            
+            <li>Engaged in advanced <strong>AI model training</strong> through structured text conversations, providing expert feedback on <strong>language model</strong> performance, accuracy, and cultural/linguistic understanding.</li>
+            
+            <li>Conducted comprehensive <strong>AI response evaluation</strong> and <strong>hallucination detection</strong>, reviewing prompts and outputs for factual accuracy, grammatical correctness, and appropriate tone alignment.</li>
+            
+            <li>Performed systematic <strong>AI voice response analysis</strong>, evaluating models across multiple dimensions including instruction adherence, relevance, truthfulness, and harmlessness detection.</li>
+            
+            <li>Collaborated with <strong>AI development teams</strong> to enhance <strong>large language model</strong> capabilities through iterative feedback and quality assessment protocols.</li>
+            
+          </ul>
 
-            
-              <div class="mt-3">
-                <button class="btn btn-sm btn-outline-secondary mt-2" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target="#additional-4" 
-                        aria-expanded="false" 
-                        aria-controls="additional-4">
-                  <i class="fas fa-plus me-1"></i>View more
-                </button>
-                <div class="collapse mt-3" id="additional-4">
-                  <div class="card card-body" style="background-color: var(--global-bg-color); border-color: var(--global-divider-color);">
-                    <!-- Additional responsibilities -->
-                    <ul class="list-unstyled ms-3">
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Applied rigorous <strong>model evaluation frameworks</strong> with prioritized assessment criteria, focusing on safety, accuracy, and instruction-following capabilities.
-                      </li>
-                      
-                      <li class="mb-2">
-                        <i class="fas fa-chevron-right me-2" style="color: #6c757d;"></i>
-                        Provided detailed performance justifications and analytical assessments to support continuous <strong>model improvement</strong> and development processes.
-                      </li>
-                      
-                    </ul>
-                  </div>
-                </div>
+          
+            <div class="exp-more-wrap">
+              <button class="exp-more-btn"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#exp-extra-4"
+                      aria-expanded="false">
+                <i class="fas fa-chevron-down"></i> Show more
+              </button>
+              <div class="collapse" id="exp-extra-4">
+                <ul class="exp-list exp-list-extra">
+                  
+                  <li>Applied rigorous <strong>model evaluation frameworks</strong> with prioritized assessment criteria, focusing on safety, accuracy, and instruction-following capabilities.</li>
+                  
+                  <li>Provided detailed performance justifications and analytical assessments to support continuous <strong>model improvement</strong> and development processes.</li>
+                  
+                </ul>
               </div>
-            
-          </div>
+            </div>
+          
+
         </div>
-        
+
         
       
     
@@ -537,130 +460,309 @@
 </div>
 
 <style>
-.experience-item {
-  padding: 1.5rem 0;
+/* ── Experience item ─────────────────────────────────────────────────────── */
+.exp-item {
+  padding: 1.75rem 1.5rem;
+  border-left: 3px solid #0d9488;
+  border-radius: 0 10px 10px 0;
+  background: var(--global-card-bg-color, #fff);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 2rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #0d9488;
+  border: 2px solid #f0fdfa;
+}
+.exp-item:hover { box-shadow: 0 3px 14px rgba(13,148,136,0.1); }
+html[data-theme='dark'] .exp-item { background: #1e1e1e; box-shadow: 0 1px 4px rgba(0,0,0,0.25); }
+html[data-theme='dark'] .exp-item::before { border-color: #1a1a1a; }
+
+.exp-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-.experience-title {
-  font-size: 1.25rem;
+/* Logo */
+.exp-logo {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--global-divider-color, #e9ecef);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 4px;
+}
+
+.exp-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.exp-logo:hover img {
+  transform: scale(1.08);
+}
+
+html[data-theme='dark'] .exp-logo {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+/* Meta */
+.exp-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-size: 1.05rem;
   font-weight: 600;
+  color: var(--global-text-color);
+  margin: 0 0 2px 0;
+  line-height: 1.3;
+}
+
+.exp-company {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light, #6c757d);
+  margin: 0;
+  font-weight: 400;
+}
+
+.exp-company a {
+  color: var(--global-theme-color, #0066cc);
+  text-decoration: none;
+}
+
+.exp-company a:hover {
+  text-decoration: underline;
+}
+
+html[data-theme='dark'] .exp-company a {
+  color: #66b3ff;
+}
+
+/* Date & Location */
+.exp-date-loc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.exp-duration,
+.exp-location {
+  font-size: 0.8rem;
+  color: var(--global-text-color-light, #6c757d);
+  white-space: nowrap;
+}
+
+.exp-duration i,
+.exp-location i {
+  font-size: 0.72rem;
+  margin-right: 4px;
+  color: #0d9488;
+  opacity: 1;
+}
+
+/* Responsibility list */
+.exp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0 0;
+}
+
+.exp-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--global-text-color);
 }
 
-.experience-company {
-  font-size: 1.1rem;
-  font-weight: 500;
+.exp-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #0d9488;
+  font-weight: 700;
 }
 
-.experience-company a {
-  color: #0066cc !important;
-  transition: color 0.3s ease;
+.exp-list-extra {
+  margin-top: 0.5rem;
 }
 
-.experience-company a:hover {
-  color: #0052a3 !important;
-  text-decoration: underline !important;
+/* Show more button */
+.exp-more-wrap {
+  margin-top: 0.6rem;
 }
 
-.company-logo img {
-  transition: transform 0.3s ease;
+.exp-more-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.82rem;
+  color: #0d9488;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
 }
 
-.company-logo img:hover {
-  transform: scale(1.05);
+.exp-more-btn:hover {
+  color: #0b7a72;
 }
 
-.badge {
-  font-size: 0.875rem;
-  font-weight: 500;
+.exp-more-btn i {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
 }
 
-/* Professional badge styling */
-.badge.bg-secondary {
-  background-color: #f8f9fa !important;
-  color: #495057 !important;
-  border: 1px solid #dee2e6 !important;
-  font-weight: 400 !important;
+.exp-more-btn[aria-expanded="true"] i {
+  transform: rotate(180deg);
 }
 
-/* Dark mode badge styling */
-html[data-theme='dark'] .badge.bg-secondary {
-  background-color: #343a40 !important;
-  color: #dee2e6 !important;
-  border: 1px solid #495057 !important;
+/* Divider */
+.exp-divider {
+  border: none;
+  height: 0.75rem;
+  margin: 0;
 }
 
-.responsibilities ul li {
-  line-height: 1.6;
-}
-
-.btn-outline-primary {
-  border-color: #6c757d;
-  color: #6c757d;
-}
-
-.btn-outline-primary:hover {
-  background-color: #6c757d;
-  border-color: #6c757d;
-  color: #ffffff;
-}
-
-.btn-outline-secondary {
-  border-color: #6c757d;
-  color: #6c757d;
-}
-
-.btn-outline-secondary:hover {
-  background-color: #6c757d;
-  border-color: #6c757d;
-  color: #ffffff;
-}
-
-/* Dark mode adjustments */
-html[data-theme='dark'] .experience-company a {
-  color: #66b3ff !important;
-}
-
-html[data-theme='dark'] .experience-company a:hover {
-  color: #99ccff !important;
-}
-
-html[data-theme='dark'] .btn-outline-secondary {
-  border-color: #adb5bd;
-  color: #adb5bd;
-}
-
-html[data-theme='dark'] .btn-outline-secondary:hover {
-  background-color: #adb5bd;
-  border-color: #adb5bd;
-  color: #212529;
-}
-
-@media (max-width: 768px) {
-  .d-flex {
+/* Responsive */
+@media (max-width: 600px) {
+  .exp-top-row {
     flex-direction: column;
+    gap: 0.25rem;
   }
-  
-  .company-logo {
-    margin-bottom: 1rem;
-    align-self: center;
-  }
-  
-  .experience-content {
-    text-align: center;
+
+  .exp-date-loc {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 0.75rem;
   }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.exp-more-btn').forEach(function (btn) {
+    var targetId = btn.getAttribute('data-target');
+    var target = document.querySelector(targetId);
+    if (!target) return;
+
+    target.addEventListener('show.bs.collapse', function () {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.innerHTML = '<i class="fas fa-chevron-down"></i> Show less';
+    });
+    target.addEventListener('hide.bs.collapse', function () {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '<i class="fas fa-chevron-down"></i> Show more';
+    });
+
+    /* Bootstrap 4 fallback */
+    if (typeof $ !== 'undefined') {
+      $(target).on('show.bs.collapse', function () {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = '<i class="fas fa-chevron-down"></i> Show less';
+      });
+      $(target).on('hide.bs.collapse', function () {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fas fa-chevron-down"></i> Show more';
+      });
+    }
+  });
+});
+</script>
+
       
     </div>
 
-    <!-- Footer -->    
-    <footer class="fixed-bottom">
-      <div class="container mt-0">
-        &copy; Copyright 2025 Shakil Mahmud Shuvo. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    <!-- Footer -->
+<footer class="fixed-bottom">
 
+
+  <style>
+  footer {
+    background: #1e293b !important;
+    border-top: none !important;
+    padding: 1.1rem 0 !important;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-style: italic;
+  }
+  .footer-tagline span {
+    color: #2dd4bf;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .footer-right {
+    font-size: 0.76rem;
+    color: #64748b;
+    text-align: right;
+  }
+  .footer-right a {
+    color: #64748b !important;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-right a:hover { color: #2dd4bf !important; }
+  @media (max-width: 600px) {
+    .footer-inner { justify-content: center; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+  </style>
+
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-tagline">
+        Writing code. Reading papers. Trying to do work that <span>actually matters</span>.
       </div>
-    </footer>
+      <div class="footer-right">
+        &copy; 2026 Shakil Shuvo
+        &ensp;&middot;&ensp; Dhaka, Bangladesh
+        &ensp;&middot;&ensp; <a href="mailto:sshuvo.cse@gmail.com">sshuvo.cse@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
 
     <!-- JavaScripts -->
     <!-- jQuery -->
@@ -776,6 +878,450 @@ html[data-theme='dark'] .btn-outline-secondary:hover {
   function getWidthPercentage() {
     return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
   }
+</script>
+
+    <style>
+#terminal-hint {
+  position: fixed;
+  bottom: 70px;
+  right: 24px;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-family: 'Courier New', monospace;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #1e3a5f;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  z-index: 998;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+#terminal-hint::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  bottom: -5px;
+  width: 8px; height: 8px;
+  background: #1e293b;
+  border-right: 1px solid #1e3a5f;
+  border-bottom: 1px solid #1e3a5f;
+  transform: rotate(45deg);
+}
+#terminal-hint.show { opacity: 1; }
+@keyframes nav-btn-glow {
+  0%, 100% { box-shadow: none; }
+  50%       { box-shadow: 0 0 0 3px rgba(45,212,191,0.35); }
+}
+#terminal-nav-btn.hint-glow { animation: nav-btn-glow 1s ease 3; }
+
+#terminal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+#terminal-overlay.open { display: flex; }
+
+#terminal-box {
+  width: min(680px, 95vw);
+  max-height: 70vh;
+  background: #0f172a;
+  border: 1px solid #1e3a5f;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #1e293b;
+  border-bottom: 1px solid #1e3a5f;
+  flex-shrink: 0;
+}
+.t-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.t-dot-red    { background: #ff5f57; }
+.t-dot-yellow { background: #febc2e; }
+.t-dot-green  { background: #28c840; }
+#terminal-title {
+  flex: 1;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #475569;
+  letter-spacing: 0.5px;
+}
+
+#terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px 6px;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  scroll-behavior: smooth;
+}
+
+#terminal-output::-webkit-scrollbar { width: 4px; }
+#terminal-output::-webkit-scrollbar-track { background: transparent; }
+#terminal-output::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 2px; }
+
+.t-line-cmd  { color: #2dd4bf; }
+.t-line-cmd::before { content: '❯ '; color: #0d9488; }
+.t-line-out  { color: #94a3b8; white-space: pre-wrap; }
+.t-line-dim  { color: #475569; }
+.t-line-err  { color: #f87171; }
+.t-line-good { color: #4ade80; }
+.t-line-head { color: #e2e8f0; font-weight: bold; }
+.t-line-accent { color: #2dd4bf; }
+.t-divider { color: #1e3a5f; }
+
+#terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 12px;
+  border-top: 1px solid #1e293b;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.t-prompt { color: #0d9488; font-size: 0.82rem; white-space: nowrap; }
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  caret-color: #2dd4bf;
+}
+</style>
+
+<!-- Hint tooltip -->
+<div id="terminal-hint"><i class="fas fa-terminal" style="color:#2dd4bf;margin-right:6px;font-size:0.65rem"></i>click <i class="fas fa-terminal" style="color:#2dd4bf"></i> in the nav or press <kbd style="background:#1e3a5f;padding:1px 5px;border-radius:3px;color:#2dd4bf;font-family:inherit">/</kbd></div>
+
+<!-- Terminal overlay -->
+<div id="terminal-overlay">
+  <div id="terminal-box">
+    <div id="terminal-titlebar">
+      <span class="t-dot t-dot-red"    onclick="closeTerminal()"></span>
+      <span class="t-dot t-dot-yellow"></span>
+      <span class="t-dot t-dot-green"></span>
+      <span id="terminal-title">shakil@portfolio: ~</span>
+    </div>
+    <div id="terminal-output"></div>
+    <div id="terminal-input-row">
+      <span class="t-prompt">shakil@portfolio ~ ❯</span>
+      <input id="terminal-input" type="text" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="type 'help'">
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay  = document.getElementById('terminal-overlay');
+  var output   = document.getElementById('terminal-output');
+  var input    = document.getElementById('terminal-input');
+  var hint     = document.getElementById('terminal-hint');
+  var history  = [];
+  var histIdx  = -1;
+  var opened   = false;
+
+  /* ── Show hint after 4s, display for 5s, pulse nav button ── */
+  setTimeout(function () {
+    hint.classList.add('show');
+    var navBtn = document.getElementById('terminal-nav-btn');
+    if (navBtn) navBtn.classList.add('hint-glow');
+    setTimeout(function () {
+      hint.classList.remove('show');
+      if (navBtn) navBtn.classList.remove('hint-glow');
+    }, 5000);
+  }, 4000);
+
+  /* ── Keyboard trigger ── */
+  document.addEventListener('keydown', function (e) {
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (e.key === '/' && !overlay.classList.contains('open')) {
+      e.preventDefault();
+      openTerminal();
+    }
+    if (e.key === 'Escape') closeTerminal();
+  });
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeTerminal();
+  });
+
+  function openTerminal() {
+    overlay.classList.add('open');
+    if (!opened) { printWelcome(); opened = true; }
+    setTimeout(function () { input.focus(); }, 50);
+  }
+
+  function closeTerminal() {
+    overlay.classList.remove('open');
+  }
+  window.closeTerminal = closeTerminal;
+
+  function printWelcome() {
+    printLines([
+      { cls: 'accent',  text: '  ███████╗██╗  ██╗ █████╗ ██╗  ██╗██╗██╗     ' },
+      { cls: 'accent',  text: '  ██╔════╝██║  ██║██╔══██╗██║ ██╔╝██║██║     ' },
+      { cls: 'accent',  text: '  ███████╗███████║███████║█████╔╝ ██║██║     ' },
+      { cls: 'accent',  text: '  ╚════██║██╔══██║██╔══██║██╔═██╗ ██║██║     ' },
+      { cls: 'accent',  text: '  ███████║██║  ██║██║  ██║██║  ██╗██║███████╗' },
+      { cls: 'accent',  text: '  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝' },
+      { cls: 'dim',     text: '' },
+      { cls: 'out',     text: '  Welcome to Shakil\'s portfolio terminal.' },
+      { cls: 'dim',     text: '  Type help to see available commands.' },
+      { cls: 'dim',     text: '' },
+    ]);
+  }
+
+  var COMMANDS = {
+    help: function () {
+      printLines([
+        { cls: 'head',   text: 'Available commands' },
+        { cls: 'divider',text: '──────────────────' },
+        { cls: 'out',    text: '  about      → who I am' },
+        { cls: 'out',    text: '  research   → publications' },
+        { cls: 'out',    text: '  skills     → tech stack' },
+        { cls: 'out',    text: '  contact    → get in touch' },
+        { cls: 'out',    text: '  hire       → availability' },
+        { cls: 'out',    text: '  ls         → site pages' },
+        { cls: 'out',    text: '  clear      → clear screen' },
+        { cls: 'out',    text: '  exit       → close terminal' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    about: function () {
+      printLines([
+        { cls: 'head',   text: 'Shakil Mahmud Shuvo' },
+        { cls: 'divider',text: '───────────────────' },
+        { cls: 'out',    text: '  ML engineer & researcher. Based in Dhaka, Bangladesh.' },
+        { cls: 'out',    text: '  Associate Data Scientist at Cognitus Consulting.' },
+        { cls: 'out',    text: '  Building LLM tools for enterprise — RAG, MCP, contract AI.' },
+        { cls: 'dim',    text: '' },
+        { cls: 'out',    text: '  Research background in healthcare AI. 6 papers published' },
+        { cls: 'out',    text: '  across ACM, IEEE, and Springer. Most proud of the suicidal' },
+        { cls: 'out',    text: '  ideation detection paper — felt like work that could matter.' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  → Actively looking for PhD programs in ML/AI.' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    research: function () {
+      printLines([
+        { cls: 'head',   text: '6 Publications' },
+        { cls: 'divider',text: '──────────────' },
+        { cls: 'accent', text: '  2024' },
+        { cls: 'out',    text: '  [1] Early Detection of Suicidal Ideation via BiGRU + LMs    ACM' },
+        { cls: 'out',    text: '  [2] Retinal Disease Classification with CBAM + Skip Conn.    ACM' },
+        { cls: 'out',    text: '  [3] Glioma Segmentation: 3D Residual Attention U-Net         ACM' },
+        { cls: 'accent', text: '  2023' },
+        { cls: 'out',    text: '  [4] Brain Tumor Classification with DenseNet + Ensemble   Springer' },
+        { cls: 'out',    text: '  [5] Late Fusion CNN for Brain Tumor MRI Classification      IEEE' },
+        { cls: 'out',    text: '  [6] Leukemia Classification with Attention CNN           Springer' },
+        { cls: 'dim',    text: '' },
+        { cls: 'dim',    text: '  → /research/ for abstracts, links, and BibTeX' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    skills: function () {
+      printLines([
+        { cls: 'head',   text: 'Tech Stack' },
+        { cls: 'divider',text: '──────────' },
+        { cls: 'dim',    text: '  Languages' },
+        { cls: 'out',    text: '  Python · SQL · R' },
+        { cls: 'dim',    text: '  ML / Deep Learning' },
+        { cls: 'out',    text: '  PyTorch · TensorFlow · Keras · Scikit-learn · OpenCV' },
+        { cls: 'dim',    text: '  NLP & LLMs' },
+        { cls: 'out',    text: '  LangChain · HuggingFace · OpenAI API · RAG · BERT' },
+        { cls: 'dim',    text: '  Data & Cloud' },
+        { cls: 'out',    text: '  AWS · Azure · Docker · Spark · Pandas' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    contact: function () {
+      printLines([
+        { cls: 'head',   text: 'Get in Touch' },
+        { cls: 'divider',text: '────────────' },
+        { cls: 'out',    text: '  email     sshuvo.cse@gmail.com' },
+        { cls: 'out',    text: '  linkedin  linkedin.com/in/smshuv0' },
+        { cls: 'out',    text: '  github    github.com/ShakilMahmudShuvo' },
+        { cls: 'out',    text: '  scholar   scholar.google.com/citations?user=EOsiW3sAAAAJ' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    hire: function () {
+      printLines([
+        { cls: 'head',   text: 'Availability' },
+        { cls: 'divider',text: '────────────' },
+        { cls: 'good',   text: '  ● Open to PhD programs in ML/AI' },
+        { cls: 'good',   text: '  ● Open to research collaborations' },
+        { cls: 'dim',    text: '  ○ Not actively seeking new industry roles' },
+        { cls: 'dim',    text: '' },
+        { cls: 'out',    text: '  Best way to reach me: sshuvo.cse@gmail.com' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    ls: function () {
+      printLines([
+        { cls: 'out',    text: '  drwxr-xr-x  about/' },
+        { cls: 'out',    text: '  drwxr-xr-x  research/' },
+        { cls: 'out',    text: '  drwxr-xr-x  experience/' },
+        { cls: 'out',    text: '  drwxr-xr-x  cv/' },
+        { cls: 'out',    text: '  drwxr-xr-x  education/' },
+        { cls: 'out',    text: '  drwxr-xr-x  projects/' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    clear: function () { output.innerHTML = ''; },
+
+    exit:  function () { closeTerminal(); },
+    quit:  function () { closeTerminal(); },
+    q:     function () { closeTerminal(); },
+
+    /* ── Easter eggs ── */
+    whoami: function () {
+      printLines([{ cls: 'out', text: '  You are a visitor. A curious one at that.' }, { cls: 'dim', text: '' }]);
+    },
+
+    'sudo rm -rf /': function () {
+      printLines([{ cls: 'err', text: '  Nice try.' }, { cls: 'dim', text: '' }]);
+    },
+
+    vim: function () {
+      printLines([
+        { cls: 'out', text: '  Opening vim...' },
+        { cls: 'dim', text: '  (Type :q to exit vim. Or don\'t. We\'ve all been there.)' },
+        { cls: 'dim', text: '' },
+      ]);
+    },
+
+    coffee: function () {
+      printLines([
+        { cls: 'dim',  text: '  Brewing...' },
+        { cls: 'good', text: '  Done. ☕  Enjoy.' },
+        { cls: 'dim',  text: '' },
+      ]);
+    },
+
+    'git log': function () {
+      printLines([
+        { cls: 'accent', text: '  commit f3a1b2c  (HEAD -> life)' },
+        { cls: 'dim',    text: '  Date: Present' },
+        { cls: 'out',    text: '  Actively applying for PhD programs' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit 9e2d4f1' },
+        { cls: 'dim',    text: '  Date: Sept 2024' },
+        { cls: 'out',    text: '  Joined Cognitus Consulting as Associate Data Scientist' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit a7c5e3b' },
+        { cls: 'dim',    text: '  Date: Sept 2023' },
+        { cls: 'out',    text: '  Graduated from RUET with B.Sc. in CSE' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit 2b4d8e9' },
+        { cls: 'dim',    text: '  Date: Jan 2023' },
+        { cls: 'out',    text: '  Published first paper. Decided this was it.' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    python: function () {
+      printLines([
+        { cls: 'out',    text: '  Python 3.11.0 (Shakil\'s machine)' },
+        { cls: 'accent', text: '  >>> print("Hello, World!")' },
+        { cls: 'out',    text: '  Hello, World!' },
+        { cls: 'accent', text: '  >>> import torch; print(torch.__version__)' },
+        { cls: 'out',    text: '  2.3.0+cu121' },
+        { cls: 'accent', text: '  >>> exit()' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+  };
+
+  function printLines(lines) {
+    lines.forEach(function (l) {
+      var div = document.createElement('div');
+      var cls = l.cls || 'out';
+      if (cls === 'out')     div.className = 't-line-out';
+      else if (cls === 'dim')    div.className = 't-line-dim';
+      else if (cls === 'err')    div.className = 't-line-err';
+      else if (cls === 'good')   div.className = 't-line-good';
+      else if (cls === 'head')   div.className = 't-line-head';
+      else if (cls === 'accent') div.className = 't-line-accent';
+      else if (cls === 'divider')div.className = 't-divider';
+      div.textContent = l.text;
+      output.appendChild(div);
+    });
+    output.scrollTop = output.scrollHeight;
+  }
+
+  function printCmd(cmd) {
+    var div = document.createElement('div');
+    div.className = 't-line-cmd';
+    div.textContent = cmd;
+    output.appendChild(div);
+  }
+
+  function handleCommand(raw) {
+    var cmd = raw.trim().toLowerCase();
+    if (!cmd) return;
+
+    history.unshift(raw);
+    histIdx = -1;
+    printCmd(raw);
+
+    if (COMMANDS[cmd]) {
+      COMMANDS[cmd]();
+    } else {
+      printLines([
+        { cls: 'err', text: '  command not found: ' + cmd + '  (try \'help\')' },
+        { cls: 'dim', text: '' },
+      ]);
+    }
+  }
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      handleCommand(input.value);
+      input.value = '';
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (histIdx < history.length - 1) { histIdx++; input.value = history[histIdx]; }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (histIdx > 0) { histIdx--; input.value = history[histIdx]; }
+      else { histIdx = -1; input.value = ''; }
+    } else if (e.key === 'Escape') {
+      closeTerminal();
+    }
+  });
+})();
 </script>
 
   </body>

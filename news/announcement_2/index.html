@@ -11,8 +11,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Presented my first paper in IEEE conference | Shakil Mahmud Shuvo</title>
     <meta name="author" content="Shakil Mahmud Shuvo" />
-    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+    <meta name="description" content="Machine Learning Researcher & Data Scientist specializing in AI for Healthcare. 6 peer-reviewed publications in medical imaging, NLP, and deep learning. PhD aspirant.
 " />
+
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Shakil Mahmud Shuvo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shakil Mahmud Shuvo | Presented my first paper in IEEE conference" />
+    <meta property="og:url" content="https://shakilmahmudshuvo.github.io/news/announcement_2/" />
+    <meta property="og:description" content="Machine Learning Researcher & Data Scientist specializing in AI for Healthcare. 6 peer-reviewed publications in medical imaging, NLP, and deep learning. PhD aspirant.
+" />
+    <meta property="og:image" content="profile.jpg" />
+    <meta property="og:locale" content="en" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Presented my first paper in IEEE conference" />
+    <meta name="twitter:description" content="Machine Learning Researcher & Data Scientist specializing in AI for Healthcare. 6 peer-reviewed publications in medical imaging, NLP, and deep learning. PhD aspirant.
+" />
+    <meta name="twitter:image" content="profile.jpg" />
+    
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "author":
+        {
+          "@type": "Person",
+          "name": "Shakil Mahmud Shuvo"
+        },
+        "url": "https://shakilmahmudshuvo.github.io/news/announcement_2/",
+        "@type": "WebSite",
+        "description": "Machine Learning Researcher & Data Scientist specializing in AI for Healthcare. 6 peer-reviewed publications in medical imaging, NLP, and deep learning. PhD aspirant.
+",
+        "headline": "Presented my first paper in IEEE conference",
+        "sameAs": ["https://scholar.google.com/citations?user=EOsiW3sAAAAJ", "https://github.com/ShakilMahmudShuvo", "https://www.linkedin.com/in/smshuv0"],
+        "name": "Shakil Mahmud Shuvo",
+        "@context": "https://schema.org"
+      }
+    </script>
 
 
     <!-- Bootstrap & MDB -->
@@ -95,6 +132,11 @@
                   <a class="dropdown-item" href="/achievements/">Achievements</a>
                   <a class="dropdown-item" href="/test_scores/">Test Scores</a>
                 </div>
+              </li><!-- Terminal button -->
+              <li class="toggle-container">
+                <button id="terminal-nav-btn" title="Open terminal (press /)" onclick="(function(){var o=document.getElementById('terminal-overlay');if(o)o.classList.add('open');var i=document.getElementById('terminal-input');if(i)setTimeout(function(){i.focus();},50);})()">
+                  <i class="fas fa-terminal"></i>
+                </button>
               </li>
 
               <!-- Toogle theme mode -->
@@ -144,13 +186,65 @@
       
     </div>
 
-    <!-- Footer -->    
-    <footer class="fixed-bottom">
-      <div class="container mt-0">
-        &copy; Copyright 2025 Shakil Mahmud Shuvo. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    <!-- Footer -->
+<footer class="fixed-bottom">
 
+
+  <style>
+  footer {
+    background: #1e293b !important;
+    border-top: none !important;
+    padding: 1.1rem 0 !important;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-style: italic;
+  }
+  .footer-tagline span {
+    color: #2dd4bf;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .footer-right {
+    font-size: 0.76rem;
+    color: #64748b;
+    text-align: right;
+  }
+  .footer-right a {
+    color: #64748b !important;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-right a:hover { color: #2dd4bf !important; }
+  @media (max-width: 600px) {
+    .footer-inner { justify-content: center; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+  </style>
+
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-tagline">
+        Writing code. Reading papers. Trying to do work that <span>actually matters</span>.
       </div>
-    </footer>
+      <div class="footer-right">
+        &copy; 2026 Shakil Shuvo
+        &ensp;&middot;&ensp; Dhaka, Bangladesh
+        &ensp;&middot;&ensp; <a href="mailto:sshuvo.cse@gmail.com">sshuvo.cse@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
 
     <!-- JavaScripts -->
     <!-- jQuery -->
@@ -266,6 +360,450 @@
   function getWidthPercentage() {
     return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
   }
+</script>
+
+    <style>
+#terminal-hint {
+  position: fixed;
+  bottom: 70px;
+  right: 24px;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-family: 'Courier New', monospace;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #1e3a5f;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  z-index: 998;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+#terminal-hint::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  bottom: -5px;
+  width: 8px; height: 8px;
+  background: #1e293b;
+  border-right: 1px solid #1e3a5f;
+  border-bottom: 1px solid #1e3a5f;
+  transform: rotate(45deg);
+}
+#terminal-hint.show { opacity: 1; }
+@keyframes nav-btn-glow {
+  0%, 100% { box-shadow: none; }
+  50%       { box-shadow: 0 0 0 3px rgba(45,212,191,0.35); }
+}
+#terminal-nav-btn.hint-glow { animation: nav-btn-glow 1s ease 3; }
+
+#terminal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+#terminal-overlay.open { display: flex; }
+
+#terminal-box {
+  width: min(680px, 95vw);
+  max-height: 70vh;
+  background: #0f172a;
+  border: 1px solid #1e3a5f;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #1e293b;
+  border-bottom: 1px solid #1e3a5f;
+  flex-shrink: 0;
+}
+.t-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.t-dot-red    { background: #ff5f57; }
+.t-dot-yellow { background: #febc2e; }
+.t-dot-green  { background: #28c840; }
+#terminal-title {
+  flex: 1;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #475569;
+  letter-spacing: 0.5px;
+}
+
+#terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px 6px;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  scroll-behavior: smooth;
+}
+
+#terminal-output::-webkit-scrollbar { width: 4px; }
+#terminal-output::-webkit-scrollbar-track { background: transparent; }
+#terminal-output::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 2px; }
+
+.t-line-cmd  { color: #2dd4bf; }
+.t-line-cmd::before { content: '❯ '; color: #0d9488; }
+.t-line-out  { color: #94a3b8; white-space: pre-wrap; }
+.t-line-dim  { color: #475569; }
+.t-line-err  { color: #f87171; }
+.t-line-good { color: #4ade80; }
+.t-line-head { color: #e2e8f0; font-weight: bold; }
+.t-line-accent { color: #2dd4bf; }
+.t-divider { color: #1e3a5f; }
+
+#terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 12px;
+  border-top: 1px solid #1e293b;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.t-prompt { color: #0d9488; font-size: 0.82rem; white-space: nowrap; }
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  caret-color: #2dd4bf;
+}
+</style>
+
+<!-- Hint tooltip -->
+<div id="terminal-hint"><i class="fas fa-terminal" style="color:#2dd4bf;margin-right:6px;font-size:0.65rem"></i>click <i class="fas fa-terminal" style="color:#2dd4bf"></i> in the nav or press <kbd style="background:#1e3a5f;padding:1px 5px;border-radius:3px;color:#2dd4bf;font-family:inherit">/</kbd></div>
+
+<!-- Terminal overlay -->
+<div id="terminal-overlay">
+  <div id="terminal-box">
+    <div id="terminal-titlebar">
+      <span class="t-dot t-dot-red"    onclick="closeTerminal()"></span>
+      <span class="t-dot t-dot-yellow"></span>
+      <span class="t-dot t-dot-green"></span>
+      <span id="terminal-title">shakil@portfolio: ~</span>
+    </div>
+    <div id="terminal-output"></div>
+    <div id="terminal-input-row">
+      <span class="t-prompt">shakil@portfolio ~ ❯</span>
+      <input id="terminal-input" type="text" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="type 'help'">
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay  = document.getElementById('terminal-overlay');
+  var output   = document.getElementById('terminal-output');
+  var input    = document.getElementById('terminal-input');
+  var hint     = document.getElementById('terminal-hint');
+  var history  = [];
+  var histIdx  = -1;
+  var opened   = false;
+
+  /* ── Show hint after 4s, display for 5s, pulse nav button ── */
+  setTimeout(function () {
+    hint.classList.add('show');
+    var navBtn = document.getElementById('terminal-nav-btn');
+    if (navBtn) navBtn.classList.add('hint-glow');
+    setTimeout(function () {
+      hint.classList.remove('show');
+      if (navBtn) navBtn.classList.remove('hint-glow');
+    }, 5000);
+  }, 4000);
+
+  /* ── Keyboard trigger ── */
+  document.addEventListener('keydown', function (e) {
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (e.key === '/' && !overlay.classList.contains('open')) {
+      e.preventDefault();
+      openTerminal();
+    }
+    if (e.key === 'Escape') closeTerminal();
+  });
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeTerminal();
+  });
+
+  function openTerminal() {
+    overlay.classList.add('open');
+    if (!opened) { printWelcome(); opened = true; }
+    setTimeout(function () { input.focus(); }, 50);
+  }
+
+  function closeTerminal() {
+    overlay.classList.remove('open');
+  }
+  window.closeTerminal = closeTerminal;
+
+  function printWelcome() {
+    printLines([
+      { cls: 'accent',  text: '  ███████╗██╗  ██╗ █████╗ ██╗  ██╗██╗██╗     ' },
+      { cls: 'accent',  text: '  ██╔════╝██║  ██║██╔══██╗██║ ██╔╝██║██║     ' },
+      { cls: 'accent',  text: '  ███████╗███████║███████║█████╔╝ ██║██║     ' },
+      { cls: 'accent',  text: '  ╚════██║██╔══██║██╔══██║██╔═██╗ ██║██║     ' },
+      { cls: 'accent',  text: '  ███████║██║  ██║██║  ██║██║  ██╗██║███████╗' },
+      { cls: 'accent',  text: '  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝' },
+      { cls: 'dim',     text: '' },
+      { cls: 'out',     text: '  Welcome to Shakil\'s portfolio terminal.' },
+      { cls: 'dim',     text: '  Type help to see available commands.' },
+      { cls: 'dim',     text: '' },
+    ]);
+  }
+
+  var COMMANDS = {
+    help: function () {
+      printLines([
+        { cls: 'head',   text: 'Available commands' },
+        { cls: 'divider',text: '──────────────────' },
+        { cls: 'out',    text: '  about      → who I am' },
+        { cls: 'out',    text: '  research   → publications' },
+        { cls: 'out',    text: '  skills     → tech stack' },
+        { cls: 'out',    text: '  contact    → get in touch' },
+        { cls: 'out',    text: '  hire       → availability' },
+        { cls: 'out',    text: '  ls         → site pages' },
+        { cls: 'out',    text: '  clear      → clear screen' },
+        { cls: 'out',    text: '  exit       → close terminal' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    about: function () {
+      printLines([
+        { cls: 'head',   text: 'Shakil Mahmud Shuvo' },
+        { cls: 'divider',text: '───────────────────' },
+        { cls: 'out',    text: '  ML engineer & researcher. Based in Dhaka, Bangladesh.' },
+        { cls: 'out',    text: '  Associate Data Scientist at Cognitus Consulting.' },
+        { cls: 'out',    text: '  Building LLM tools for enterprise — RAG, MCP, contract AI.' },
+        { cls: 'dim',    text: '' },
+        { cls: 'out',    text: '  Research background in healthcare AI. 6 papers published' },
+        { cls: 'out',    text: '  across ACM, IEEE, and Springer. Most proud of the suicidal' },
+        { cls: 'out',    text: '  ideation detection paper — felt like work that could matter.' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  → Actively looking for PhD programs in ML/AI.' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    research: function () {
+      printLines([
+        { cls: 'head',   text: '6 Publications' },
+        { cls: 'divider',text: '──────────────' },
+        { cls: 'accent', text: '  2024' },
+        { cls: 'out',    text: '  [1] Early Detection of Suicidal Ideation via BiGRU + LMs    ACM' },
+        { cls: 'out',    text: '  [2] Retinal Disease Classification with CBAM + Skip Conn.    ACM' },
+        { cls: 'out',    text: '  [3] Glioma Segmentation: 3D Residual Attention U-Net         ACM' },
+        { cls: 'accent', text: '  2023' },
+        { cls: 'out',    text: '  [4] Brain Tumor Classification with DenseNet + Ensemble   Springer' },
+        { cls: 'out',    text: '  [5] Late Fusion CNN for Brain Tumor MRI Classification      IEEE' },
+        { cls: 'out',    text: '  [6] Leukemia Classification with Attention CNN           Springer' },
+        { cls: 'dim',    text: '' },
+        { cls: 'dim',    text: '  → /research/ for abstracts, links, and BibTeX' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    skills: function () {
+      printLines([
+        { cls: 'head',   text: 'Tech Stack' },
+        { cls: 'divider',text: '──────────' },
+        { cls: 'dim',    text: '  Languages' },
+        { cls: 'out',    text: '  Python · SQL · R' },
+        { cls: 'dim',    text: '  ML / Deep Learning' },
+        { cls: 'out',    text: '  PyTorch · TensorFlow · Keras · Scikit-learn · OpenCV' },
+        { cls: 'dim',    text: '  NLP & LLMs' },
+        { cls: 'out',    text: '  LangChain · HuggingFace · OpenAI API · RAG · BERT' },
+        { cls: 'dim',    text: '  Data & Cloud' },
+        { cls: 'out',    text: '  AWS · Azure · Docker · Spark · Pandas' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    contact: function () {
+      printLines([
+        { cls: 'head',   text: 'Get in Touch' },
+        { cls: 'divider',text: '────────────' },
+        { cls: 'out',    text: '  email     sshuvo.cse@gmail.com' },
+        { cls: 'out',    text: '  linkedin  linkedin.com/in/smshuv0' },
+        { cls: 'out',    text: '  github    github.com/ShakilMahmudShuvo' },
+        { cls: 'out',    text: '  scholar   scholar.google.com/citations?user=EOsiW3sAAAAJ' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    hire: function () {
+      printLines([
+        { cls: 'head',   text: 'Availability' },
+        { cls: 'divider',text: '────────────' },
+        { cls: 'good',   text: '  ● Open to PhD programs in ML/AI' },
+        { cls: 'good',   text: '  ● Open to research collaborations' },
+        { cls: 'dim',    text: '  ○ Not actively seeking new industry roles' },
+        { cls: 'dim',    text: '' },
+        { cls: 'out',    text: '  Best way to reach me: sshuvo.cse@gmail.com' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    ls: function () {
+      printLines([
+        { cls: 'out',    text: '  drwxr-xr-x  about/' },
+        { cls: 'out',    text: '  drwxr-xr-x  research/' },
+        { cls: 'out',    text: '  drwxr-xr-x  experience/' },
+        { cls: 'out',    text: '  drwxr-xr-x  cv/' },
+        { cls: 'out',    text: '  drwxr-xr-x  education/' },
+        { cls: 'out',    text: '  drwxr-xr-x  projects/' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    clear: function () { output.innerHTML = ''; },
+
+    exit:  function () { closeTerminal(); },
+    quit:  function () { closeTerminal(); },
+    q:     function () { closeTerminal(); },
+
+    /* ── Easter eggs ── */
+    whoami: function () {
+      printLines([{ cls: 'out', text: '  You are a visitor. A curious one at that.' }, { cls: 'dim', text: '' }]);
+    },
+
+    'sudo rm -rf /': function () {
+      printLines([{ cls: 'err', text: '  Nice try.' }, { cls: 'dim', text: '' }]);
+    },
+
+    vim: function () {
+      printLines([
+        { cls: 'out', text: '  Opening vim...' },
+        { cls: 'dim', text: '  (Type :q to exit vim. Or don\'t. We\'ve all been there.)' },
+        { cls: 'dim', text: '' },
+      ]);
+    },
+
+    coffee: function () {
+      printLines([
+        { cls: 'dim',  text: '  Brewing...' },
+        { cls: 'good', text: '  Done. ☕  Enjoy.' },
+        { cls: 'dim',  text: '' },
+      ]);
+    },
+
+    'git log': function () {
+      printLines([
+        { cls: 'accent', text: '  commit f3a1b2c  (HEAD -> life)' },
+        { cls: 'dim',    text: '  Date: Present' },
+        { cls: 'out',    text: '  Actively applying for PhD programs' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit 9e2d4f1' },
+        { cls: 'dim',    text: '  Date: Sept 2024' },
+        { cls: 'out',    text: '  Joined Cognitus Consulting as Associate Data Scientist' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit a7c5e3b' },
+        { cls: 'dim',    text: '  Date: Sept 2023' },
+        { cls: 'out',    text: '  Graduated from RUET with B.Sc. in CSE' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit 2b4d8e9' },
+        { cls: 'dim',    text: '  Date: Jan 2023' },
+        { cls: 'out',    text: '  Published first paper. Decided this was it.' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    python: function () {
+      printLines([
+        { cls: 'out',    text: '  Python 3.11.0 (Shakil\'s machine)' },
+        { cls: 'accent', text: '  >>> print("Hello, World!")' },
+        { cls: 'out',    text: '  Hello, World!' },
+        { cls: 'accent', text: '  >>> import torch; print(torch.__version__)' },
+        { cls: 'out',    text: '  2.3.0+cu121' },
+        { cls: 'accent', text: '  >>> exit()' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+  };
+
+  function printLines(lines) {
+    lines.forEach(function (l) {
+      var div = document.createElement('div');
+      var cls = l.cls || 'out';
+      if (cls === 'out')     div.className = 't-line-out';
+      else if (cls === 'dim')    div.className = 't-line-dim';
+      else if (cls === 'err')    div.className = 't-line-err';
+      else if (cls === 'good')   div.className = 't-line-good';
+      else if (cls === 'head')   div.className = 't-line-head';
+      else if (cls === 'accent') div.className = 't-line-accent';
+      else if (cls === 'divider')div.className = 't-divider';
+      div.textContent = l.text;
+      output.appendChild(div);
+    });
+    output.scrollTop = output.scrollHeight;
+  }
+
+  function printCmd(cmd) {
+    var div = document.createElement('div');
+    div.className = 't-line-cmd';
+    div.textContent = cmd;
+    output.appendChild(div);
+  }
+
+  function handleCommand(raw) {
+    var cmd = raw.trim().toLowerCase();
+    if (!cmd) return;
+
+    history.unshift(raw);
+    histIdx = -1;
+    printCmd(raw);
+
+    if (COMMANDS[cmd]) {
+      COMMANDS[cmd]();
+    } else {
+      printLines([
+        { cls: 'err', text: '  command not found: ' + cmd + '  (try \'help\')' },
+        { cls: 'dim', text: '' },
+      ]);
+    }
+  }
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      handleCommand(input.value);
+      input.value = '';
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (histIdx < history.length - 1) { histIdx++; input.value = history[histIdx]; }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (histIdx > 0) { histIdx--; input.value = history[histIdx]; }
+      else { histIdx = -1; input.value = ''; }
+    } else if (e.key === 'Escape') {
+      closeTerminal();
+    }
+  });
+})();
 </script>
 
   </body>

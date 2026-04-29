@@ -11,8 +11,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CV | Shakil Mahmud Shuvo</title>
     <meta name="author" content="Shakil Mahmud Shuvo" />
-    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-" />
+    <meta name="description" content="Curriculum Vitae — Shakil Mahmud Shuvo" />
+
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Shakil Mahmud Shuvo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shakil Mahmud Shuvo | CV" />
+    <meta property="og:url" content="https://shakilmahmudshuvo.github.io/cv/" />
+    <meta property="og:description" content="Curriculum Vitae — Shakil Mahmud Shuvo" />
+    <meta property="og:image" content="profile.jpg" />
+    <meta property="og:locale" content="en" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="CV" />
+    <meta name="twitter:description" content="Curriculum Vitae — Shakil Mahmud Shuvo" />
+    <meta name="twitter:image" content="profile.jpg" />
+    
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "author":
+        {
+          "@type": "Person",
+          "name": "Shakil Mahmud Shuvo"
+        },
+        "url": "https://shakilmahmudshuvo.github.io/cv/",
+        "@type": "WebSite",
+        "description": "Curriculum Vitae — Shakil Mahmud Shuvo",
+        "headline": "CV",
+        "sameAs": ["https://scholar.google.com/citations?user=EOsiW3sAAAAJ", "https://github.com/ShakilMahmudShuvo", "https://www.linkedin.com/in/smshuv0"],
+        "name": "Shakil Mahmud Shuvo",
+        "@context": "https://schema.org"
+      }
+    </script>
 
 
     <!-- Bootstrap & MDB -->
@@ -95,6 +128,11 @@
                   <a class="dropdown-item" href="/achievements/">Achievements</a>
                   <a class="dropdown-item" href="/test_scores/">Test Scores</a>
                 </div>
+              </li><!-- Terminal button -->
+              <li class="toggle-container">
+                <button id="terminal-nav-btn" title="Open terminal (press /)" onclick="(function(){var o=document.getElementById('terminal-overlay');if(o)o.classList.add('open');var i=document.getElementById('terminal-input');if(i)setTimeout(function(){i.focus();},50);})()">
+                  <i class="fas fa-terminal"></i>
+                </button>
               </li>
 
               <!-- Toogle theme mode -->
@@ -126,19 +164,769 @@
 
           <header class="post-header">
             <h1 class="post-title">CV</h1>
-            <p class="post-description"></p>
+            <p class="post-description">Curriculum Vitae — Shakil Mahmud Shuvo</p>
           </header>
 
           <article>
-            <script type="text/javascript">
-    window.location.href = "/assets/pdf/Shakil_Mahmud_CV.pdf";
+            <script>
+document.addEventListener('DOMContentLoaded', function () {
+  var h = document.querySelector('.post-header');
+  if (h) h.style.display = 'none';
+});
 </script>
 
-<noscript>
-    <meta http-equiv="refresh" content="0; url=/assets/pdf/Shakil_Mahmud_CV.pdf" />
-</noscript>
+<style>
+/* ── Base ──────────────────────────────────────────────────────────────── */
+.cv-wrap { text-align: left !important; }
+.cv-wrap * { box-sizing: border-box; }
 
-<p>Redirecting to CV… If you are not redirected automatically, <a href="/assets/pdf/Shakil_Mahmud_CV.pdf">click here</a>.</p>
+/* ── Hero ──────────────────────────────────────────────────────────────── */
+.cv-hero {
+  background: linear-gradient(135deg, #1e293b 0%, #0f4d47 100%);
+  border-radius: 12px;
+  padding: 2.25rem 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  position: relative;
+  overflow: hidden;
+}
+.cv-hero::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+.cv-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -70px; left: 35%;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.025);
+  pointer-events: none;
+}
+.cv-photo {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.25);
+  object-fit: cover;
+  flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.cv-hero-info { flex: 1; position: relative; z-index: 1; }
+.cv-name {
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.cv-roles { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+.cv-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 20px;
+  padding: 3px 11px;
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.88);
+}
+.cv-role-badge i { font-size: 0.62rem; opacity: 0.75; }
+.cv-contacts { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.1rem; }
+.cv-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.cv-contact-pill:hover { background: rgba(255,255,255,0.16); color: #fff; text-decoration: none; }
+.cv-contact-pill i { font-size: 0.7rem; color: #5eead4; }
+.cv-dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.cv-dl-btn:hover { background: rgba(255,255,255,0.22); color: #fff; text-decoration: none; }
+
+/* ── Stats strip ───────────────────────────────────────────────────────── */
+.cv-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+.cv-stat {
+  padding: 0.9rem 0.5rem;
+  text-align: center;
+  border-right: 1px solid #e2e8f0;
+  background: linear-gradient(175deg, #f8fafb 0%, #f0fdfb 100%);
+}
+.cv-stat:last-child { border-right: none; }
+.cv-sn {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0d9488;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.5px;
+}
+.cv-sl {
+  display: block;
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #64748b;
+}
+
+/* ── Two-column layout ─────────────────────────────────────────────────── */
+.cv-body {
+  display: grid;
+  grid-template-columns: 1fr 290px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ── Section heading ───────────────────────────────────────────────────── */
+.cv-sh {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+.cv-sh i { font-size: 0.78rem; color: #0d9488; }
+.cv-section { margin-bottom: 2rem; }
+
+/* ── Timeline item ─────────────────────────────────────────────────────── */
+.cv-item {
+  position: relative;
+  padding: 1.1rem 1.25rem 1rem 1.5rem;
+  border-left: 3px solid #0d9488;
+  border-radius: 0 8px 8px 0;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 0.7rem;
+  transition: box-shadow 0.2s;
+}
+.cv-item::before {
+  content: '';
+  position: absolute;
+  left: -7px; top: 1.2rem;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: #0d9488;
+  border: 2px solid #f0fdfa;
+}
+.cv-item:hover { box-shadow: 0 3px 14px rgba(13,148,136,0.1); }
+
+.cv-edu-item { border-left-color: #64748b; }
+.cv-edu-item::before { background: #64748b; border-color: #f8fafb; }
+.cv-edu-item:hover { box-shadow: 0 3px 14px rgba(100,116,139,0.1); }
+
+.cv-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+  flex-wrap: wrap;
+}
+.cv-item-title {
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.3;
+}
+.cv-item-meta { font-size: 0.74rem; color: #64748b; white-space: nowrap; flex-shrink: 0; }
+.cv-item-sub { font-size: 0.82rem; color: #0d9488; font-weight: 500; margin-bottom: 0.3rem; }
+.cv-item-sub a { color: #0d9488; text-decoration: none; }
+.cv-item-sub a:hover { text-decoration: underline; }
+.cv-edu-item .cv-item-sub { color: #64748b; }
+.cv-edu-item .cv-item-sub a { color: #64748b; }
+.cv-item-loc { font-size: 0.73rem; color: #94a3b8; margin-bottom: 0.6rem; }
+.cv-item-loc i { font-size: 0.63rem; margin-right: 3px; }
+
+.cv-list { list-style: none; padding: 0; margin: 0; }
+.cv-list li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #374151;
+}
+.cv-list li::before { content: '–'; position: absolute; left: 0; color: #0d9488; font-weight: 700; }
+.cv-edu-item .cv-list li::before { color: #64748b; }
+
+.cv-badge {
+  display: inline-block;
+  font-size: 0.63rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.cv-badge-present { background: #dcfce7; color: #166534; }
+.cv-badge-part    { background: #fef9c3; color: #854d0e; }
+
+/* ── Publication category header ───────────────────────────────────────── */
+.pub-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.55rem 0.9rem;
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  border-left: 3px solid #0d9488;
+  border-radius: 0 6px 6px 0;
+  margin: 1rem 0 0.55rem;
+}
+.pub-cat-header:first-of-type { margin-top: 0; }
+.pub-cat-icon {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  background: rgba(13,148,136,0.1);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.pub-cat-icon i { font-size: 0.7rem; color: #0d9488; }
+.pub-cat-label { font-size: 0.84rem; font-weight: 600; color: #1e293b; flex: 1; }
+.pub-cat-count {
+  font-size: 0.7rem; font-weight: 700;
+  background: #0d9488; color: #fff;
+  border-radius: 10px; padding: 1px 8px;
+}
+
+.pub-entry {
+  padding: 0.8rem 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 0.45rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.pub-entry:hover { border-color: #99f6e4; box-shadow: 0 1px 6px rgba(13,148,136,0.07); }
+.pub-title-text { font-size: 0.85rem; font-weight: 600; color: #1e293b; display: block; margin-bottom: 0.25rem; }
+.pub-title-text a { color: #1e293b; text-decoration: none; }
+.pub-title-text a:hover { color: #0d9488; }
+.pub-authors-text { font-size: 0.79rem; color: #64748b; margin-bottom: 0.2rem; }
+.pub-venue-text { font-size: 0.77rem; font-style: italic; color: #94a3b8; }
+.pub-venue-badge {
+  display: inline-block;
+  font-size: 0.63rem; font-weight: 700;
+  padding: 1px 6px; border-radius: 3px;
+  margin-left: 5px; font-style: normal;
+  text-transform: uppercase; vertical-align: middle;
+}
+.pub-venue-badge.acm    { background: #e8f4fd; color: #1565c0; }
+.pub-venue-badge.ieee   { background: #e8f5e9; color: #2e7d32; }
+.pub-venue-badge.spring { background: #fff3e0; color: #e65100; }
+
+/* ── Aside ─────────────────────────────────────────────────────────────── */
+.cv-aside {
+  background: #f4faf9;
+  border: 1px solid #ccfbf1;
+  border-radius: 10px;
+  padding: 1.4rem;
+}
+.cv-aside-section {
+  margin-bottom: 1.35rem;
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid #c9f0eb;
+}
+.cv-aside-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.cv-aside-sh {
+  font-size: 0.67rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.9px;
+  color: #64748b;
+  margin: 0 0 0.65rem 0;
+  display: flex; align-items: center; gap: 6px;
+}
+.cv-aside-sh i { color: #0d9488; font-size: 0.72rem; }
+
+.interest-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+.interest-pill {
+  font-size: 0.74rem; padding: 3px 10px;
+  border-radius: 20px;
+  background: #fff; border: 1px solid #99f6e4;
+  color: #0d6e68; font-weight: 500;
+}
+
+.skill-cat-label {
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  color: #94a3b8;
+  margin: 0.7rem 0 0.35rem;
+}
+.skill-pills { display: flex; flex-wrap: wrap; gap: 4px; }
+.skill-pill {
+  font-size: 0.72rem; padding: 2px 9px;
+  border-radius: 12px;
+  background: #1e293b; color: #e2e8f0;
+  font-weight: 500;
+}
+
+.cv-profile-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 0;
+  font-size: 0.82rem; color: #1e293b;
+  text-decoration: none; transition: color 0.15s;
+}
+.cv-profile-link:hover { color: #0d9488; text-decoration: none; }
+.cv-profile-link i { width: 16px; color: #0d9488; font-size: 0.8rem; }
+
+/* ── Reference cards ───────────────────────────────────────────────────── */
+.cv-ref-card {
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #0d9488;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 0.65rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s;
+}
+.cv-ref-card:hover { box-shadow: 0 3px 10px rgba(13,148,136,0.09); }
+.cv-ref-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.15rem 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.cv-ref-name a { color: #1e293b; text-decoration: none; }
+.cv-ref-name a:hover { color: #0d9488; }
+.cv-ref-li-icon { font-size: 0.78rem; color: #0a66c2; }
+.cv-ref-title {
+  font-size: 0.8rem;
+  color: #0d9488;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+}
+.cv-ref-meta {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  margin-bottom: 0.6rem;
+}
+.cv-ref-text {
+  font-size: 0.83rem;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0;
+  font-style: italic;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.6rem;
+}
+.cv-ref-text::before { content: '\201C'; color: #0d9488; font-size: 1.1rem; font-style: normal; margin-right: 2px; }
+.cv-ref-text::after  { content: '\201D'; color: #0d9488; font-size: 1.1rem; font-style: normal; margin-left: 2px; }
+
+html[data-theme='dark'] .cv-ref-card { background: #1e1e1e; border-color: #2d3748; }
+html[data-theme='dark'] .cv-ref-name { color: #e2e8f0; }
+html[data-theme='dark'] .cv-ref-name a { color: #e2e8f0; }
+html[data-theme='dark'] .cv-ref-text { color: #cbd5e1; border-top-color: #2d3748; }
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cv-body { grid-template-columns: 1fr; }
+  .cv-aside { order: -1; }
+}
+@media (max-width: 640px) {
+  .cv-hero { flex-direction: column; gap: 1rem; padding: 1.5rem 1.25rem; }
+  .cv-photo { width: 80px; height: 80px; }
+  .cv-stats { grid-template-columns: repeat(2, 1fr); }
+  .cv-stat:nth-child(2) { border-right: none; }
+  .cv-stat:nth-child(1),
+  .cv-stat:nth-child(2) { border-bottom: 1px solid #e2e8f0; }
+}
+
+/* ── Dark mode ─────────────────────────────────────────────────────────── */
+html[data-theme='dark'] .cv-stats { border-color: #2d3748; }
+html[data-theme='dark'] .cv-stat  { background: linear-gradient(175deg, #1a1a1a, #0d2220); border-right-color: #2d3748; }
+html[data-theme='dark'] .cv-item  { background: #1e1e1e; box-shadow: 0 1px 4px rgba(0,0,0,0.25); }
+html[data-theme='dark'] .cv-item:hover { box-shadow: 0 3px 14px rgba(13,148,136,0.15); }
+html[data-theme='dark'] .cv-item-title { color: #e2e8f0; }
+html[data-theme='dark'] .cv-list li { color: #cbd5e1; }
+html[data-theme='dark'] .cv-sh { color: #e2e8f0; border-bottom-color: #2d3748; }
+html[data-theme='dark'] .pub-entry { background: #1e1e1e; border-color: #2d3748; }
+html[data-theme='dark'] .pub-title-text { color: #e2e8f0; }
+html[data-theme='dark'] .pub-title-text a { color: #e2e8f0; }
+html[data-theme='dark'] .pub-cat-header { background: #0d2220; border-color: #1a4a44; }
+html[data-theme='dark'] .pub-cat-label { color: #e2e8f0; }
+html[data-theme='dark'] .cv-aside { background: #0d2220; border-color: #1a4a44; }
+html[data-theme='dark'] .cv-aside-section { border-bottom-color: #1a4a44; }
+html[data-theme='dark'] .interest-pill { background: #0d2220; border-color: #1a5c56; color: #5eead4; }
+html[data-theme='dark'] .skill-pill { background: #334155; color: #e2e8f0; }
+html[data-theme='dark'] .cv-profile-link { color: #cbd5e1; }
+</style>
+
+<div class="cv-wrap">
+
+<!-- ── HERO ──────────────────────────────────────────────────────────── -->
+<div class="cv-hero">
+  <img src="/assets/img/profile.jpg" alt="Shakil Mahmud Shuvo" class="cv-photo" />
+  <div class="cv-hero-info">
+    <h1 class="cv-name">Shakil Mahmud Shuvo</h1>
+    <div class="cv-roles">
+      <span class="cv-role-badge"><i class="fas fa-chart-line"></i> Associate Data Scientist</span>
+      <span class="cv-role-badge"><i class="fas fa-flask"></i> ML Researcher</span>
+      <span class="cv-role-badge"><i class="fas fa-graduation-cap"></i> PhD Aspirant</span>
+    </div>
+    <div class="cv-contacts">
+      <a href="mailto:sshuvo.cse@gmail.com" class="cv-contact-pill"><i class="fas fa-envelope"></i> sshuvo.cse@gmail.com</a>
+      <span class="cv-contact-pill"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+      <a href="https://linkedin.com/in/smshuv0" target="_blank" class="cv-contact-pill"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/ShakilMahmudShuvo" target="_blank" class="cv-contact-pill"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://scholar.google.com/citations?user=EOsiW3sAAAAJ" target="_blank" class="cv-contact-pill"><i class="ai ai-google-scholar"></i> Scholar</a>
+    </div>
+    <a href="/assets/pdf/Shakil_Mahmud_CV.pdf" target="_blank" class="cv-dl-btn">
+      <i class="fas fa-download"></i> Download PDF CV
+    </a>
+  </div>
+</div>
+
+<!-- ── STATS ──────────────────────────────────────────────────────────── -->
+<div class="cv-stats">
+  <div class="cv-stat"><span class="cv-sn">7</span><span class="cv-sl">Publications</span></div>
+  <div class="cv-stat"><span class="cv-sn">4</span><span class="cv-sl">Positions</span></div>
+  <div class="cv-stat"><span class="cv-sn">3</span><span class="cv-sl">Venues</span></div>
+  <div class="cv-stat"><span class="cv-sn">2+</span><span class="cv-sl">Yrs Research</span></div>
+</div>
+
+<!-- ── BODY ───────────────────────────────────────────────────────────── -->
+<div class="cv-body">
+
+  <!-- MAIN -->
+  <div class="cv-main">
+
+    <!-- Summary -->
+    <div class="cv-section">
+      <div class="cv-sh"><i class="fas fa-user"></i> Professional Summary</div>
+      <p style="font-size:0.88rem;line-height:1.8;color:#374151;margin:0;">
+        Machine learning engineer and researcher with hands-on experience building LLM-powered enterprise systems and a research background in healthcare AI. Published 6 peer-reviewed papers (ACM, IEEE, Springer) on medical imaging, deep learning, and NLP for mental health detection. Currently seeking PhD programs in ML/AI to pursue research in federated learning, multimodal reasoning, and explainable medical AI.
+      </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="cv-section">
+      <div class="cv-sh"><i class="fas fa-briefcase"></i> Work Experience</div>
+
+      <div class="cv-item">
+        <div class="cv-item-head">
+          <h3 class="cv-item-title">Associate Data Scientist <span class="cv-badge cv-badge-present">Current</span></h3>
+          <span class="cv-item-meta">Sept 2024 – Present</span>
+        </div>
+        <div class="cv-item-sub"><a href="https://cognitusconsulting.com/" target="_blank">Cognitus Consulting LLC</a></div>
+        <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Dallas, TX &nbsp;·&nbsp; Remote</div>
+        <ul class="cv-list">
+          <li>Led data integration for <strong>LambdaX</strong>, an AI-powered Contract Lifecycle Management platform — deployed at Lockheed Martin</li>
+          <li>Built LLM-powered workflow generation system using MCP server architecture; intelligent chatbot for automated workflow creation</li>
+          <li>Designed custom ML-driven data workflows and automation pipelines for enterprise clients</li>
+          <li>Built scalable ETL pipelines ingesting contract data from SAP, Salesforce, and internal systems</li>
+          <li>Implemented real-time contract data management with predictive analytics capabilities</li>
+        </ul>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-head">
+          <h3 class="cv-item-title">Generative AI Trainer <span class="cv-badge cv-badge-part">Part-time</span> <span class="cv-badge cv-badge-present">Current</span></h3>
+          <span class="cv-item-meta">Jun 2024 – Present</span>
+        </div>
+        <div class="cv-item-sub"><a href="https://outlier.ai/" target="_blank">Outlier</a></div>
+        <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> San Francisco, CA &nbsp;·&nbsp; Remote</div>
+        <ul class="cv-list">
+          <li>Advanced AI model training via structured text conversations — expert feedback on LLM performance and accuracy</li>
+          <li>Hallucination detection and comprehensive AI response evaluation (factual accuracy, grammar, tone alignment)</li>
+          <li>Systematic AI voice response analysis across instruction adherence, truthfulness, and harmlessness</li>
+        </ul>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-head">
+          <h3 class="cv-item-title">Associate Software Engineer — Machine Learning</h3>
+          <span class="cv-item-meta">Nov 2023 – Aug 2024</span>
+        </div>
+        <div class="cv-item-sub"><a href="https://ideascale.com/" target="_blank">IdeaScale Bangladesh Limited</a></div>
+        <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
+        <ul class="cv-list">
+          <li>Built ML recommendation models — increased user engagement 15% through personalized suggestions</li>
+          <li>Designed contextual NLP + deep learning recommendation PoC, improving relevance by 20%</li>
+          <li>Integrated OpenSearch as vector database for embedding storage and semantic retrieval pipelines</li>
+          <li>Deployed ML solutions via REST APIs with model versioning; collaborated on microservice architecture</li>
+        </ul>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-head">
+          <h3 class="cv-item-title">Research Assistant <span class="cv-badge cv-badge-present">Ongoing</span></h3>
+          <span class="cv-item-meta">Jan 2023 – Present</span>
+        </div>
+        <div class="cv-item-sub"><a href="https://www.linkedin.com/company/aysrizon-ylrl/" target="_blank">Young Learners' Research Lab, RUET</a></div>
+        <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Rajshahi, Bangladesh</div>
+        <ul class="cv-list">
+          <li>Research in medical imaging, deep learning, computer vision, and NLP for mental health</li>
+          <li>Developed CNN and attention-based models for medical image analysis — 18% diagnostic accuracy improvement</li>
+          <li>Contributed to 6 academic publications (2 first-author) published in ACM, IEEE, and Springer</li>
+          <li>Mentored junior researchers on ML methodologies, experimental design, and academic writing</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Education -->
+    <div class="cv-section">
+      <div class="cv-sh"><i class="fas fa-graduation-cap"></i> Education</div>
+
+      <div class="cv-item cv-edu-item">
+        <div class="cv-item-head">
+          <h3 class="cv-item-title">B.Sc. in Computer Science &amp; Engineering</h3>
+          <span class="cv-item-meta">Jan 2018 – Sept 2023</span>
+        </div>
+        <div class="cv-item-sub"><a href="https://www.ruet.ac.bd/" target="_blank">Rajshahi University of Engineering &amp; Technology (RUET)</a></div>
+        <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Rajshahi, Bangladesh</div>
+        <ul class="cv-list">
+          <li>CGPA <strong>3.22</strong>/4.00 &ensp;·&ensp; Last 60 credit average <strong>3.71</strong>/4.00</li>
+          <li><strong>Thesis:</strong> A Two-Phase Framework for Multi-Class Brain Tumor Detection using DenseNet-121 Features and ML Ensembles</li>
+          <li><strong>Supervisor:</strong> Md. Farukuzzaman Faruk, Asst. Professor, Dept. of CSE, RUET</li>
+          <li>Mentor — RUET Analytical Programming Lab &ensp;·&ensp; Organizing Member — RUET e-Sports Club</li>
+        </ul>
+      </div>
+
+      <div class="cv-item cv-edu-item">
+        <div class="cv-item-head">
+          <h3 class="cv-item-title">Higher Secondary Certificate — Science</h3>
+          <span class="cv-item-meta">2017</span>
+        </div>
+        <div class="cv-item-sub"><a href="https://ndc.edu.bd/" target="_blank">Notre Dame College</a></div>
+        <div class="cv-item-loc"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
+        <ul class="cv-list">
+          <li>GPA <strong>5.00</strong>/5.00</li>
+          <li>Group Representative — Outward Bound Adventure Club, Notre Dame College</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Publications -->
+    <div class="cv-section">
+      <div class="cv-sh"><i class="fas fa-book-open"></i> Publications</div>
+
+      <div class="pub-cat-header">
+        <div class="pub-cat-icon"><i class="fas fa-file-alt"></i></div>
+        <span class="pub-cat-label">ACM Conference Papers</span>
+        <span class="pub-cat-count">3</span>
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-title-text"><a href="https://dl.acm.org/doi/10.1145/3723178.3723242" target="_blank">Early Detection of Suicidal Ideation Using Bidirectional GRU and Language Models</a></span>
+        <div class="pub-authors-text"><strong>Shakil Mahmud Shuvo</strong>, Navia Novely, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, S. M. Mahedy Hasan</div>
+        <div class="pub-venue-text">3rd International Conference on Computing Advancements (ICCA 2024) <span class="pub-venue-badge acm">ACM</span></div>
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-title-text"><a href="https://dl.acm.org/doi/10.1145/3723178.3723304" target="_blank">Improving Pre-Trained CNNs with CBAM and Skip Connections for Multi-Class Retinal Diseases Classification using OCT Images</a></span>
+        <div class="pub-authors-text">Navia Novely, <strong>Shakil Mahmud Shuvo</strong>, Md. Farukuzzaman Faruk</div>
+        <div class="pub-venue-text">3rd International Conference on Computing Advancements (ICCA 2024) <span class="pub-venue-badge acm">ACM</span></div>
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-title-text"><a href="https://dl.acm.org/doi/10.1145/3723178.3723308" target="_blank">Advancing Glioma Segmentation: A Robust 3D Residual Attention U-Net Framework for Multimodal MRI Images</a></span>
+        <div class="pub-authors-text">Soumit Das, Md. Farukuzzaman Faruk, <strong>Shakil Mahmud Shuvo</strong>, Azmain Yakin Srizon, S. M. Mahedy Hasan, Md. Al Mamun</div>
+        <div class="pub-venue-text">3rd International Conference on Computing Advancements (ICCA 2024) <span class="pub-venue-badge acm">ACM</span></div>
+      </div>
+
+      <div class="pub-cat-header">
+        <div class="pub-cat-icon"><i class="fas fa-file-alt"></i></div>
+        <span class="pub-cat-label">Springer Conference Papers</span>
+        <span class="pub-cat-count">2</span>
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-title-text"><a href="https://link.springer.com/chapter/10.1007/978-981-99-8937-9_38" target="_blank">Multi-class Brain Tumor Classification with DenseNet-Based Deep Learning Features and Ensemble of Machine Learning Approaches</a></span>
+        <div class="pub-authors-text"><strong>Shakil Mahmud Shuvo</strong>, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, Tahsen Islam Sajon, S. M. Mahedy Hasan, Anirban Barai, A. F. M. Minhazur Rahman, Md. Al Mamun</div>
+        <div class="pub-venue-text">2nd International Conference on Big Data, IoT and Machine Learning (BIM 2023) <span class="pub-venue-badge spring">Springer</span></div>
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-title-text"><a href="https://link.springer.com/chapter/10.1007/978-981-99-8937-9_24" target="_blank">Attention Mechanism-Enhanced Deep CNN Architecture for Precise Multi-class Leukemia Classification</a></span>
+        <div class="pub-authors-text">Tahsen Islam Sajon, Barsha Roy, Md. Farukuzzaman Faruk, Azmain Yakin Srizon, <strong>Shakil Mahmud Shuvo</strong>, Md. Al Mamun, Abu Sayeed, S. M. Mahedy Hasan</div>
+        <div class="pub-venue-text">2nd International Conference on Big Data, IoT and Machine Learning (BIM 2023) <span class="pub-venue-badge spring">Springer</span></div>
+      </div>
+
+      <div class="pub-cat-header">
+        <div class="pub-cat-icon"><i class="fas fa-file-alt"></i></div>
+        <span class="pub-cat-label">IEEE Conference Papers</span>
+        <span class="pub-cat-count">1</span>
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-title-text"><a href="https://ieeexplore.ieee.org/document/10212729" target="_blank">A Late Fusion Deep CNN Model for the Classification of Brain Tumors from Multi-Parametric MRI Images</a></span>
+        <div class="pub-authors-text">Anirban Barai, Md. Farukuzzaman Faruk, <strong>Shakil Mahmud Shuvo</strong>, Azmain Yakin Srizon, S. M. Mahedy Hasan, Abu Sayeed</div>
+        <div class="pub-venue-text">International Conference on Next-Generation Computing, IoT and Machine Learning (NCIM 2023) <span class="pub-venue-badge ieee">IEEE</span></div>
+      </div>
+
+    </div>
+
+    <!-- References -->
+    <div class="cv-section">
+      <div class="cv-sh"><i class="fas fa-user-tie"></i> References</div>
+      
+      <div class="cv-ref-card">
+        <h4 class="cv-ref-name">
+          Md Asif Iqbal Fahim
+          <a href="https://www.linkedin.com/in/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin cv-ref-li-icon"></i></a>
+        </h4>
+        <div class="cv-ref-title">Doctoral Researcher, Multimodal LLM in SE</div>
+        <div class="cv-ref-meta">University College Dublin (UCD), Ireland &ensp;·&ensp; Colleague at IdeaScale Bangladesh &ensp;·&ensp; August 2025</div>
+        <p class="cv-ref-text">Shakil is an exceptional Machine Learning Engineer who brings a rare combination of deep technical expertise and practical business acumen to every project. During his time at IdeaScale, he transformed our recommendation system by implementing sophisticated solutions ranging from ALS-based matrix factorization to context-aware recommendation engines. What sets him apart is not just his technical skills — though his work optimizing Sentence-BERT was impressive — but his ability to deliver tangible business value. Shuvo would be a valuable addition to any team looking for someone who can bridge the gap between ML research and real-world application.</p>
+      </div>
+      
+      <div class="cv-ref-card">
+        <h4 class="cv-ref-name">
+          Md Ariful Islam Rana
+          <a href="https://www.linkedin.com/in/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin cv-ref-li-icon"></i></a>
+        </h4>
+        <div class="cv-ref-title">Software Engineer</div>
+        <div class="cv-ref-meta">IdeaScale Bangladesh Limited &ensp;·&ensp; Colleague at IdeaScale Bangladesh &ensp;·&ensp; August 2024</div>
+        <p class="cv-ref-text">I have the pleasure of working with Shuvo at IdeaScale, where he plays a pivotal role in developing large-scale recommendation systems. Shuvo's expertise in Python and machine learning is instrumental in enhancing our platform's user experience. His clean, maintainable code and deep understanding of data structures and algorithm design make complex problems manageable. His passion and commitment to continuous learning for AI and cutting-edge ML topics make him an invaluable asset. I highly recommend Shuvo for any ML/AI engineer role.</p>
+      </div>
+      
+      <div class="cv-ref-card">
+        <h4 class="cv-ref-name">
+          Masho Rana
+          <a href="https://www.linkedin.com/in/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin cv-ref-li-icon"></i></a>
+        </h4>
+        <div class="cv-ref-title">Senior Software Engineer, Backend &amp; AI/ML Specialist</div>
+        <div class="cv-ref-meta">IdeaScale Bangladesh Limited &ensp;·&ensp; Colleague at IdeaScale Bangladesh &ensp;·&ensp; October 2024</div>
+        <p class="cv-ref-text">Pretty good at learning technology and solving problems. Well-behaved and a great team player.</p>
+      </div>
+      
+    </div>
+
+  </div><!-- /cv-main -->
+
+  <!-- ASIDE -->
+  <div class="cv-aside">
+
+    <div class="cv-aside-section">
+      <div class="cv-aside-sh"><i class="fas fa-flask"></i> Research Interests</div>
+      <div class="interest-pills">
+        <span class="interest-pill">Federated Learning</span>
+        <span class="interest-pill">Medical Imaging</span>
+        <span class="interest-pill">NLP &amp; Mental Health</span>
+        <span class="interest-pill">Explainable AI</span>
+        <span class="interest-pill">Multimodal Reasoning</span>
+        <span class="interest-pill">Healthcare AI</span>
+      </div>
+    </div>
+
+    <div class="cv-aside-section">
+      <div class="cv-aside-sh"><i class="fas fa-code"></i> Technical Skills</div>
+      <div class="skill-cat-label">Languages</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">R</span>
+      </div>
+      <div class="skill-cat-label">ML / Deep Learning</div>
+      <div class="skill-pills">
+        <span class="skill-pill">PyTorch</span>
+        <span class="skill-pill">TensorFlow</span>
+        <span class="skill-pill">Keras</span>
+        <span class="skill-pill">Scikit-learn</span>
+        <span class="skill-pill">OpenCV</span>
+      </div>
+      <div class="skill-cat-label">NLP &amp; LLMs</div>
+      <div class="skill-pills">
+        <span class="skill-pill">LangChain</span>
+        <span class="skill-pill">HuggingFace</span>
+        <span class="skill-pill">OpenAI API</span>
+        <span class="skill-pill">RAG</span>
+        <span class="skill-pill">BERT</span>
+      </div>
+      <div class="skill-cat-label">Data &amp; Cloud</div>
+      <div class="skill-pills">
+        <span class="skill-pill">AWS</span>
+        <span class="skill-pill">Azure</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">Spark</span>
+        <span class="skill-pill">Pandas</span>
+      </div>
+      <div class="skill-cat-label">Tools</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Git</span>
+        <span class="skill-pill">Jupyter</span>
+        <span class="skill-pill">LaTeX</span>
+        <span class="skill-pill">SAP</span>
+        <span class="skill-pill">Salesforce</span>
+      </div>
+    </div>
+
+    <div class="cv-aside-section">
+      <div class="cv-aside-sh"><i class="fas fa-language"></i> Languages</div>
+      <div class="interest-pills">
+        <span class="interest-pill">Bengali — Native</span>
+        <span class="interest-pill">English — Fluent</span>
+      </div>
+    </div>
+
+    <div class="cv-aside-section">
+      <div class="cv-aside-sh"><i class="fas fa-link"></i> Profiles</div>
+      <a href="https://scholar.google.com/citations?user=EOsiW3sAAAAJ" target="_blank" class="cv-profile-link">
+        <i class="ai ai-google-scholar"></i> Google Scholar
+      </a>
+      <a href="https://linkedin.com/in/smshuv0" target="_blank" class="cv-profile-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/ShakilMahmudShuvo" target="_blank" class="cv-profile-link">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+
+  </div><!-- /cv-aside -->
+
+</div><!-- /cv-body -->
+</div>
+<!-- /cv-wrap -->
 
           </article>
 
@@ -147,13 +935,65 @@
       
     </div>
 
-    <!-- Footer -->    
-    <footer class="fixed-bottom">
-      <div class="container mt-0">
-        &copy; Copyright 2025 Shakil Mahmud Shuvo. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    <!-- Footer -->
+<footer class="fixed-bottom">
 
+
+  <style>
+  footer {
+    background: #1e293b !important;
+    border-top: none !important;
+    padding: 1.1rem 0 !important;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-style: italic;
+  }
+  .footer-tagline span {
+    color: #2dd4bf;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .footer-right {
+    font-size: 0.76rem;
+    color: #64748b;
+    text-align: right;
+  }
+  .footer-right a {
+    color: #64748b !important;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-right a:hover { color: #2dd4bf !important; }
+  @media (max-width: 600px) {
+    .footer-inner { justify-content: center; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+  </style>
+
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-tagline">
+        Writing code. Reading papers. Trying to do work that <span>actually matters</span>.
       </div>
-    </footer>
+      <div class="footer-right">
+        &copy; 2026 Shakil Shuvo
+        &ensp;&middot;&ensp; Dhaka, Bangladesh
+        &ensp;&middot;&ensp; <a href="mailto:sshuvo.cse@gmail.com">sshuvo.cse@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
 
     <!-- JavaScripts -->
     <!-- jQuery -->
@@ -269,6 +1109,450 @@
   function getWidthPercentage() {
     return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
   }
+</script>
+
+    <style>
+#terminal-hint {
+  position: fixed;
+  bottom: 70px;
+  right: 24px;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-family: 'Courier New', monospace;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #1e3a5f;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  z-index: 998;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+#terminal-hint::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  bottom: -5px;
+  width: 8px; height: 8px;
+  background: #1e293b;
+  border-right: 1px solid #1e3a5f;
+  border-bottom: 1px solid #1e3a5f;
+  transform: rotate(45deg);
+}
+#terminal-hint.show { opacity: 1; }
+@keyframes nav-btn-glow {
+  0%, 100% { box-shadow: none; }
+  50%       { box-shadow: 0 0 0 3px rgba(45,212,191,0.35); }
+}
+#terminal-nav-btn.hint-glow { animation: nav-btn-glow 1s ease 3; }
+
+#terminal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+#terminal-overlay.open { display: flex; }
+
+#terminal-box {
+  width: min(680px, 95vw);
+  max-height: 70vh;
+  background: #0f172a;
+  border: 1px solid #1e3a5f;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #1e293b;
+  border-bottom: 1px solid #1e3a5f;
+  flex-shrink: 0;
+}
+.t-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.t-dot-red    { background: #ff5f57; }
+.t-dot-yellow { background: #febc2e; }
+.t-dot-green  { background: #28c840; }
+#terminal-title {
+  flex: 1;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #475569;
+  letter-spacing: 0.5px;
+}
+
+#terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px 6px;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  scroll-behavior: smooth;
+}
+
+#terminal-output::-webkit-scrollbar { width: 4px; }
+#terminal-output::-webkit-scrollbar-track { background: transparent; }
+#terminal-output::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 2px; }
+
+.t-line-cmd  { color: #2dd4bf; }
+.t-line-cmd::before { content: '❯ '; color: #0d9488; }
+.t-line-out  { color: #94a3b8; white-space: pre-wrap; }
+.t-line-dim  { color: #475569; }
+.t-line-err  { color: #f87171; }
+.t-line-good { color: #4ade80; }
+.t-line-head { color: #e2e8f0; font-weight: bold; }
+.t-line-accent { color: #2dd4bf; }
+.t-divider { color: #1e3a5f; }
+
+#terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 12px;
+  border-top: 1px solid #1e293b;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.t-prompt { color: #0d9488; font-size: 0.82rem; white-space: nowrap; }
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  caret-color: #2dd4bf;
+}
+</style>
+
+<!-- Hint tooltip -->
+<div id="terminal-hint"><i class="fas fa-terminal" style="color:#2dd4bf;margin-right:6px;font-size:0.65rem"></i>click <i class="fas fa-terminal" style="color:#2dd4bf"></i> in the nav or press <kbd style="background:#1e3a5f;padding:1px 5px;border-radius:3px;color:#2dd4bf;font-family:inherit">/</kbd></div>
+
+<!-- Terminal overlay -->
+<div id="terminal-overlay">
+  <div id="terminal-box">
+    <div id="terminal-titlebar">
+      <span class="t-dot t-dot-red"    onclick="closeTerminal()"></span>
+      <span class="t-dot t-dot-yellow"></span>
+      <span class="t-dot t-dot-green"></span>
+      <span id="terminal-title">shakil@portfolio: ~</span>
+    </div>
+    <div id="terminal-output"></div>
+    <div id="terminal-input-row">
+      <span class="t-prompt">shakil@portfolio ~ ❯</span>
+      <input id="terminal-input" type="text" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="type 'help'">
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay  = document.getElementById('terminal-overlay');
+  var output   = document.getElementById('terminal-output');
+  var input    = document.getElementById('terminal-input');
+  var hint     = document.getElementById('terminal-hint');
+  var history  = [];
+  var histIdx  = -1;
+  var opened   = false;
+
+  /* ── Show hint after 4s, display for 5s, pulse nav button ── */
+  setTimeout(function () {
+    hint.classList.add('show');
+    var navBtn = document.getElementById('terminal-nav-btn');
+    if (navBtn) navBtn.classList.add('hint-glow');
+    setTimeout(function () {
+      hint.classList.remove('show');
+      if (navBtn) navBtn.classList.remove('hint-glow');
+    }, 5000);
+  }, 4000);
+
+  /* ── Keyboard trigger ── */
+  document.addEventListener('keydown', function (e) {
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (e.key === '/' && !overlay.classList.contains('open')) {
+      e.preventDefault();
+      openTerminal();
+    }
+    if (e.key === 'Escape') closeTerminal();
+  });
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeTerminal();
+  });
+
+  function openTerminal() {
+    overlay.classList.add('open');
+    if (!opened) { printWelcome(); opened = true; }
+    setTimeout(function () { input.focus(); }, 50);
+  }
+
+  function closeTerminal() {
+    overlay.classList.remove('open');
+  }
+  window.closeTerminal = closeTerminal;
+
+  function printWelcome() {
+    printLines([
+      { cls: 'accent',  text: '  ███████╗██╗  ██╗ █████╗ ██╗  ██╗██╗██╗     ' },
+      { cls: 'accent',  text: '  ██╔════╝██║  ██║██╔══██╗██║ ██╔╝██║██║     ' },
+      { cls: 'accent',  text: '  ███████╗███████║███████║█████╔╝ ██║██║     ' },
+      { cls: 'accent',  text: '  ╚════██║██╔══██║██╔══██║██╔═██╗ ██║██║     ' },
+      { cls: 'accent',  text: '  ███████║██║  ██║██║  ██║██║  ██╗██║███████╗' },
+      { cls: 'accent',  text: '  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝' },
+      { cls: 'dim',     text: '' },
+      { cls: 'out',     text: '  Welcome to Shakil\'s portfolio terminal.' },
+      { cls: 'dim',     text: '  Type help to see available commands.' },
+      { cls: 'dim',     text: '' },
+    ]);
+  }
+
+  var COMMANDS = {
+    help: function () {
+      printLines([
+        { cls: 'head',   text: 'Available commands' },
+        { cls: 'divider',text: '──────────────────' },
+        { cls: 'out',    text: '  about      → who I am' },
+        { cls: 'out',    text: '  research   → publications' },
+        { cls: 'out',    text: '  skills     → tech stack' },
+        { cls: 'out',    text: '  contact    → get in touch' },
+        { cls: 'out',    text: '  hire       → availability' },
+        { cls: 'out',    text: '  ls         → site pages' },
+        { cls: 'out',    text: '  clear      → clear screen' },
+        { cls: 'out',    text: '  exit       → close terminal' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    about: function () {
+      printLines([
+        { cls: 'head',   text: 'Shakil Mahmud Shuvo' },
+        { cls: 'divider',text: '───────────────────' },
+        { cls: 'out',    text: '  ML engineer & researcher. Based in Dhaka, Bangladesh.' },
+        { cls: 'out',    text: '  Associate Data Scientist at Cognitus Consulting.' },
+        { cls: 'out',    text: '  Building LLM tools for enterprise — RAG, MCP, contract AI.' },
+        { cls: 'dim',    text: '' },
+        { cls: 'out',    text: '  Research background in healthcare AI. 6 papers published' },
+        { cls: 'out',    text: '  across ACM, IEEE, and Springer. Most proud of the suicidal' },
+        { cls: 'out',    text: '  ideation detection paper — felt like work that could matter.' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  → Actively looking for PhD programs in ML/AI.' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    research: function () {
+      printLines([
+        { cls: 'head',   text: '6 Publications' },
+        { cls: 'divider',text: '──────────────' },
+        { cls: 'accent', text: '  2024' },
+        { cls: 'out',    text: '  [1] Early Detection of Suicidal Ideation via BiGRU + LMs    ACM' },
+        { cls: 'out',    text: '  [2] Retinal Disease Classification with CBAM + Skip Conn.    ACM' },
+        { cls: 'out',    text: '  [3] Glioma Segmentation: 3D Residual Attention U-Net         ACM' },
+        { cls: 'accent', text: '  2023' },
+        { cls: 'out',    text: '  [4] Brain Tumor Classification with DenseNet + Ensemble   Springer' },
+        { cls: 'out',    text: '  [5] Late Fusion CNN for Brain Tumor MRI Classification      IEEE' },
+        { cls: 'out',    text: '  [6] Leukemia Classification with Attention CNN           Springer' },
+        { cls: 'dim',    text: '' },
+        { cls: 'dim',    text: '  → /research/ for abstracts, links, and BibTeX' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    skills: function () {
+      printLines([
+        { cls: 'head',   text: 'Tech Stack' },
+        { cls: 'divider',text: '──────────' },
+        { cls: 'dim',    text: '  Languages' },
+        { cls: 'out',    text: '  Python · SQL · R' },
+        { cls: 'dim',    text: '  ML / Deep Learning' },
+        { cls: 'out',    text: '  PyTorch · TensorFlow · Keras · Scikit-learn · OpenCV' },
+        { cls: 'dim',    text: '  NLP & LLMs' },
+        { cls: 'out',    text: '  LangChain · HuggingFace · OpenAI API · RAG · BERT' },
+        { cls: 'dim',    text: '  Data & Cloud' },
+        { cls: 'out',    text: '  AWS · Azure · Docker · Spark · Pandas' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    contact: function () {
+      printLines([
+        { cls: 'head',   text: 'Get in Touch' },
+        { cls: 'divider',text: '────────────' },
+        { cls: 'out',    text: '  email     sshuvo.cse@gmail.com' },
+        { cls: 'out',    text: '  linkedin  linkedin.com/in/smshuv0' },
+        { cls: 'out',    text: '  github    github.com/ShakilMahmudShuvo' },
+        { cls: 'out',    text: '  scholar   scholar.google.com/citations?user=EOsiW3sAAAAJ' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    hire: function () {
+      printLines([
+        { cls: 'head',   text: 'Availability' },
+        { cls: 'divider',text: '────────────' },
+        { cls: 'good',   text: '  ● Open to PhD programs in ML/AI' },
+        { cls: 'good',   text: '  ● Open to research collaborations' },
+        { cls: 'dim',    text: '  ○ Not actively seeking new industry roles' },
+        { cls: 'dim',    text: '' },
+        { cls: 'out',    text: '  Best way to reach me: sshuvo.cse@gmail.com' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    ls: function () {
+      printLines([
+        { cls: 'out',    text: '  drwxr-xr-x  about/' },
+        { cls: 'out',    text: '  drwxr-xr-x  research/' },
+        { cls: 'out',    text: '  drwxr-xr-x  experience/' },
+        { cls: 'out',    text: '  drwxr-xr-x  cv/' },
+        { cls: 'out',    text: '  drwxr-xr-x  education/' },
+        { cls: 'out',    text: '  drwxr-xr-x  projects/' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    clear: function () { output.innerHTML = ''; },
+
+    exit:  function () { closeTerminal(); },
+    quit:  function () { closeTerminal(); },
+    q:     function () { closeTerminal(); },
+
+    /* ── Easter eggs ── */
+    whoami: function () {
+      printLines([{ cls: 'out', text: '  You are a visitor. A curious one at that.' }, { cls: 'dim', text: '' }]);
+    },
+
+    'sudo rm -rf /': function () {
+      printLines([{ cls: 'err', text: '  Nice try.' }, { cls: 'dim', text: '' }]);
+    },
+
+    vim: function () {
+      printLines([
+        { cls: 'out', text: '  Opening vim...' },
+        { cls: 'dim', text: '  (Type :q to exit vim. Or don\'t. We\'ve all been there.)' },
+        { cls: 'dim', text: '' },
+      ]);
+    },
+
+    coffee: function () {
+      printLines([
+        { cls: 'dim',  text: '  Brewing...' },
+        { cls: 'good', text: '  Done. ☕  Enjoy.' },
+        { cls: 'dim',  text: '' },
+      ]);
+    },
+
+    'git log': function () {
+      printLines([
+        { cls: 'accent', text: '  commit f3a1b2c  (HEAD -> life)' },
+        { cls: 'dim',    text: '  Date: Present' },
+        { cls: 'out',    text: '  Actively applying for PhD programs' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit 9e2d4f1' },
+        { cls: 'dim',    text: '  Date: Sept 2024' },
+        { cls: 'out',    text: '  Joined Cognitus Consulting as Associate Data Scientist' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit a7c5e3b' },
+        { cls: 'dim',    text: '  Date: Sept 2023' },
+        { cls: 'out',    text: '  Graduated from RUET with B.Sc. in CSE' },
+        { cls: 'dim',    text: '' },
+        { cls: 'accent', text: '  commit 2b4d8e9' },
+        { cls: 'dim',    text: '  Date: Jan 2023' },
+        { cls: 'out',    text: '  Published first paper. Decided this was it.' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+
+    python: function () {
+      printLines([
+        { cls: 'out',    text: '  Python 3.11.0 (Shakil\'s machine)' },
+        { cls: 'accent', text: '  >>> print("Hello, World!")' },
+        { cls: 'out',    text: '  Hello, World!' },
+        { cls: 'accent', text: '  >>> import torch; print(torch.__version__)' },
+        { cls: 'out',    text: '  2.3.0+cu121' },
+        { cls: 'accent', text: '  >>> exit()' },
+        { cls: 'dim',    text: '' },
+      ]);
+    },
+  };
+
+  function printLines(lines) {
+    lines.forEach(function (l) {
+      var div = document.createElement('div');
+      var cls = l.cls || 'out';
+      if (cls === 'out')     div.className = 't-line-out';
+      else if (cls === 'dim')    div.className = 't-line-dim';
+      else if (cls === 'err')    div.className = 't-line-err';
+      else if (cls === 'good')   div.className = 't-line-good';
+      else if (cls === 'head')   div.className = 't-line-head';
+      else if (cls === 'accent') div.className = 't-line-accent';
+      else if (cls === 'divider')div.className = 't-divider';
+      div.textContent = l.text;
+      output.appendChild(div);
+    });
+    output.scrollTop = output.scrollHeight;
+  }
+
+  function printCmd(cmd) {
+    var div = document.createElement('div');
+    div.className = 't-line-cmd';
+    div.textContent = cmd;
+    output.appendChild(div);
+  }
+
+  function handleCommand(raw) {
+    var cmd = raw.trim().toLowerCase();
+    if (!cmd) return;
+
+    history.unshift(raw);
+    histIdx = -1;
+    printCmd(raw);
+
+    if (COMMANDS[cmd]) {
+      COMMANDS[cmd]();
+    } else {
+      printLines([
+        { cls: 'err', text: '  command not found: ' + cmd + '  (try \'help\')' },
+        { cls: 'dim', text: '' },
+      ]);
+    }
+  }
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      handleCommand(input.value);
+      input.value = '';
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (histIdx < history.length - 1) { histIdx++; input.value = history[histIdx]; }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (histIdx > 0) { histIdx--; input.value = history[histIdx]; }
+      else { histIdx = -1; input.value = ''; }
+    } else if (e.key === 'Escape') {
+      closeTerminal();
+    }
+  });
+})();
 </script>
 
   </body>
