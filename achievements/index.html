@@ -173,7 +173,7 @@
 <!-- Honors and Awards Section -->
 <div class="row mt-4">
     <div class="col-12">
-        <h2 class="section-title"><i class="fas fa-trophy text-warning"></i> Honors &amp; Awards</h2>
+        <h2 class="section-title"><i class="fas fa-trophy" style="color:#d97706;"></i> Honors &amp; Awards</h2>
         <div class="awards-list mt-3">
             
             <div class="award-item mb-4">
@@ -186,7 +186,7 @@
                             <li>Team Name: <code>k3rnel_pan1c</code> - demonstrated collaborative problem-solving and algorithmic thinking skills</li>
                         </ul>
                     </div>
-                    <span class="badge bg-primary">2019</span>
+                    <span class="badge ach-badge-year">2019</span>
                 </div>
             </div>
 
@@ -200,7 +200,7 @@
                             <li>Received approximately $350 USD scholarship for outstanding academic performance</li>
                         </ul>
                     </div>
-                    <span class="badge bg-success">2015</span>
+                    <span class="badge ach-badge-scholarship">2015</span>
                 </div>
             </div>
 
@@ -214,7 +214,7 @@
                             <li>Received full tuition fee waiver with $71 USD annual stipend (2013-2014)</li>
                         </ul>
                     </div>
-                    <span class="badge bg-success">2012</span>
+                    <span class="badge ach-badge-scholarship">2012</span>
                 </div>
             </div>
             
@@ -227,7 +227,7 @@
 <!-- Volunteer Experience Section -->
 <div class="row">
     <div class="col-12">
-        <h2 class="section-title"><i class="fas fa-hands-helping text-info"></i> Volunteer Experience</h2>
+        <h2 class="section-title"><i class="fas fa-hands-helping" style="color:#0d9488;"></i> Volunteer Experience</h2>
         <div class="volunteer-list mt-3">
             
             <div class="volunteer-item mb-4">
@@ -237,7 +237,7 @@
                         <p class="text-muted mb-1"><a href="https://rapl.site/" target="_blank" class="text-decoration-none">RUET Analytical Programming Lab (RAPL)</a></p>
                         <p class="mb-0">Guided students in problem-solving and programming competitions.</p>
                     </div>
-                    <span class="badge bg-secondary">Jan 2019 - Jun 2021</span>
+                    <span class="badge ach-badge-date">Jan 2019 - Jun 2021</span>
                 </div>
             </div>
 
@@ -248,7 +248,7 @@
                         <p class="text-muted mb-1"><a href="https://www.facebook.com/ruetesports/" target="_blank" class="text-decoration-none">RUET e-Sports Club</a></p>
                         <p class="mb-0">Organized gaming events and managed club activities.</p>
                     </div>
-                    <span class="badge bg-secondary">Nov 2022 - Present</span>
+                    <span class="badge ach-badge-date">Nov 2022 - Present</span>
                 </div>
             </div>
 
@@ -259,7 +259,7 @@
                         <p class="text-muted mb-1"><a href="https://ndc.edu.bd/club/news/list/11" target="_blank" class="text-decoration-none">Outward Bound Adventure Club</a>, Notre Dame College</p>
                         <p class="mb-0">Led group activities and ensured team coordination.</p>
                     </div>
-                    <span class="badge bg-secondary">Feb 2016 - Jun 2017</span>
+                    <span class="badge ach-badge-date">Feb 2016 - Jun 2017</span>
                 </div>
             </div>
             
@@ -272,7 +272,7 @@
 <!-- Certifications Section -->
 <div class="row">
     <div class="col-12">
-        <h2 class="section-title"><i class="fas fa-certificate text-success"></i> Certifications</h2>
+        <h2 class="section-title"><i class="fas fa-certificate" style="color:#0d9488;"></i> Certifications</h2>
         <div class="row mt-3">
             
             <div class="col-md-6 mb-4">
@@ -283,7 +283,7 @@
                             <i class="fas fa-building"></i> <strong>Certifying Body:</strong> Codecademy<br />
                             <i class="fas fa-tools"></i> <strong>Skills Covered:</strong> Deep Learning, Feature Engineering, A/B Testing
                         </p>
-                        <span class="badge bg-info">Jun 2020</span>
+                        <span class="badge ach-badge-cert">Jun 2020</span>
                     </div>
                 </div>
             </div>
@@ -296,7 +296,7 @@
                             <i class="fas fa-building"></i> <strong>Certifying Body:</strong> Coursera<br />
                             <i class="fas fa-tools"></i> <strong>Skills Covered:</strong> SQL Database Management and Data Analysis
                         </p>
-                        <span class="badge bg-info">Apr 2020</span>
+                        <span class="badge ach-badge-cert">Apr 2020</span>
                     </div>
                 </div>
             </div>
@@ -310,7 +310,7 @@
 <!-- Additional Information Section -->
 <div class="row mb-5">
     <div class="col-12">
-        <h2 class="section-title"><i class="fas fa-info-circle text-primary"></i> Additional Information</h2>
+        <h2 class="section-title"><i class="fas fa-info-circle" style="color:#0d9488;"></i> Additional Information</h2>
         <div class="row mt-3">
             
             <div class="col-md-4 mb-3">
@@ -370,13 +370,15 @@
 }
 
 .cert-card {
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     border: 1px solid var(--global-divider-color);
+    border-top: 3px solid #0d9488;
 }
 
 .cert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(13,148,136,0.1);
+    border-top-color: #2dd4bf;
 }
 
 .info-card {
@@ -385,12 +387,23 @@
     border-radius: 8px;
     height: 100%;
     border: 1px solid var(--global-divider-color);
+    border-top: 3px solid #0d9488;
 }
 
 .badge {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
 }
+
+/* Teal-aligned badge palette */
+.ach-badge-year       { background: #0d9488; color: #fff; }
+.ach-badge-scholarship { background: #0f766e; color: #fff; }
+.ach-badge-cert       { background: #0e7490; color: #fff; }
+.ach-badge-date       { background: #475569; color: #fff; }
+html[data-theme='dark'] .ach-badge-year        { background: #0f766e; }
+html[data-theme='dark'] .ach-badge-scholarship { background: #134e4a; border: 1px solid #2dd4bf; color: #2dd4bf; }
+html[data-theme='dark'] .ach-badge-cert        { background: #0c4a6e; color: #7dd3fc; }
+html[data-theme='dark'] .ach-badge-date        { background: #334155; color: #94a3b8; }
 
 code {
     background-color: var(--global-code-bg-color);
@@ -445,9 +458,11 @@ code {
     transition: color 0.15s;
   }
   .footer-right a:hover { color: #2dd4bf !important; }
-  @media (max-width: 600px) {
-    .footer-inner { justify-content: center; text-align: center; }
-    .footer-right { text-align: center; }
+  @media (max-width: 576px) {
+    footer { padding: 0.6rem 0 !important; }
+    .footer-tagline { display: none; }
+    .footer-inner { justify-content: center; }
+    .footer-right { text-align: center; font-size: 0.7rem; }
   }
   </style>
 
@@ -820,11 +835,11 @@ code {
         { cls: 'divider',text: '───────────────────' },
         { cls: 'out',    text: '  ML engineer & researcher. Based in Dhaka, Bangladesh.' },
         { cls: 'out',    text: '  Associate Data Scientist at Cognitus Consulting.' },
-        { cls: 'out',    text: '  Building LLM tools for enterprise — RAG, MCP, contract AI.' },
+        { cls: 'out',    text: '  Building LLM tools for enterprise: RAG, MCP, contract AI.' },
         { cls: 'dim',    text: '' },
         { cls: 'out',    text: '  Research background in healthcare AI. 6 papers published' },
         { cls: 'out',    text: '  across ACM, IEEE, and Springer. Most proud of the suicidal' },
-        { cls: 'out',    text: '  ideation detection paper — felt like work that could matter.' },
+        { cls: 'out',    text: '  ideation detection paper; it felt like work that could matter.' },
         { cls: 'dim',    text: '' },
         { cls: 'accent', text: '  → Actively looking for PhD programs in ML/AI.' },
         { cls: 'dim',    text: '' },
@@ -1024,6 +1039,190 @@ code {
       closeTerminal();
     }
   });
+})();
+</script>
+
+    <style>
+/* ── Gradient mesh background ────────────────────────────────────────── */
+.mesh-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: -1; overflow: hidden;
+}
+.mesh-blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(90px);
+}
+.mesh-blob-1 {
+  width: 560px; height: 560px;
+  background: radial-gradient(circle, rgba(13,148,136,0.09) 0%, transparent 70%);
+  top: -120px; left: -80px;
+  animation: mb1 28s ease-in-out infinite alternate;
+}
+.mesh-blob-2 {
+  width: 430px; height: 430px;
+  background: radial-gradient(circle, rgba(45,212,191,0.07) 0%, transparent 70%);
+  top: 35%; right: -100px;
+  animation: mb2 22s ease-in-out infinite alternate;
+}
+.mesh-blob-3 {
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(13,148,136,0.06) 0%, transparent 70%);
+  bottom: -60px; left: 25%;
+  animation: mb3 32s ease-in-out infinite alternate;
+}
+.mesh-blob-4 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(45,212,191,0.05) 0%, transparent 70%);
+  top: 60%; left: 5%;
+  animation: mb4 18s ease-in-out infinite alternate;
+}
+@keyframes mb1 { from { transform:translate(0,0) scale(1); }    to { transform:translate(180px,130px) scale(1.15); } }
+@keyframes mb2 { from { transform:translate(0,0) scale(1); }    to { transform:translate(-130px,90px) scale(0.9); } }
+@keyframes mb3 { from { transform:translate(0,0) scale(1); }    to { transform:translate(80px,-110px) scale(1.1); } }
+@keyframes mb4 { from { transform:translate(0,0) scale(1); }    to { transform:translate(120px,-60px) scale(1.2); } }
+html[data-theme='dark'] .mesh-blob-1 { background: radial-gradient(circle, rgba(13,148,136,0.13) 0%, transparent 70%); }
+html[data-theme='dark'] .mesh-blob-2 { background: radial-gradient(circle, rgba(45,212,191,0.10) 0%, transparent 70%); }
+html[data-theme='dark'] .mesh-blob-3 { background: radial-gradient(circle, rgba(13,148,136,0.09) 0%, transparent 70%); }
+
+/* ── Click ripple ────────────────────────────────────────────────────── */
+.click-ripple {
+  position: fixed; border-radius: 50%;
+  width: 60px; height: 60px;
+  background: rgba(13,148,136,0.2);
+  pointer-events: none; transform: scale(0);
+  animation: ripple-go 0.55s ease-out forwards;
+  z-index: 8000;
+}
+@keyframes ripple-go { to { transform: scale(5); opacity: 0; } }
+
+/* ── Toast ───────────────────────────────────────────────────────────── */
+.ff-toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: #1e293b; color: #2dd4bf;
+  font-size: 0.8rem; font-weight: 500;
+  padding: 8px 20px; border-radius: 20px;
+  border: 1px solid #1a5c56;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  opacity: 0; transition: opacity 0.3s, transform 0.3s;
+  z-index: 9998; white-space: nowrap; pointer-events: none;
+}
+.ff-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── Matrix rain ─────────────────────────────────────────────────────── */
+#matrix-canvas { position:fixed; inset:0; z-index:9990; pointer-events:none; display:none; }
+#matrix-exit {
+  position:fixed; top:18px; right:18px; z-index:9991;
+  background:rgba(0,0,0,0.78); color:#2dd4bf;
+  border:1px solid #2dd4bf; border-radius:6px;
+  padding:5px 14px; font-size:0.78rem; cursor:pointer; display:none;
+  font-family:'Courier New',monospace; letter-spacing:0.5px;
+}
+</style>
+
+<div class="mesh-bg" aria-hidden="true">
+  <div class="mesh-blob mesh-blob-1"></div>
+  <div class="mesh-blob mesh-blob-2"></div>
+  <div class="mesh-blob mesh-blob-3"></div>
+  <div class="mesh-blob mesh-blob-4"></div>
+</div>
+
+<canvas id="matrix-canvas"></canvas>
+<button id="matrix-exit">✕ exit matrix</button>
+
+<script>
+(function () {
+
+  /* ── Click ripple ── */
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('#terminal-overlay') || e.target.closest('#matrix-exit')) return;
+    var r = document.createElement('div');
+    r.className = 'click-ripple';
+    r.style.left = (e.clientX - 30) + 'px';
+    r.style.top  = (e.clientY - 30) + 'px';
+    document.body.appendChild(r);
+    setTimeout(function () { r.remove(); }, 600);
+  });
+
+  /* ── Toast helper ── */
+  function showToast(msg) {
+    var t = document.createElement('div');
+    t.className = 'ff-toast';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function () { t.classList.add('show'); }, 10);
+    setTimeout(function () {
+      t.classList.remove('show');
+      setTimeout(function () { t.remove(); }, 400);
+    }, 2600);
+  }
+  window._ffToast = showToast;
+
+  /* ── Email click → copy ── */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="mailto:"]');
+    if (!a || !navigator.clipboard) return;
+    var email = a.getAttribute('href').replace('mailto:', '');
+    e.preventDefault();
+    navigator.clipboard.writeText(email).then(function () {
+      showToast('✓  ' + email + '  copied to clipboard');
+    });
+  });
+
+  /* ── Konami code → Matrix rain ── */
+  var SEQ = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown',
+             'ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  var idx = 0, running = false, raf;
+  var canvas  = document.getElementById('matrix-canvas');
+  var exitBtn = document.getElementById('matrix-exit');
+  var ctx     = canvas.getContext('2d');
+  var CHARS   = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEF'.split('');
+
+  document.addEventListener('keydown', function (e) {
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+    if (e.key === SEQ[idx]) { idx++; } else { idx = (e.key === SEQ[0]) ? 1 : 0; }
+    if (idx === SEQ.length) { idx = 0; running ? stopMatrix() : startMatrix(); }
+  });
+
+  function startMatrix() {
+    running = true;
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.display  = 'block';
+    exitBtn.style.display = 'block';
+    var cols  = Math.floor(canvas.width / 16);
+    var drops = Array(cols).fill(1);
+    function draw() {
+      ctx.fillStyle = 'rgba(0,0,0,0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = '14px Courier New';
+      for (var i = 0; i < drops.length; i++) {
+        var ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+        ctx.fillStyle = Math.random() > 0.96 ? '#ffffff' : (Math.random() > 0.4 ? '#2dd4bf' : '#0d9488');
+        ctx.fillText(ch, i * 16, drops[i] * 16);
+        if (drops[i] * 16 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+      raf = requestAnimationFrame(draw);
+    }
+    draw();
+    showToast('🟩 konami code unlocked: matrix mode');
+  }
+
+  function stopMatrix() {
+    running = false;
+    cancelAnimationFrame(raf);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.style.display  = 'none';
+    exitBtn.style.display = 'none';
+  }
+
+  exitBtn.addEventListener('click', stopMatrix);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && running) stopMatrix();
+  });
+
 })();
 </script>
 

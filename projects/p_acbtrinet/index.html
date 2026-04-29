@@ -1,0 +1,129 @@
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div class="text-center">
+            <a href="https://github.com/ShakilMahmudShuvo/ACB-TriNet" class="btn btn-sm btn-primary" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+            <a href="https://drive.google.com/file/d/1fXkstzlnxIDUL3eVXNbeickwkAImdDvD/view" class="btn btn-sm btn-success" target="_blank">
+                <i class="fas fa-file-pdf"></i> Preprint PDF
+            </a>
+            <span class="badge" style="background:#fef3c7;color:#92400e;border:1px solid #fde68a;font-size:0.78rem;padding:4px 10px;border-radius:20px;">🏆 Best Technical Paper · ICETCS 2025</span>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<h2 id="overview">Overview</h2>
+
+<p>ACB-TriNet is a dual-branch deep learning architecture for malware classification that converts malware binaries into three-channel image representations: <strong>grayscale</strong>, <strong>entropy map</strong>, and <strong>Sobel edge features</strong>, enabling the model to simultaneously capture global structural patterns and fine-grained local textures.</p>
+
+<p>Published at the <strong>International Conference on Emerging Trends in Cybersecurity (ICETCS 2025, UK)</strong> and awarded <strong>Best Technical Paper</strong>. Accepted for publication in <strong>Springer Lecture Notes</strong>.</p>
+
+<h3 id="tools--technologies">Tools &amp; Technologies</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Python</code> <code class="language-plaintext highlighter-rouge">PyTorch</code> <code class="language-plaintext highlighter-rouge">OpenCV</code> <code class="language-plaintext highlighter-rouge">NumPy</code> <code class="language-plaintext highlighter-rouge">Matplotlib</code> <code class="language-plaintext highlighter-rouge">Scikit-learn</code> <code class="language-plaintext highlighter-rouge">Malimg Dataset</code></p>
+
+<hr />
+
+<h2 id="architecture">Architecture</h2>
+
+<p>The framework has three core innovations:</p>
+
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="card h-100" style="border-left:3px solid #0d9488;">
+      <div class="card-body">
+        <h6 class="card-title" style="color:#0d9488;"><i class="fas fa-layer-group"></i> Asymmetric Convolution Blocks (ACB)</h6>
+        <p class="card-text" style="font-size:0.85rem;">Directional feature extraction using asymmetric 1×k and k×1 kernels alongside standard k×k convolutions. Captures horizontal, vertical, and diagonal patterns in malware visualizations.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100" style="border-left:3px solid #0d9488;">
+      <div class="card-body">
+        <h6 class="card-title" style="color:#0d9488;"><i class="fas fa-project-diagram"></i> Triplet Attention</h6>
+        <p class="card-text" style="font-size:0.85rem;">Cross-dimensional feature refinement across H×W, C×W, and C×H planes without dimensionality reduction, capturing inter-channel and spatial dependencies simultaneously.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100" style="border-left:3px solid #0d9488;">
+      <div class="card-body">
+        <h6 class="card-title" style="color:#0d9488;"><i class="fas fa-compress-arrows-alt"></i> Global Attention Block (GAB)</h6>
+        <p class="card-text" style="font-size:0.85rem;">Final feature fusion module that aggregates multi-scale representations from both branches, producing a discriminative global descriptor for classification.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 id="three-channel-input-representation">Three-Channel Input Representation</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Malware Binary → Grayscale visualization  ┐
+               → Entropy map              ├→ 3-channel tensor → Dual-branch ACB-TriNet
+               → Sobel edge features      ┘
+</code></pre></div></div>
+
+<p>A <strong>class-balanced focal loss</strong> handles the significant class imbalance in the Malimg dataset (25 malware families with highly skewed distributions).</p>
+
+<hr />
+
+<h2 id="results">Results</h2>
+
+<div class="row text-center mb-4">
+  <div class="col-md-3 col-6">
+    <div class="metric-card">
+      <h2 style="color:#0d9488;">98.98%</h2>
+      <p>Accuracy</p>
+    </div>
+  </div>
+  <div class="col-md-3 col-6">
+    <div class="metric-card">
+      <h2 style="color:#0d9488;">98.81%</h2>
+      <p>F1-Score</p>
+    </div>
+  </div>
+  <div class="col-md-3 col-6">
+    <div class="metric-card">
+      <h2 style="color:#0d9488;">2.28%</h2>
+      <p>False Negative Rate</p>
+    </div>
+  </div>
+  <div class="col-md-3 col-6">
+    <div class="metric-card">
+      <h2 style="color:#0d9488;">25</h2>
+      <p>Malware Families</p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="citation">Citation</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">shuvo2025acbtrinet</span><span class="p">,</span>
+  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Shakil Mahmud Shuvo and Rezwanul Haque}</span><span class="p">,</span>
+  <span class="na">title</span>     <span class="p">=</span> <span class="s">{ACB-TriNet: Asymmetric Convolutions and Triplet Attention for Effective Malware Classification}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proc. ICETCS 2025}</span><span class="p">,</span>
+  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
+  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{Springer Lecture Notes}</span><span class="p">,</span>
+  <span class="na">note</span>      <span class="p">=</span> <span class="s">{Best Technical Paper Award. Accepted, in press.}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<div class="text-center mt-4">
+  <a href="https://github.com/ShakilMahmudShuvo/ACB-TriNet" class="btn btn-primary" target="_blank">
+    <i class="fab fa-github"></i> View Source Code
+  </a>
+  <a href="https://drive.google.com/file/d/1fXkstzlnxIDUL3eVXNbeickwkAImdDvD/view" class="btn btn-success ml-2" target="_blank">
+    <i class="fas fa-file-pdf"></i> Read Preprint
+  </a>
+</div>
+
+<style>
+.metric-card { padding:18px; border-radius:8px; background:#f0fdfa; border:1px solid #ccfbf1; margin-bottom:16px; }
+.metric-card h2 { font-weight:700; margin-bottom:6px; }
+</style>
+
